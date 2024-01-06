@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqj8gga8k064"]
+
+[ext_resource type="Script" path="res://Retired Technology/PlayerInventory.gd" id="1_aybtk"]
+[ext_resource type="Texture2D" uid="uid://cyixnv76pf0xr" path="res://Textures/textboxFINAL.png" id="1_mrhak"]
+[ext_resource type="Texture2D" uid="uid://dwgsfn83rgagq" path="res://Textures/emptySlot.png" id="2_6uoia"]
+
+[node name="PlayerInventory" type="Node2D"]
+position = Vector2(300, 250)
+script = ExtResource("1_aybtk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ExitHitbox" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -74.0
+offset_right = 218.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_mrhak")
+region_rect = Rect2(0, 0, 45, 45)
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="Slot1" type="Button" parent="CanvasLayer"]
+offset_left = 315.0
+offset_top = 265.0
+offset_right = 387.0
+offset_bottom = 337.0
+icon = ExtResource("2_6uoia")
+
+[node name="Slot2" type="Button" parent="CanvasLayer"]
+offset_left = 393.0
+offset_top = 265.0
+offset_right = 465.0
+offset_bottom = 337.0
+icon = ExtResource("2_6uoia")
+
+[node name="Slot3" type="Button" parent="CanvasLayer"]
+offset_left = 471.0
+offset_top = 265.0
+offset_right = 543.0
+offset_bottom = 337.0
+icon = ExtResource("2_6uoia")
+
+[node name="Slot4" type="Button" parent="CanvasLayer"]
+offset_left = 549.0
+offset_top = 265.0
+offset_right = 621.0
+offset_bottom = 337.0
+icon = ExtResource("2_6uoia")
+
+[node name="Slot5" type="Button" parent="CanvasLayer"]
+offset_left = 627.0
+offset_top = 265.0
+offset_right = 699.0
+offset_bottom = 337.0
+icon = ExtResource("2_6uoia")
+
+[node name="Slot6" type="Button" parent="CanvasLayer"]
+offset_left = 705.0
+offset_top = 265.0
+offset_right = 777.0
+offset_bottom = 337.0
+icon = ExtResource("2_6uoia")
+
+[connection signal="pressed" from="CanvasLayer/ExitHitbox" to="." method="_on_exit_hitbox_pressed"]

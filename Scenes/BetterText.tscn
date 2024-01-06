@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bojwiahj20skl"]
+
+[ext_resource type="Script" path="res://Scripts/betterText.gd" id="1_00w2t"]
+[ext_resource type="LabelSettings" uid="uid://cjby3spvru6gr" path="res://TextBox.tres" id="3_ildjm"]
+[ext_resource type="Texture2D" uid="uid://do1tlnnr4eaj0" path="res://Textures/dialogue_box_layers_version_2.png" id="4_rsglg"]
+
+[node name="TextBox" type="Node2D"]
+position = Vector2(962, 541)
+script = ExtResource("1_00w2t")
+
+[node name="DialogueBoxLayersVersion2" type="Sprite2D" parent="."]
+z_index = 10
+texture = ExtResource("4_rsglg")
+
+[node name="Hitbox" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -1800.0
+offset_top = -800.0
+offset_right = 1700.0
+offset_bottom = 1200.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -590.0
+offset_top = 345.0
+offset_right = 923.0
+offset_bottom = 483.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="PanelContainer"]
+z_index = 11
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+label_settings = ExtResource("3_ildjm")
+autowrap_mode = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+offset_left = 3000.0
+offset_top = 80.0
+offset_right = 3001.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer2"]
+layout_mode = 2
+label_settings = ExtResource("3_ildjm")
+
+[connection signal="pressed" from="Hitbox" to="." method="_on_hitbox_pressed"]

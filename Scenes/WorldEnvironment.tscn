@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqftuon7rdvuf"]
+
+[sub_resource type="Environment" id="Environment_dynhm"]
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dynhm")

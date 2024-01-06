@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqrhxton7spiu"]
+
+[ext_resource type="LabelSettings" uid="uid://dxhicxfb8wl1b" path="res://Backlog.tres" id="2_2kkov"]
+[ext_resource type="Texture2D" uid="uid://d2cpfafh0pwn2" path="res://Textures/backlog.png" id="2_b4ec7"]
+[ext_resource type="FontFile" uid="uid://dpwk6jggieidv" path="res://Prociono-Regular.ttf" id="3_stwpi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvvs2"]
+font = ExtResource("3_stwpi")
+
+[node name="Backlog" type="Node2D"]
+
+[node name="Text" type="Label" parent="."]
+offset_left = 412.0
+offset_top = 137.0
+offset_right = 1756.0
+offset_bottom = 1018.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, lorem at condimentum porttitor, justo diam posuere massa, sit amet porttitor mi massa ac justo. Nunc dictum, metus at laoreet tincidunt, mi dui ultrices erat, accumsan vehicula ante velit et urna. Etiam ornare nulla vitae viverra pulvinar. Nulla eu porta turpis. Sed mollis a ante aliquet venenatis. Sed ac fringilla massa. Nulla varius sed arcu eu consectetur. Nunc scelerisque porta leo, nec mollis libero imperdiet nec. Vivamus ut neque condimentum, accumsan tellus nec, facilisis nunc. Cras mattis vitae odio vel ultricies. Cras varius, enim non luctus faucibus, justo elit consequat tellus, id consequat dui ante id arcu. Integer ipsum libero, scelerisque a odio quis, placerat scelerisque arcu. Donec at odio velit. "
+label_settings = ExtResource("2_2kkov")
+autowrap_mode = 2
+
+[node name="CharacterNames" type="Label" parent="."]
+offset_left = 151.0
+offset_top = 133.0
+offset_right = 356.0
+offset_bottom = 980.0
+text = "Characterna
+d
+d
+d
+d
+d
+d
+d
+"
+label_settings = ExtResource("2_2kkov")
+
+[node name="Backlog" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(960, 540)
+texture = ExtResource("2_b4ec7")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Patch-"
+label_settings = SubResource("LabelSettings_cvvs2")
