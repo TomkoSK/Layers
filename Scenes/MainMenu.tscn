@@ -75,4 +75,5 @@ flat = true
 
 [connection signal="pressed" from="NewGame" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

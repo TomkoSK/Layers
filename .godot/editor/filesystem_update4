@@ -1,0 +1,10 @@
+res://BlackScene.tscn
+res://Scripts/MainMenu.gd
+res://Scripts/betterText.gd
+res://Scenes/Credits.tscn
+res://Scripts/MenuMusicPlayer.gd
+res://Scripts/Settings.gd
+res://Scenes/SceneManager.tscn
+res://Scenes/MainMenu.tscn
+res://Scenes/MenuMusicPlayer.tscn
+res://Scenes/Settings.tscn

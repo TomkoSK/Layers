@@ -9,3 +9,7 @@ func _on_play_button_pressed():
 
 func _on_options_button_pressed():
 	SceneManager.openSettings()
+	
+
+func _on_credits_pressed():
+	SceneManager.changeScene("res://Scenes/Credits.tscn", 1, 0.8, 1)

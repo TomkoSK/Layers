@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://botnl5370udeg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hyg1"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_k34ux"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_iq8al"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_saeoy"]
+font_size = 30
+
+[node name="Credits" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 759.0
+offset_top = 2.0
+offset_right = 1158.0
+offset_bottom = 139.0
+text = "CREDITS
+"
+label_settings = SubResource("LabelSettings_4hyg1")
+horizontal_alignment = 1
+
+[node name="CreditsContainer" type="HBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 192.0
+offset_right = 1922.0
+offset_bottom = 1078.0
+
+[node name="JobContainer" type="VBoxContainer" parent="CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="JobLabel" type="Label" parent="CreditsContainer/JobContainer"]
+layout_mode = 2
+text = "Job"
+label_settings = SubResource("LabelSettings_k34ux")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/JobContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CreditsContainer/JobContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Direction
+"
+label_settings = SubResource("LabelSettings_iq8al")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CreditsContainer/JobContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Writing"
+label_settings = SubResource("LabelSettings_iq8al")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditsContainer/JobContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Art"
+label_settings = SubResource("LabelSettings_iq8al")
+horizontal_alignment = 1
+
+[node name="NameContainer" type="VBoxContainer" parent="CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="CreditsContainer/NameContainer"]
+layout_mode = 2
+text = "Name
+"
+label_settings = SubResource("LabelSettings_saeoy")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/NameContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CreditsContainer/NameContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Syrius"
+label_settings = SubResource("LabelSettings_iq8al")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CreditsContainer/NameContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Syrius"
+label_settings = SubResource("LabelSettings_iq8al")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditsContainer/NameContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Syrius
+"
+label_settings = SubResource("LabelSettings_iq8al")
+horizontal_alignment = 1
