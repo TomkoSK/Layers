@@ -8,7 +8,7 @@ var changeTime = 1
 
 
 func _ready():
-	startSmooth(1, 2)#NOTE: AFTER SAVING PLAYER SOUND SETTING MAKE THIS WORK WITH IT!
+	startSmooth(SettingsFile.load_settings().music, 2)# smooths out the music volume to start from 0 to the settings.music value in 2 seconds
 
 func startSmooth(linearVolume, time):
 	fadeIn(linearVolume, time)

@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704557575
+::res://::1704566520
 -Stasis-.wav::AudioStreamWAV::2514296048588468027::1704557364::1704557577::1::::<><>::
 Backlog.tres::LabelSettings::8788546622413896129::1704557364::0::1::::<><>::uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
-BlackScene.tscn::PackedScene::17918773196231703::1704557364::0::1::::<><>::uid://cg6012dh7t047::::res://Textures/square.png
+BlackScene.tscn::PackedScene::17918773196231703::1704565409::0::1::::<><>::uid://cg6012dh7t047::::res://Textures/square.png
 default_bus_layout.tres::AudioBusLayout::7616872049961334629::1704557364::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1704557364::0::1::::<><>::
 output.ogv::VideoStreamTheora::-1::1704557364::0::1::::<><>::
@@ -11,10 +11,10 @@ README.md::TextFile::-1::1704557364::0::1::::<><>::
 stasis_nD9iYNZM.wav::AudioStreamWAV::2379936270200173815::1704557364::1704557577::1::::<><>::
 TextBox.tres::LabelSettings::5408113517508338153::1704557364::0::1::::<><>::uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
 TextBoxBlue.tres::LabelSettings::3390741163976579374::1704557364::0::1::::<><>::uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
-::res://Characters/::1704557364
+::res://Characters/::1704557577
 bigGuy.png::CompressedTexture2D::6133006715619600804::1704557364::1704557577::1::::<><>::
 otherGuy.png::CompressedTexture2D::4621873066434963125::1704557364::1704557577::1::::<><>::
-::res://MainMenuButtons/::1704557364
+::res://MainMenuButtons/::1704557577
 Continue.png::CompressedTexture2D::5115408340236959803::1704557364::1704557577::1::::<><>::
 Credits.png::CompressedTexture2D::4889472133842225579::1704557364::1704557577::1::::<><>::
 Gallery.png::CompressedTexture2D::6949271179345606767::1704557364::1704557577::1::::<><>::
@@ -22,14 +22,14 @@ NewGame.png::CompressedTexture2D::6095670371486837096::1704557364::1704557577::1
 Options.png::CompressedTexture2D::7886688512785720426::1704557364::1704557577::1::::<><>::
 Quit.png.png::CompressedTexture2D::4815534449658334802::1704557364::1704557577::1::::<><>::
 text-1704400544344.png::CompressedTexture2D::2139288448616898408::1704557364::1704557577::1::::<><>::
-::res://ProfilePictures/::1704557364
+::res://ProfilePictures/::1704557577
 bluesus.png::CompressedTexture2D::563224883721655135::1704557364::1704557577::1::::<><>::
 pfp.png::CompressedTexture2D::5833531183525352039::1704557364::1704557577::1::::<><>::
 redsus.png::CompressedTexture2D::3247844351649730516::1704557364::1704557577::1::::<><>::
 ::res://Resources/::1704557364
-emptyItem.tres::Resource/Item::1992266088042175769::1704557364::0::1::::<><>::res://Retired Technology/ItemResource.gd
-greenAmongus.tres::Resource/Item::1708374592717798950::1704557364::0::1::::<><>::res://Retired Technology/ItemResource.gd
-InventoryItems.tres::Resource/IventoryItemList::-1::1704557364::0::1::::<><>::res://Retired Technology/InventoryResource.gd<>uid://ylsxeatsax3s::::res://Resources/greenAmongus.tres
+emptyItem.tres::Resource/Resource::1992266088042175769::1704557364::0::1::::<><>::res://Retired Technology/ItemResource.gd
+greenAmongus.tres::Resource/Resource::1708374592717798950::1704557364::0::1::::<><>::res://Retired Technology/ItemResource.gd
+InventoryItems.tres::Resource/Resource::-1::1704557364::0::1::::<><>::res://Retired Technology/InventoryResource.gd<>uid://ylsxeatsax3s::::res://Resources/greenAmongus.tres
 ::res://Retired Technology/::1704557364
 InventoryButton.gd::GDScript::-1::1704557364::0::1::::<>Node2D<>::
 InventoryButton.tscn::PackedScene::3919946264467365873::1704557364::0::1::::<><>::res://Retired Technology/InventoryButton.gd<>uid://cyixnv76pf0xr::::res://Textures/textboxFINAL.png
@@ -38,30 +38,34 @@ Item.tscn::PackedScene::7642784132391757425::1704557364::0::1::::<><>::
 ItemResource.gd::GDScript::-1::1704557364::0::1::::Item<>Resource<>::
 PlayerInventory.gd::GDScript::-1::1704557364::0::1::::<>Node<>::
 PlayerInventory.tscn::PackedScene::6140065149160983039::1704557364::0::1::::<><>::res://Retired Technology/PlayerInventory.gd<>uid://cyixnv76pf0xr::::res://Textures/textboxFINAL.png<>uid://dwgsfn83rgagq::::res://Textures/emptySlot.png
-::res://Scenes/::1704557364
+::res://Scenes/::1704566520
 Backlog.tscn::PackedScene::8317845083521078288::1704557364::0::1::::<><>::uid://dxhicxfb8wl1b::::res://Backlog.tres<>uid://d2cpfafh0pwn2::::res://Textures/backlog.png<>uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
 BetterText.tscn::PackedScene::3388993965863828351::1704557364::0::1::::<><>::res://Scripts/betterText.gd<>uid://cjby3spvru6gr::::res://TextBox.tres<>uid://do1tlnnr4eaj0::::res://Textures/dialogue_box_layers_version_2.png
+Credits.tscn::PackedScene::3409098257034767690::1704563016::0::1::::<><>::
 DialoguePlayer.tscn::PackedScene::7199949062355143864::1704557364::0::1::::<><>::res://Scripts/DialoguePlayer.gd
-MainMenu.tscn::PackedScene::3679241229877638082::1704557364::0::1::::<><>::res://Scripts/MainMenu.gd<>res://output.ogv<>uid://ce47a7mikq46j::::res://MainMenuButtons/Continue.png<>uid://cs312hkdfnu1m::::res://MainMenuButtons/NewGame.png<>uid://dkmmuwk8sxfoc::::res://MainMenuButtons/Options.png<>uid://c6ajqmcd2va28::::res://MainMenuButtons/Gallery.png<>uid://cbwq5k1y3y8mp::::res://MainMenuButtons/Credits.png<>uid://5qj1ebek6oke::::res://MainMenuButtons/text-1704400544344.png
-MenuMusicPlayer.tscn::PackedScene::1094433489283589522::1704557364::0::1::::<><>::res://Scripts/MenuMusicPlayer.gd<>uid://854g5jib208j::::res://stasis_nD9iYNZM.wav
+MainMenu.tscn::PackedScene::3679241229877638082::1704566155::0::1::::<><>::res://Scripts/MainMenu.gd<>res://output.ogv<>uid://ce47a7mikq46j::::res://MainMenuButtons/Continue.png<>uid://cs312hkdfnu1m::::res://MainMenuButtons/NewGame.png<>uid://dkmmuwk8sxfoc::::res://MainMenuButtons/Options.png<>uid://c6ajqmcd2va28::::res://MainMenuButtons/Gallery.png<>uid://cbwq5k1y3y8mp::::res://MainMenuButtons/Credits.png<>uid://5qj1ebek6oke::::res://MainMenuButtons/text-1704400544344.png
+MenuMusicPlayer.tscn::PackedScene::1094433489283589522::1704563016::0::1::::<><>::res://Scripts/MenuMusicPlayer.gd<>uid://854g5jib208j::::res://stasis_nD9iYNZM.wav
 PrologueScene.tscn::PackedScene::6810028433637837184::1704557364::0::1::::<><>::res://Scripts/PrologueScene.gd<>uid://cg6012dh7t047::::res://Textures/square.png
-SceneManager.tscn::PackedScene::7054871427989194575::1704557364::0::1::::<><>::res://Scripts/SceneManager.gd
-Settings.tscn::PackedScene::6311090831063622255::1704557364::0::1::::<><>::res://Scripts/Settings.gd
+SceneManager.tscn::PackedScene::7054871427989194575::1704563016::0::1::::<><>::res://Scripts/SceneManager.gd
+Settings.tscn::PackedScene::6311090831063622255::1704565811::0::1::::<><>::res://Scripts/Settings.gd
+Settings_file.gd::GDScript::-1::1704566461::0::1::::<>Node<>::
+Settings_file.tscn::PackedScene::443221916631911371::1704566495::0::1::::<><>::
 WorldEnvironment.tscn::PackedScene::3520954166298732393::1704557364::0::1::::<><>::
-::res://Scripts/::1704557364
-betterText.gd::GDScript::-1::1704557364::0::1::::<>Node2D<>::
+::res://Scripts/::1704566520
+betterText.gd::GDScript::-1::1704561560::0::1::::<>Node2D<>::
 DialoguePlayer.gd::GDScript::-1::1704557364::0::1::::<>Node<>::
-MainMenu.gd::GDScript::-1::1704557364::0::1::::<>Node2D<>::
-MenuMusicPlayer.gd::GDScript::-1::1704557364::0::1::::<>Node<>::
+FileSaving.gd::GDScript::-1::1704566495::0::1::::Settings<>Resource<>::
+MainMenu.gd::GDScript::-1::1704566400::0::1::::<>Node2D<>::
+MenuMusicPlayer.gd::GDScript::-1::1704562523::0::1::::<>Node<>::
 PrologueScene.gd::GDScript::-1::1704557364::0::1::::<>Node<>::
 SceneManager.gd::GDScript::-1::1704557364::0::1::::<>Node<>::
-Settings.gd::GDScript::-1::1704557364::0::1::::<>Node<>::
+Settings.gd::GDScript::-1::1704566400::0::1::::<>Node<>::
 ::res://TestScenes/::1704557364
 Test1.gd::GDScript::-1::1704557364::0::1::::<>Node2D<>::
 Test1.tscn::PackedScene::2784546292954745283::1704557364::0::1::::<><>::res://TestScenes/Test1.gd
 Test2.gd::GDScript::-1::1704557364::0::1::::<>Node2D<>::
 Test2.tscn::PackedScene::5916801952287927186::1704557364::0::1::::<><>::res://TestScenes/Test2.gd
-::res://Textures/::1704557364
+::res://Textures/::1704557577
 amogsus.png::CompressedTexture2D::1047331774601801688::1704557364::1704557576::1::::<><>::
 backlog.png::CompressedTexture2D::9059409276751412437::1704557364::1704557577::1::::<><>::
 dialogue_box_layers_version_2.png::CompressedTexture2D::8196753653910150171::1704557364::1704557577::1::::<><>::

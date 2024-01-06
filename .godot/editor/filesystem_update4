@@ -8,3 +8,6 @@ res://Scenes/SceneManager.tscn
 res://Scenes/MainMenu.tscn
 res://Scenes/MenuMusicPlayer.tscn
 res://Scenes/Settings.tscn
+res://Scripts/FileSaving.gd
+res://Scenes/Settings_file.tscn
+res://Scripts/Settings_file.gd

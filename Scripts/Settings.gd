@@ -2,7 +2,10 @@ extends Node
 
 var previousScene = null
 
+var settings
+
 func _ready():
+	settings = SettingsFile.load_settings()
 	var windowMode = DisplayServer.window_get_mode()
 	if(windowMode == 0 or windowMode == 1 or windowMode == 2):#All the windowed modes
 		$VBoxContainer/WindowMode/OptionButton.selected = 1#windowed index
@@ -10,9 +13,12 @@ func _ready():
 		$VBoxContainer/WindowMode/OptionButton.selected = 0
 	$VBoxContainer/MusicContainer/HSlider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
 	$VBoxContainer/VolumeContainer/HSlider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	
 
 func _on_settings_applied():
 	ProjectSettings.save()
+	
+	var result = ResourceSaver.save(settings, "res://settings.tres")
 	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately
 
 func _on_window_mode_changed(index:int):
@@ -23,6 +29,8 @@ func _on_back_button_pressed():
 
 func _on_music_slider_changed(value: float):
 	AudioServer.set_bus_volume_db(1, linear_to_db(value))
+	settings.music = value
 
 func _on_volume_slider_changed(value: float):
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
+	settings.level = value

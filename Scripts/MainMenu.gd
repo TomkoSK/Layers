@@ -1,5 +1,10 @@
 extends Node2D
 
+func _ready():
+	var settings = SettingsFile.load_settings() # Creates a setting instance
+	AudioServer.set_bus_volume_db(1, linear_to_db(settings.music))
+	AudioServer.set_bus_volume_db(2, linear_to_db(settings.level))
+
 func _on_quit_button_pressed():
 	get_tree().quit()
 
