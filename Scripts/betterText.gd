@@ -10,7 +10,7 @@ var longPause
 
 func _ready():
 	testContainer = $PanelContainer2
-	#testNode = $PanelContainer2/Label
+	testNode = $PanelContainer2/Label
 	textNode = $PanelContainer/Label
 	shortPause = Timer.new()
 	shortPause.set_wait_time(0.15)
