@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Settings" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/FileSaving.gd" id="1_2nwa2"]
+[ext_resource type="Script" path="res://Scripts/SettingsResource.gd" id="1_2nwa2"]
 
 [resource]
 script = ExtResource("1_2nwa2")
-music = 0.2
-level = 0.0
+music = 0.44
+level = 0.35

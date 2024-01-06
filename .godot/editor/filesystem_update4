@@ -1,7 +1,11 @@
 res://Scenes/SceneManager.tscn
 res://Scenes/Credits.tscn
-res://Scenes/MenuMusicPlayer.tscn
 res://Scenes/MainMenu.tscn
+res://Scenes/Backlog.tscn
 res://Scenes/Settings.tscn
-res://BlackScene.tscn
-res://Scenes/Settings_file.tscn
+res://Scripts/FileSaving.gd
+res://Scripts/MainMenu.gd
+res://Scripts/Settings_file.gd
+res://Scripts/Settings.gd
+res://Scripts/SettingsFile.gd
+res://Scripts/SettingsResource.gd

@@ -17,9 +17,8 @@ func _ready():
 
 func _on_settings_applied():
 	ProjectSettings.save()
-	
-	var result = ResourceSaver.save(settings, "res://settings.tres")
-	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately
+	ResourceSaver.save(settings, "res://settings.tres")
+	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately after applying settings
 
 func _on_window_mode_changed(index:int):
 	ProjectSettings.set_setting("display/window/size/mode", $VBoxContainer/WindowMode/OptionButton.get_item_id(index))
