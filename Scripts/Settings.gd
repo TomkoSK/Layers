@@ -11,10 +11,10 @@ func _ready():
 		$VBoxContainer/WindowMode/OptionButton.selected = 1#windowed index
 	else:
 		$VBoxContainer/WindowMode/OptionButton.selected = 0
-	$VBoxContainer/MusicContainer/HSlider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
-	$VBoxContainer/VolumeContainer/HSlider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	$VBoxContainer/MusicContainer/HSlider.value = settings.music
+	$VBoxContainer/VolumeContainer/HSlider.value = settings.level
+	$VBoxContainer/BrightnessContainer/HSlider.value = settings.brightness
 	
-
 func _on_settings_applied():
 	ProjectSettings.save()
 	ResourceSaver.save(settings, "res://settings.tres")
@@ -33,3 +33,7 @@ func _on_music_slider_changed(value: float):
 func _on_volume_slider_changed(value: float):
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
 	settings.level = value
+
+func _on_brightness_changed(value: float):
+	settings.brightness = value
+	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the value that was given

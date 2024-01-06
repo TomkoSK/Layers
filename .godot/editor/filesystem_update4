@@ -10,3 +10,9 @@ res://Scripts/Settings.gd
 res://Scripts/SettingsFile.gd
 res://Scripts/SettingsResource.gd
 res://Scripts/MenuMusicPlayer.gd
+res://Scripts/betterText.gd
+res://Scenes/WorldEnvironment.tscn
+res://Scenes/WorldEnvironment.gd
+res://Scripts/WorldEnvironment.gd
+res://settings.tres
+res://Scenes/SettingsFile.tscn
