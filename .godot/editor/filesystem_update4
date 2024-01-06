@@ -1,13 +1,7 @@
-res://BlackScene.tscn
-res://Scripts/MainMenu.gd
-res://Scripts/betterText.gd
-res://Scenes/Credits.tscn
-res://Scripts/MenuMusicPlayer.gd
-res://Scripts/Settings.gd
 res://Scenes/SceneManager.tscn
-res://Scenes/MainMenu.tscn
+res://Scenes/Credits.tscn
 res://Scenes/MenuMusicPlayer.tscn
+res://Scenes/MainMenu.tscn
 res://Scenes/Settings.tscn
-res://Scripts/FileSaving.gd
+res://BlackScene.tscn
 res://Scenes/Settings_file.tscn
-res://Scripts/Settings_file.gd

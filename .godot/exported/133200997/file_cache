@@ -1,0 +1,25 @@
+res://Resources/emptyItem.tres::4a72391a283d8e26dea6ac1d141b21e3::1704557364::res://.godot/exported/133200997/export-51855b6a71d6bdf48485fc8679b12ed3-emptyItem.res
+res://Resources/greenAmongus.tres::f99d9eda57fa4ffd78ee5b3915a46a0c::1704557364::res://.godot/exported/133200997/export-a4da4f204a2d9ab0ec113760154413b7-greenAmongus.res
+res://Retired Technology/InventoryButton.tscn::4e0adedcf1e47d92bcd5089dc7d31648::1704557364::res://.godot/exported/133200997/export-f136d2bdc64e3734a2dd120ca5403c1a-InventoryButton.scn
+res://Retired Technology/Item.tscn::69c7bd479a7e461388100e0e982e1632::1704557364::res://.godot/exported/133200997/export-48029ff4cc66f573abe28ff3fd854155-Item.scn
+res://Retired Technology/PlayerInventory.tscn::8e02caafc296a74c1757fdd2e2c51251::1704557364::res://.godot/exported/133200997/export-61a3376f77c05033b75b9b64747e4800-PlayerInventory.scn
+res://Scenes/Backlog.tscn::7b5556ffe2814b7981ac8689d682f19b::1704557364::res://.godot/exported/133200997/export-efb56004bd1da86b5b643cfa448ee779-Backlog.scn
+res://Scenes/BetterText.tscn::f50405c0656364c8feef2e564e2e3194::1704557364::res://.godot/exported/133200997/export-587e79aa215cc34cd7f9d0382e3c18ad-BetterText.scn
+res://Scenes/Credits.tscn::3a0c13dcabee912effa93add34e94b77::1704568490::res://.godot/exported/133200997/export-ba10b6bf9b68ff95e16c5bbd546b3ea2-Credits.scn
+res://Scenes/DialoguePlayer.tscn::9ae4c855c1b97897c372892f26273913::1704557364::res://.godot/exported/133200997/export-4c1439c9badcb3e88925c10f1f52b9cc-DialoguePlayer.scn
+res://Scenes/MainMenu.tscn::f09932f6bc26694326e132f0beb53a37::1704568491::res://.godot/exported/133200997/export-5d46f2c25b5b7595677274e5845c73b8-MainMenu.scn
+res://Scenes/MenuMusicPlayer.tscn::0dc1bc290d32d44e48417e5e5b8d3853::1704568490::res://.godot/exported/133200997/export-d1589e676a813f74bfece305e4d6a70c-MenuMusicPlayer.scn
+res://Scenes/PrologueScene.tscn::3e9c729207c5022edfc1a5413b6ca5dc::1704557364::res://.godot/exported/133200997/export-7508c8da8524c8721d4481b4e6a2c858-PrologueScene.scn
+res://Scenes/SceneManager.tscn::84478529260cff4fae7024f1f1d7526b::1704568490::res://.godot/exported/133200997/export-2039b193b4065e4162eb44209786bb33-SceneManager.scn
+res://Scenes/Settings.tscn::834fe4dd14adb8714142d4e6944cb8d3::1704568491::res://.godot/exported/133200997/export-6cb79092696b70b71fb229c64f5a67c5-Settings.scn
+res://Scenes/Settings_file.tscn::4a118fe97075f05bb65c7b46189d346f::1704568491::res://.godot/exported/133200997/export-246c1fc933f00b162d60debf7c7ba091-Settings_file.scn
+res://Scenes/WorldEnvironment.tscn::2c6e95f5766fb7098f230e8574008106::1704557364::res://.godot/exported/133200997/export-7fcb21e27412dd5dd6f243bf80d3891a-WorldEnvironment.scn
+res://TestScenes/Test1.tscn::14c49aafb1b898503ddfa27886a7074d::1704557364::res://.godot/exported/133200997/export-6ff943c6ccfc3ed29408e9bf3b7d4e5d-Test1.scn
+res://TestScenes/Test2.tscn::adc5245092343f950f0a61b72b8bdb8d::1704557364::res://.godot/exported/133200997/export-aba31ff43cfc9fd72a1fbb469fe6c31c-Test2.scn
+res://UIButtons/OptionsButton.tscn::5f38fdc9b99a261f6393a8b5a4e3098d::1704557364::res://.godot/exported/133200997/export-844e64fb13491519a611f4c34d3ba8bc-OptionsButton.scn
+res://Backlog.tres::bce188800bcf22ae8c50785c8b4b8238::1704557364::res://.godot/exported/133200997/export-3620c8183d44a06c8d80af0f8e1a5879-Backlog.res
+res://BlackScene.tscn::f31fcfa9627abcac6df8e3c81f88e7db::1704568491::res://.godot/exported/133200997/export-62e07560798cea7d58cb2d768d81fe6d-BlackScene.scn
+res://default_bus_layout.tres::3b37ccca3699063ab0ee7dde5978689d::1704557364::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://settings.tres::7f98ecbef691d34095ee547218d22de6::1704568050::res://.godot/exported/133200997/export-0ecb12cfced7e5093e9bb9dc1a2d581c-settings.res
+res://TextBox.tres::fd16ff8531952694c6b3863a4f897a14::1704557364::res://.godot/exported/133200997/export-f1a6a6b86be4e57eb0809a4cc995719b-TextBox.res
+res://TextBoxBlue.tres::7743d145df33d7441e31a09816e2e654::1704557364::res://.godot/exported/133200997/export-ada427bc2ce0e866c9022ab96273f191-TextBoxBlue.res
