@@ -22,7 +22,7 @@ SceneManager="*res://Scenes/SceneManager.tscn"
 OptionsButton="*res://UIButtons/OptionsButton.tscn"
 MenuMusicPlayer="*res://Scenes/MenuMusicPlayer.tscn"
 GlobalWorldEnvironment="*res://Scenes/WorldEnvironment.tscn"
-SettingsFile="*res://Scenes/Settings_file.tscn"
+SettingsFile="*res://Scripts/SettingsFile.gd"
 
 [display]
 
