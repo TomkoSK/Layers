@@ -1,5 +1,6 @@
-WorldEnvironment
 Label
+PanelContainer
+WorldEnvironment
 VBoxContainer
 HBoxContainer
 TextEdit

@@ -23,12 +23,13 @@ OptionsButton="*res://UIButtons/OptionsButton.tscn"
 MenuMusicPlayer="*res://Scenes/MenuMusicPlayer.tscn"
 GlobalWorldEnvironment="*res://Scenes/WorldEnvironment.tscn"
 SettingsFile="*res://Scripts/SettingsFile.gd"
+Backlog="*res://Scenes/Backlog.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]

@@ -13,7 +13,6 @@ func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "t
 					oldestIndex = 0
 				else:
 					oldestIndex = 1
-
 		if(len(text) > 3 and text[3] != null):#sets a profile picture if passed
 			profilePicture = text[3]
 		else:
@@ -33,3 +32,4 @@ func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "t
 			tempList = null
 		textBox.init(text[1], tempList, profilePicture, timerLength)
 		await Signal(textBox, "tree_exited")
+		Backlog.addText([text[0], text[1]])
