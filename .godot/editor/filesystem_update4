@@ -1,3 +1,9 @@
+res://Scripts/betterText.gd
+res://Scripts/Backlog.gd
+res://Scripts/DialoguePlayer.gd
+res://Scripts/MenuMusicPlayer.gd
+res://Scripts/MainMenu.gd
+res://Scripts/SaveFile.gd
 res://Scripts/SettingsResource.gd
 res://Scenes/SceneManager.tscn
 res://Scenes/Credits.tscn
@@ -7,13 +13,4 @@ res://Scenes/Settings.tscn
 res://Scenes/WorldEnvironment.tscn
 res://Scenes/SettingsFile.tscn
 res://Scenes/BetterText.tscn
-res://Scripts/SceneManager.gd
-res://Scripts/DialoguePlayer.gd
-res://Scripts/PrologueScene.gd
-res://Scenes/Backlog.gd
-res://Scripts/Backlog.gd
-res://TestScenes/Test1.gd
 res://TestScenes/Test1.tscn
-res://Scripts/SettingsFile.gd
-res://Scripts/betterText.gd
-res://Scripts/Settings.gd
