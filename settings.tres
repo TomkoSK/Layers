@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_2nwa2")
-music = 0.59
+music = 0.0
 level = 0.26
 brightness = 1.07

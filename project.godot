@@ -19,7 +19,7 @@ config/icon="res://Textures/icon.svg"
 
 DialoguePlayer="*res://Scenes/DialoguePlayer.tscn"
 SceneManager="*res://Scenes/SceneManager.tscn"
-OptionsButton="*res://UIButtons/OptionsButton.tscn"
+UIButtons="*res://UIButtons/UIButtons.tscn"
 MenuMusicPlayer="*res://Scenes/MenuMusicPlayer.tscn"
 GlobalWorldEnvironment="*res://Scenes/WorldEnvironment.tscn"
 SettingsFile="*res://Scripts/SettingsFile.gd"

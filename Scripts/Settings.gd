@@ -5,6 +5,7 @@ var previousScene = null
 var settings
 
 func _ready():
+	UIButtons.set_visibility("ui", false)
 	settings = SettingsFile.load_settings()
 	var windowMode = DisplayServer.window_get_mode()
 	if(windowMode == 0 or windowMode == 1 or windowMode == 2):#All the windowed modes

@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	print(linear_to_db(0.01))
+	UIButtons.set_visibility("ui", false)
 	for line in dialogue:
 		var listToAppend = [line[1], line[0]]
 		formattedDialogue.append(listToAppend)

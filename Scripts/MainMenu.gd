@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	var settings = SettingsFile.load_settings() # Creates a setting instance
+	UIButtons.set_visibility("ui", false)#Hides the UI buttons
+	var settings = SettingsFile.load_settings() #Loads the settings from the saved file
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the settings value
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.music))
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings.level))
