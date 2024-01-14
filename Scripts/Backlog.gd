@@ -7,6 +7,7 @@ var testNode
 #Array of text and names for each line, the backlog has 12 lines so the array has 12 elements 
 var names = ["", "", "", "", "", "", "", "", "", "", "", ""]
 var textLines = ["", "", "", "", "", "", "", "", "", "", "", ""]
+var scrollOffset = 0
 
 func _ready():
 	self.hide()
@@ -23,25 +24,29 @@ func refreshText():#Just gets the text and names from names and textLines and pu
 
 func updateArrays():#Updates the text in names and textLines based on whatever is in the formattedText
 	var previousName = ""
-	var textArray#NOTE: put comments here explaining whats happening
+	var textArray
 	for i in range(12):
 		names[i] = ""
-		textLines[i] = ""
+		textLines[i] = ""#Resets both the arrays to their empty state
 	if(len(formattedText) > 12):
-		textArray = formattedText.slice(-12)
-	else:
+		if(scrollOffset == 0):#Scroll offset is the amount the player has scrolled up in the backlog
+			textArray = formattedText.slice(-12)#If the offset is 0, just print the last 12 lines of the backlog
+		else:
+			textArray = formattedText.slice(-12+scrollOffset, scrollOffset)#Otherwise prints the last 12 lines but offset by the scroll amount
+	else:#If there arent more than 12 lines just print the whole formattedText
 		textArray = formattedText
-	for i in range(len(textArray)):
-		if(len(textArray[i]) > 1):
-			textLines[i] = textArray[i][1]
-			if(previousName == textArray[i][0]):
+
+	for i in range(len(textArray)):#Puts every line into the arrays
+		if(len(textArray[i]) > 1):#If the length is more than 1 it means there is also a character name in the line
+			textLines[i] = textArray[i][1]#sets the text line to the line in the array
+			if(previousName == textArray[i][0]):#This exists so that if a character has 2 lines in a row in the backlog, the name is only shown in the first line
 				pass
 			else:
 				previousName = textArray[i][0]
 				names[i] = textArray[i][0] 
 		else:
-			textLines[i] = textArray[i][0]
-	refreshText()
+			textLines[i] = textArray[i][0]#sets the text line to the line in the array
+	refreshText()#Finally refreshes the text after updating the arrays
 
 func removeNewlines(text):
 	while(text.find("\n") != -1):#Keeps looping until it can't find any more \n characters
@@ -82,3 +87,13 @@ func _input(event):
 		self.show()
 	if(event.is_action("ui_down")):
 		self.hide()
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				scrollOffset -= 1
+				scrollOffset = clamp(scrollOffset, -(len(formattedText)-12), 0)
+				updateArrays()
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				scrollOffset += 1
+				scrollOffset = clamp(scrollOffset, -(len(formattedText)-12), 0)
+				updateArrays()

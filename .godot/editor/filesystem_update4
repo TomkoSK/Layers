@@ -1,3 +1,4 @@
+res://Scripts/Backlog.gd
 res://Scenes/SceneManager.tscn
 res://Scenes/Credits.tscn
 res://Scenes/MainMenu.tscn
@@ -12,13 +13,4 @@ res://TestScenes/Test2.tscn
 res://Scenes/PrologueScene.tscn
 res://Scenes/SaveSlots.tscn
 res://BlackScene.tscn
-res://Scripts/Backlog.gd
-res://Scripts/MainMenu.gd
-res://UIButtons/UIButtons.gd
-res://Scripts/SceneManager.gd
-res://ResourceScripts/SaveFileResource.gd
-res://Scripts/PrologueScene.gd
-res://Scripts/Settings.gd
-res://ResourceScripts/SettingsResource.gd
-res://Scripts/MenuMusicPlayer.gd
-res://Scripts/betterText.gd
+res://TestScenes/Test2.gd
