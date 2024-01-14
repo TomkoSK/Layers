@@ -31,4 +31,4 @@ func _on_options_pressed():
 	SceneManager.openSettings(true)
 
 func _on_backlog_pressed():
-	Backlog.show()		
+	Backlog.open()		

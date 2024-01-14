@@ -10,7 +10,7 @@ var textLines = ["", "", "", "", "", "", "", "", "", "", "", ""]
 var scrollOffset = 0
 
 func _ready():
-	self.hide()
+	self.close()
 	#the testContainer and testNode are used in the same way as in the textbox script, they are for testing how big a string is
 	testContainer = $TestContainer
 	testNode = $TestContainer/TestLabel
@@ -83,10 +83,8 @@ func addText(text):#textlines with the character name and the text will be passe
 	updateArrays()
 
 func _input(event):
-	if(event.is_action("ui_up")):
-		self.show()
-	if(event.is_action("ui_down")):
-		self.hide()
+	if(event.is_action_pressed("ui_cancel")):
+		close()
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -97,3 +95,15 @@ func _input(event):
 				scrollOffset += 1
 				scrollOffset = clamp(scrollOffset, -(len(formattedText)-12), 0)
 				updateArrays()
+
+func open():#The hitboxes are on another canvas layer so that clicking them takes priority over everything else, the layer also has to be 
+	#manually hidden, thats why the custom show and hide function
+	self.show()
+	$CanvasLayer.visible = true
+
+func close():
+	self.hide()
+	$CanvasLayer.visible = false
+
+func _on_button_pressed():#Hides the backlog when the empty region around it is clicked
+	close()

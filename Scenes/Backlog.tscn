@@ -37,3 +37,73 @@ offset_bottom = 23.0
 [node name="TestLabel" type="Label" parent="TestContainer"]
 layout_mode = 2
 label_settings = ExtResource("2_2kkov")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BGHitbox" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 63.0
+offset_bottom = 1080.0
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1858.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 17.0
+
+[node name="Button4" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 1064.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Button5" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 44.0
+offset_top = 35.0
+offset_right = 97.0
+offset_bottom = 62.0
+rotation = -0.78643
+
+[node name="Button6" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1831.0
+offset_top = 1068.0
+offset_right = 1884.0
+offset_bottom = 1095.0
+rotation = -0.78643
+
+[node name="Button7" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 99.0
+offset_top = 1080.0
+offset_right = 152.0
+offset_bottom = 1096.0
+rotation = -2.72798
+
+[node name="Button8" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1839.0
+offset_top = -2.0
+offset_right = 1892.0
+offset_bottom = 25.0
+rotation = 0.783858
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button5" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button6" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button7" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button8" to="." method="_on_button_pressed"]

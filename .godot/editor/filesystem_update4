@@ -14,3 +14,8 @@ res://Scenes/PrologueScene.tscn
 res://Scenes/SaveSlots.tscn
 res://BlackScene.tscn
 res://TestScenes/Test2.gd
+res://Scripts/MainMenu.gd
+res://UIButtons/UIButtons.gd
+res://Scripts/SceneManager.gd
+res://Scripts/PrologueScene.gd
+res://Scripts/betterText.gd
