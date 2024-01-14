@@ -15,7 +15,7 @@ func _ready():
 	bgSprite.position = Vector2(960, 540)#middle of the screen
 	bgSprite.z_index = -10#its literally the background so u know
 	self.add_child(bgSprite)
-	#changeScene("res://Scenes/MainMenu.tscn", 0.02, 0.5, 2)
+	changeScene("res://Scenes/MainMenu.tscn", 0.02, 0.5, 2)
 
 func openSettings():
 	var currentScene = get_tree().current_scene.scene_file_path

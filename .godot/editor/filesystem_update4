@@ -16,3 +16,9 @@ res://Scripts/FileManager.gd
 res://Scripts/SaveSlots.gd
 res://Scripts/PrologueScene.gd
 res://Scripts/MainMenu.gd
+res://UIButtons/UIButtons.gd
+res://Scripts/SceneManager.gd
+res://Scripts/MenuMusicPlayer.gd
+res://Scripts/DialoguePlayer.gd
+res://Scripts/betterText.gd
+res://Scripts/Backlog.gd

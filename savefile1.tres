@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_tjcqh")
 last_scene = "res://TestScenes/Test2.tscn"
-playtime = 95
+playtime = 106
