@@ -20,3 +20,5 @@ res://ResourceScripts/SaveFileResource.gd
 res://Scripts/PrologueScene.gd
 res://Scripts/Settings.gd
 res://ResourceScripts/SettingsResource.gd
+res://Scripts/MenuMusicPlayer.gd
+res://Scripts/betterText.gd

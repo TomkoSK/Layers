@@ -5,6 +5,7 @@ var fadingOut = false
 var volumeIncrement = 0
 var currentVolume = 0
 var changeTime = 1
+var playingMenuMusic = false#Used in MainMenu.gd
 
 func fadeIn(volume : float, time : float):#Makes the main menu music fade in from 0 to {volume} level of sound over {time} seconds
 	currentVolume = 0#current volume is changed because _physics_process() uses the variable
@@ -50,6 +51,7 @@ func _physics_process(delta):
 	if(fadingOut):
 		currentVolume -= volumeIncrement/changeTime*delta#decrements the current volume if fading out
 		AudioServer.set_bus_volume_db(1, linear_to_db(currentVolume/100))
+	playingMenuMusic = $AudioStreamPlayer.playing
 
 func _on_audio_stream_player_finished():
 	$AudioStreamPlayer.play()#whenever the main menu music finishes it loops again
