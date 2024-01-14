@@ -6,7 +6,7 @@ var settings
 
 func _ready():
 	UIButtons.set_visibility("ui", false)
-	settings = SettingsFile.load_settings()
+	settings = FileManager.load_settings()
 	var windowMode = DisplayServer.window_get_mode()
 	if(windowMode == 0 or windowMode == 1 or windowMode == 2):#All the windowed modes
 		$VBoxContainer/WindowMode/OptionButton.selected = 1#windowed index
@@ -18,7 +18,7 @@ func _ready():
 	
 func _on_settings_applied():
 	ProjectSettings.save()
-	ResourceSaver.save(settings, "res://settings.tres")
+	ResourceSaver.save(settings, FileManager.settings_file_name)
 	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately after applying settings
 
 func _on_window_mode_changed(index:int):

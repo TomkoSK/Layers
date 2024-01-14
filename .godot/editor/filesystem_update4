@@ -4,17 +4,15 @@ res://Scenes/MainMenu.tscn
 res://Scenes/Backlog.tscn
 res://Scenes/Settings.tscn
 res://Scenes/WorldEnvironment.tscn
-res://Scenes/SettingsFile.tscn
 res://Scenes/BetterText.tscn
 res://TestScenes/Test1.tscn
 res://Scenes/MenuMusicPlayer.tscn
-res://UIButtons/OptionsButton.tscn
-res://UIButtons/OptionsButton.gd
-res://Retired Technology/PlayerInventory.gd
-res://Scripts/MainMenu.gd
 res://UIButtons/UIButtons.tscn
-res://Scripts/Settings.gd
+res://TestScenes/Test2.tscn
+res://Scenes/PrologueScene.tscn
+res://Scenes/SaveSlots.tscn
+res://BlackScene.tscn
+res://Scripts/FileManager.gd
+res://Scripts/SaveSlots.gd
 res://Scripts/PrologueScene.gd
-res://Scripts/DialoguePlayer.gd
-res://Scripts/MenuMusicPlayer.gd
-res://Scripts/SettingsResource.gd
+res://Scripts/MainMenu.gd

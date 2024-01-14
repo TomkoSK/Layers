@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SaveFile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ResourceScripts/SaveFileResource.gd" id="1_tjcqh"]
+
+[resource]
+script = ExtResource("1_tjcqh")
+last_scene = "res://TestScenes/Test2.tscn"
+playtime = 95

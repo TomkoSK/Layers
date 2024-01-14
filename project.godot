@@ -17,19 +17,19 @@ config/icon="res://Textures/icon.svg"
 
 [autoload]
 
-DialoguePlayer="*res://Scenes/DialoguePlayer.tscn"
 SceneManager="*res://Scenes/SceneManager.tscn"
 UIButtons="*res://UIButtons/UIButtons.tscn"
 MenuMusicPlayer="*res://Scenes/MenuMusicPlayer.tscn"
 GlobalWorldEnvironment="*res://Scenes/WorldEnvironment.tscn"
-SettingsFile="*res://Scripts/SettingsFile.gd"
+FileManager="*res://Scripts/FileManager.gd"
 Backlog="*res://Scenes/Backlog.tscn"
+DialoguePlayer="*res://Scripts/DialoguePlayer.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

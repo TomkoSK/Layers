@@ -31,6 +31,7 @@ func _on_options_pressed():
 	SceneManager.openSettings()
 
 func _on_main_menu_pressed():
+	FileManager.save()
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
 
 func _on_backlog_pressed():

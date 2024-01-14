@@ -1,6 +1,8 @@
 Label
+Button
+NinePatchRect
+VBoxContainer
 PanelContainer
 WorldEnvironment
-VBoxContainer
 HBoxContainer
 TextEdit

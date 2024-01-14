@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfw4cnvs6kyqd"]
+[gd_scene load_steps=4 format=3 uid="uid://bfw4cnvs6kyqd"]
 
 [ext_resource type="Script" path="res://TestScenes/Test1.gd" id="1_l28vr"]
-[ext_resource type="PackedScene" uid="uid://dqrhxton7spiu" path="res://Scenes/Backlog.tscn" id="2_21fph"]
+[ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="2_bnduq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb3dd"]
+font = ExtResource("2_bnduq")
+font_size = 70
 
 [node name="Test1" type="Node2D"]
 script = ExtResource("1_l28vr")
@@ -11,9 +15,14 @@ offset_left = 437.0
 offset_top = 325.0
 offset_right = 2235.0
 offset_bottom = 488.0
-text = "I AM ABOUT TO COOK :D"
+text = "GET ME OUT"
 
-[node name="Backlog" parent="Button" instance=ExtResource("2_21fph")]
-position = Vector2(-500, -300)
+[node name="Label" type="Label" parent="."]
+offset_left = 468.0
+offset_top = 659.0
+offset_right = 1362.0
+offset_bottom = 728.0
+text = "THIS IS THE TEST 1 SCENE"
+label_settings = SubResource("LabelSettings_yb3dd")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
