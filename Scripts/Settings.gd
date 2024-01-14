@@ -38,3 +38,9 @@ func _on_volume_slider_changed(value: float):
 func _on_brightness_changed(value: float):
 	settings.brightness = value
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the value that was given
+
+func setMenuButton(visibility : bool):#Called from the SceneManager
+	$MenuButton.visible = visibility
+
+func _on_menu_button_pressed():
+	SceneManager.changeScene("res://Scenes/MainMenu.tscn")

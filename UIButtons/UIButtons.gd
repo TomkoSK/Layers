@@ -28,11 +28,7 @@ func set_visibility(buttonName : String, setVisible : bool):
 		print("[WARNING]",buttonName," was passed into ui buttons set visibility function")
 
 func _on_options_pressed():
-	SceneManager.openSettings()
-
-func _on_main_menu_pressed():
-	FileManager.save()
-	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
+	SceneManager.openSettings(true)
 
 func _on_backlog_pressed():
 	Backlog.show()		

@@ -17,11 +17,13 @@ func _ready():
 	self.add_child(bgSprite)
 	changeScene("res://Scenes/MainMenu.tscn", 0.02, 0.5, 2)
 
-func openSettings():
+func openSettings(includeMenuButton : bool = false):
 	var currentScene = get_tree().current_scene.scene_file_path
 	changeScene("res://Scenes/Settings.tscn")
 	await Signal(self, "sceneSwitched")
 	get_tree().current_scene.previousScene = currentScene
+	get_tree().current_scene.setMenuButton(includeMenuButton)#The way to get back to the menu from the game is through the settings,
+	#so the includeMenuButton argument is just deciding whether or not the menu button in the settings should be shown
 
 func openSaveSlots(mode : String):#The mode thing is explained in SaveSlots.gd, this function just switches to the save slots scene
 	#and sets the mode, the mode setting is what requires this to be another function instead of just using changeScene
@@ -31,6 +33,7 @@ func openSaveSlots(mode : String):#The mode thing is explained in SaveSlots.gd, 
 
 func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4):
 	$CanvasLayer/Button.show()
+	var scene = load(targetScene).instantiate()
 	fadeLengthIn = fadeIn
 	fadeLengthOut = fadeOut
 	sprite = Sprite2D.new()
@@ -53,7 +56,10 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4):
 	await t1.timeout
 	fadingIn = false
 	opacity = 1
-	get_tree().change_scene_to_file(targetScene)
+	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(scene)
+	get_tree().set_current_scene(scene)
+	sceneSwitched.emit()
 
 	var timer = Timer.new()
 	timer.set_wait_time(midLength)
@@ -71,12 +77,10 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4):
 	t1.queue_free()
 	t2.queue_free()
 
-	sceneSwitched.emit()
 	$CanvasLayer/Button.hide()
 
 func setBackground(bgPath):
 	bgSprite.texture = load(bgPath)
-
 
 func _process(delta):
 	if(fadingAway):
