@@ -1,6 +1,7 @@
+Sprite2D
+Label
 Button
 CanvasLayer
-Label
 NinePatchRect
 VBoxContainer
 PanelContainer
