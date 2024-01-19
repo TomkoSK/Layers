@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_0bdrc"]
 [ext_resource type="VideoStream" path="res://output.ogv" id="2_crwrw"]
-[ext_resource type="Texture2D" uid="uid://ce47a7mikq46j" path="res://MainMenuButtons/Continue.png" id="3_1ps3f"]
-[ext_resource type="Texture2D" uid="uid://dkmmuwk8sxfoc" path="res://MainMenuButtons/Options.png" id="5_5v4vt"]
-[ext_resource type="Texture2D" uid="uid://dpn8yu8p5rmrq" path="res://MainMenuButtons/NewButton.png" id="5_8qv40"]
-[ext_resource type="Texture2D" uid="uid://c6ajqmcd2va28" path="res://MainMenuButtons/Gallery.png" id="6_6x28t"]
-[ext_resource type="Texture2D" uid="uid://cbwq5k1y3y8mp" path="res://MainMenuButtons/Credits.png" id="7_x2h1r"]
-[ext_resource type="Texture2D" uid="uid://5qj1ebek6oke" path="res://MainMenuButtons/text-1704400544344.png" id="8_go4iy"]
-[ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="9_p2mw5"]
+[ext_resource type="Texture2D" uid="uid://cgdryte7801yi" path="res://Buttons/continue.png" id="3_g1nya"]
+[ext_resource type="Texture2D" uid="uid://buhrse0iyji0k" path="res://Buttons/newgame.png" id="5_nt2j6"]
+[ext_resource type="Texture2D" uid="uid://bcse4eauj0x17" path="res://Textures/arrowgus.png" id="6_e1o37"]
+[ext_resource type="Texture2D" uid="uid://pbf60ohiqxer" path="res://Buttons/options.png" id="6_q0ef5"]
+[ext_resource type="Texture2D" uid="uid://8uj3wriallbn" path="res://Buttons/gallery.png" id="7_gp2fh"]
+[ext_resource type="Texture2D" uid="uid://swvi7siowge1" path="res://Buttons/credits.png" id="8_5cf6d"]
+[ext_resource type="Texture2D" uid="uid://dpg2u8qmf3yyq" path="res://Buttons/quitted.png" id="9_ipm8y"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_0bdrc")
@@ -20,6 +20,7 @@ offset_bottom = 1088.0
 stream = ExtResource("2_crwrw")
 autoplay = true
 loop = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Continue" type="Button" parent="."]
 offset_left = 1540.0
@@ -27,72 +28,77 @@ offset_top = 520.0
 offset_right = 2035.0
 offset_bottom = 622.0
 scale = Vector2(0.7, 0.7)
-icon = ExtResource("3_1ps3f")
+icon = ExtResource("3_g1nya")
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Continue"]
 visible = false
-position = Vector2(-24.2857, 47.1428)
-scale = Vector2(20, 20)
-texture = ExtResource("9_p2mw5")
+position = Vector2(-48.5714, 52.8571)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("6_e1o37")
 
 [node name="NewGame" type="Button" parent="."]
 offset_left = 1490.0
 offset_top = 355.0
 offset_right = 1938.0
 offset_bottom = 444.0
-scale = Vector2(0.85, 0.85)
-icon = ExtResource("5_8qv40")
+scale = Vector2(0.95, 0.95)
+icon = ExtResource("5_nt2j6")
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="NewGame"]
 visible = false
-position = Vector2(-20, 35.2941)
-scale = Vector2(20, 20)
-texture = ExtResource("9_p2mw5")
+position = Vector2(-36.842, 35.7895)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("6_e1o37")
 
 [node name="Options" type="Button" parent="."]
 offset_left = 45.0
 offset_top = 500.0
 offset_right = 349.0
 offset_bottom = 589.0
-icon = ExtResource("5_5v4vt")
+icon = ExtResource("6_q0ef5")
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Options"]
 visible = false
-position = Vector2(322, 43)
-scale = Vector2(20, 20)
-texture = ExtResource("9_p2mw5")
+position = Vector2(337, 44)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("6_e1o37")
 
 [node name="Gallery" type="Button" parent="."]
 offset_left = 95.0
 offset_top = 660.0
 offset_right = 409.0
 offset_bottom = 749.0
-icon = ExtResource("6_6x28t")
+icon = ExtResource("7_gp2fh")
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Gallery"]
 visible = false
-position = Vector2(302, 44)
-scale = Vector2(20, 20)
-texture = ExtResource("9_p2mw5")
+position = Vector2(325, 54)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("6_e1o37")
 
 [node name="Credits" type="Button" parent="."]
 offset_left = 75.0
 offset_top = 340.0
-offset_right = 480.0
-offset_bottom = 429.0
-scale = Vector2(0.8, 0.8)
-icon = ExtResource("7_x2h1r")
+offset_right = 494.0
+offset_bottom = 442.0
+scale = Vector2(0.76, 0.76)
+icon = ExtResource("8_5cf6d")
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Credits"]
 visible = false
-position = Vector2(436.25, 57.5)
-scale = Vector2(25, 25)
-texture = ExtResource("9_p2mw5")
+position = Vector2(459.211, 63.1579)
+scale = Vector2(-0.79, 0.79)
+texture = ExtResource("6_e1o37")
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 1515.0
@@ -100,14 +106,15 @@ offset_top = 670.0
 offset_right = 1701.0
 offset_bottom = 772.0
 scale = Vector2(0.8, 0.8)
-icon = ExtResource("8_go4iy")
+icon = ExtResource("9_ipm8y")
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Quit"]
 visible = false
-position = Vector2(-16.25, 41.25)
-scale = Vector2(20, 20)
-texture = ExtResource("9_p2mw5")
+position = Vector2(-47.5, 41.25)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_e1o37")
 
 [connection signal="mouse_entered" from="Continue" to="." method="_on_continue_mouse_entered"]
 [connection signal="mouse_exited" from="Continue" to="." method="_on_continue_mouse_exited"]

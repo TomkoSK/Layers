@@ -1,13 +1,17 @@
 extends Node2D
 
 var focusedDict
+var numberedDict
 var positions
 var previousArrow
 
 func _ready():
 	previousArrow = $Credits/Arrow
+	numberedDict = {0 : $Credits, 1 : $Options, 2 : $Gallery, 3 : $NewGame, 4 : $Continue, 5 : $Quit}
 	focusedDict = {$NewGame : false, $Continue : false, $Quit : false, $Credits : false, $Options : false, $Gallery : false}
-	positions = {$NewGame : $NewGame.global_position, $Continue : $Continue.global_position, $Quit : $Quit.global_position, $Credits : $Credits.global_position, $Options : $Options.global_position, $Gallery : $Gallery.global_position}
+	for key in focusedDict:
+		key.self_modulate = Color(1, 1, 1, 0.7)
+		key.get_child(0).self_modulate = Color(1, 1, 1, 0.75)
 	UIButtons.set_visibility("ui", false)#Hides the UI buttons
 	var settings = FileManager.load_settings() #Loads the settings from the saved file
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the settings value
@@ -33,76 +37,57 @@ func _on_continue_pressed():
 
 #I assure you this cannot be done in a better way :(
 func _on_continue_mouse_entered():
-	focusedDict[$Continue]= true
+	$Continue.self_modulate = Color(1, 1, 1, 0.9)
 	previousArrow.hide()
 	$Continue/Arrow.show()
 	previousArrow = $Continue/Arrow
 
 func _on_new_game_mouse_entered():
-	focusedDict[$NewGame] = true
+	$NewGame.self_modulate = Color(1, 1, 1, 0.9)
 	previousArrow.hide()
 	$NewGame/Arrow.show()
 	previousArrow = $NewGame/Arrow
 
 func _on_options_mouse_entered():
-	focusedDict[$Options]= true
+	$Options.self_modulate = Color(1, 1, 1, 0.9)
 	previousArrow.hide()
 	$Options/Arrow.show()
 	previousArrow = $Options/Arrow
 
 func _on_gallery_mouse_entered():
-	focusedDict[$Gallery]= true
+	$Gallery.self_modulate = Color(1, 1, 1, 0.9)
 	previousArrow.hide()
 	$Gallery/Arrow.show()
 	previousArrow = $Gallery/Arrow
 
-
 func _on_quit_mouse_entered():
-	focusedDict[$Quit]= true
+	$Quit.self_modulate = Color(1, 1, 1, 0.9)
 	previousArrow.hide()
 	$Quit/Arrow.show()
 	previousArrow = $Quit/Arrow
 
-
 func _on_credits_mouse_entered():
-	focusedDict[$Credits]= true
+	$Credits.self_modulate = Color(1, 1, 1, 0.9)
 	previousArrow.hide()
 	$Credits/Arrow.show()
 	previousArrow = $Credits/Arrow
-	
+
 
 #The same way for the mouse exit, this is the only way I know how to do it
 func _on_quit_mouse_exited():
-	focusedDict[$Quit] = false
+	$Quit.self_modulate = Color(1, 1, 1, 0.7)
 
 func _on_credits_mouse_exited():
-	focusedDict[$Credits] = false
+	$Credits.self_modulate = Color(1, 1, 1, 0.7)
 
 func _on_gallery_mouse_exited():
-	focusedDict[$Gallery] = false
+	$Gallery.self_modulate = Color(1, 1, 1, 0.7)
 
 func _on_options_mouse_exited():
-	focusedDict[$Options] = false
+	$Options.self_modulate = Color(1, 1, 1, 0.7)
 
 func _on_new_game_mouse_exited():
-	focusedDict[$NewGame] = false
+	$NewGame.self_modulate = Color(1, 1, 1, 0.7)
 
 func _on_continue_mouse_exited():
-	focusedDict[$Continue] = false
-
-func _physics_process(delta):
-	for key in focusedDict:
-		if(focusedDict[key] == true):
-			if(key == $NewGame or key == $Continue or key == $Quit):
-				key.global_position.x += 180*delta
-				key.global_position.x = clamp(key.global_position.x, positions[key].x, positions[key].x+40)
-			else:
-				key.global_position.x -= 180*delta
-				key.global_position.x = clamp(key.global_position.x, positions[key].x-40, positions[key].x)
-		else:
-			if(key == $NewGame or key == $Continue or key == $Quit):
-				key.global_position.x -= 420*delta
-				key.global_position.x = clamp(key.global_position.x, positions[key].x, positions[key].x+40)
-			else:
-				key.global_position.x += 420*delta
-				key.global_position.x = clamp(key.global_position.x, positions[key].x-40, positions[key].x)
+	$Continue.self_modulate = Color(1, 1, 1, 0.7)

@@ -1,25 +1,26 @@
-res://Resources/emptyItem.tres::4a72391a283d8e26dea6ac1d141b21e3::1704571793::res://.godot/exported/133200997/export-51855b6a71d6bdf48485fc8679b12ed3-emptyItem.res
-res://Resources/greenAmongus.tres::f99d9eda57fa4ffd78ee5b3915a46a0c::1704571793::res://.godot/exported/133200997/export-a4da4f204a2d9ab0ec113760154413b7-greenAmongus.res
-res://Retired Technology/InventoryButton.tscn::4e0adedcf1e47d92bcd5089dc7d31648::1704571793::res://.godot/exported/133200997/export-f136d2bdc64e3734a2dd120ca5403c1a-InventoryButton.scn
-res://Retired Technology/Item.tscn::69c7bd479a7e461388100e0e982e1632::1704571793::res://.godot/exported/133200997/export-48029ff4cc66f573abe28ff3fd854155-Item.scn
-res://Retired Technology/PlayerInventory.tscn::8e02caafc296a74c1757fdd2e2c51251::1704571793::res://.godot/exported/133200997/export-61a3376f77c05033b75b9b64747e4800-PlayerInventory.scn
-res://Scenes/Backlog.tscn::508d0a324081643b07a3da9308d86d3f::1704996152::res://.godot/exported/133200997/export-efb56004bd1da86b5b643cfa448ee779-Backlog.scn
-res://Scenes/BetterText.tscn::f50405c0656364c8feef2e564e2e3194::1704996152::res://.godot/exported/133200997/export-587e79aa215cc34cd7f9d0382e3c18ad-BetterText.scn
-res://Scenes/Credits.tscn::3a0c13dcabee912effa93add34e94b77::1704996152::res://.godot/exported/133200997/export-ba10b6bf9b68ff95e16c5bbd546b3ea2-Credits.scn
-res://Scenes/DialoguePlayer.tscn::9ae4c855c1b97897c372892f26273913::1704571793::res://.godot/exported/133200997/export-4c1439c9badcb3e88925c10f1f52b9cc-DialoguePlayer.scn
-res://Scenes/MainMenu.tscn::f09932f6bc26694326e132f0beb53a37::1704996152::res://.godot/exported/133200997/export-5d46f2c25b5b7595677274e5845c73b8-MainMenu.scn
-res://Scenes/MenuMusicPlayer.tscn::0dc1bc290d32d44e48417e5e5b8d3853::1704996414::res://.godot/exported/133200997/export-d1589e676a813f74bfece305e4d6a70c-MenuMusicPlayer.scn
-res://Scenes/PrologueScene.tscn::3e9c729207c5022edfc1a5413b6ca5dc::1704571793::res://.godot/exported/133200997/export-7508c8da8524c8721d4481b4e6a2c858-PrologueScene.scn
-res://Scenes/SceneManager.tscn::84478529260cff4fae7024f1f1d7526b::1704996152::res://.godot/exported/133200997/export-2039b193b4065e4162eb44209786bb33-SceneManager.scn
-res://Scenes/Settings.tscn::1f204d20dc3aecbca75f44e0d8130eac::1704996152::res://.godot/exported/133200997/export-6cb79092696b70b71fb229c64f5a67c5-Settings.scn
-res://Scenes/WorldEnvironment.tscn::b89413e294eead58acf4d4cc31915989::1704996152::res://.godot/exported/133200997/export-7fcb21e27412dd5dd6f243bf80d3891a-WorldEnvironment.scn
-res://TestScenes/Test1.tscn::6a19f4ae4628478b51ca2ee6d704879d::1704996152::res://.godot/exported/133200997/export-6ff943c6ccfc3ed29408e9bf3b7d4e5d-Test1.scn
-res://TestScenes/Test2.tscn::adc5245092343f950f0a61b72b8bdb8d::1704571793::res://.godot/exported/133200997/export-aba31ff43cfc9fd72a1fbb469fe6c31c-Test2.scn
-res://UIButtons/OptionsButton.tscn::5f38fdc9b99a261f6393a8b5a4e3098d::1704571793::res://.godot/exported/133200997/export-844e64fb13491519a611f4c34d3ba8bc-OptionsButton.scn
-res://Backlog.tres::bce188800bcf22ae8c50785c8b4b8238::1704571793::res://.godot/exported/133200997/export-3620c8183d44a06c8d80af0f8e1a5879-Backlog.res
-res://BlackScene.tscn::f31fcfa9627abcac6df8e3c81f88e7db::1704571793::res://.godot/exported/133200997/export-62e07560798cea7d58cb2d768d81fe6d-BlackScene.scn
-res://default_bus_layout.tres::3b37ccca3699063ab0ee7dde5978689d::1704571793::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
-res://settings.tres::4b12aa492df24f801526f45ff197e09f::1704995962::res://.godot/exported/133200997/export-0ecb12cfced7e5093e9bb9dc1a2d581c-settings.res
-res://TextBox.tres::fd16ff8531952694c6b3863a4f897a14::1704571793::res://.godot/exported/133200997/export-f1a6a6b86be4e57eb0809a4cc995719b-TextBox.res
-res://TextBoxBlue.tres::7743d145df33d7441e31a09816e2e654::1704571793::res://.godot/exported/133200997/export-ada427bc2ce0e866c9022ab96273f191-TextBoxBlue.res
-res://Scenes/SettingsFile.tscn::6eef33ecb6f121bbe1b8826210fac5f3::1704996152::res://.godot/exported/133200997/export-1ac078903fa815550f653d7a072c5d7e-SettingsFile.scn
+res://Resources/emptyItem.tres::39a140a54e3cb7c57458184e86335ca9::1705255839::res://.godot/exported/133200997/export-51855b6a71d6bdf48485fc8679b12ed3-emptyItem.res
+res://Resources/greenAmongus.tres::4f833afc37d072d7bdb97aa589ad9c4b::1705255839::res://.godot/exported/133200997/export-a4da4f204a2d9ab0ec113760154413b7-greenAmongus.res
+res://Retired Technology/InventoryButton.tscn::a554e44b5b78cae16f4e8d05d3ce9ea0::1705255839::res://.godot/exported/133200997/export-f136d2bdc64e3734a2dd120ca5403c1a-InventoryButton.scn
+res://Retired Technology/Item.tscn::a71884893a7ac8f4399b6e2032b677aa::1705255839::res://.godot/exported/133200997/export-48029ff4cc66f573abe28ff3fd854155-Item.scn
+res://Retired Technology/PlayerInventory.tscn::db94503ac99baf61297d6613aa6d4712::1705255839::res://.godot/exported/133200997/export-61a3376f77c05033b75b9b64747e4800-PlayerInventory.scn
+res://Scenes/Backlog.tscn::86be2e323f83b31a7c93704b3ce6e4bb::1705498583::res://.godot/exported/133200997/export-efb56004bd1da86b5b643cfa448ee779-Backlog.scn
+res://Scenes/BetterText.tscn::f50405c0656364c8feef2e564e2e3194::1705498583::res://.godot/exported/133200997/export-587e79aa215cc34cd7f9d0382e3c18ad-BetterText.scn
+res://Scenes/Credits.tscn::3a0c13dcabee912effa93add34e94b77::1705498583::res://.godot/exported/133200997/export-ba10b6bf9b68ff95e16c5bbd546b3ea2-Credits.scn
+res://Scenes/MainMenu.tscn::5709fbe71478a69bb283f6141fe6f037::1705498641::res://.godot/exported/133200997/export-5d46f2c25b5b7595677274e5845c73b8-MainMenu.scn
+res://Scenes/MenuMusicPlayer.tscn::0dc1bc290d32d44e48417e5e5b8d3853::1705498583::res://.godot/exported/133200997/export-d1589e676a813f74bfece305e4d6a70c-MenuMusicPlayer.scn
+res://Scenes/PrologueScene.tscn::3e9c729207c5022edfc1a5413b6ca5dc::1705498584::res://.godot/exported/133200997/export-7508c8da8524c8721d4481b4e6a2c858-PrologueScene.scn
+res://Scenes/SceneManager.tscn::84478529260cff4fae7024f1f1d7526b::1705498583::res://.godot/exported/133200997/export-2039b193b4065e4162eb44209786bb33-SceneManager.scn
+res://Scenes/Settings.tscn::ff03ce402dec7125da44d664d1b14e31::1705498583::res://.godot/exported/133200997/export-6cb79092696b70b71fb229c64f5a67c5-Settings.scn
+res://Scenes/WorldEnvironment.tscn::b89413e294eead58acf4d4cc31915989::1705498583::res://.godot/exported/133200997/export-7fcb21e27412dd5dd6f243bf80d3891a-WorldEnvironment.scn
+res://TestScenes/Test1.tscn::b4ea939a96c3354f50675b28dc6a639d::1705498583::res://.godot/exported/133200997/export-6ff943c6ccfc3ed29408e9bf3b7d4e5d-Test1.scn
+res://TestScenes/Test2.tscn::eaba011f17689bc65660e00112531ece::1705498584::res://.godot/exported/133200997/export-aba31ff43cfc9fd72a1fbb469fe6c31c-Test2.scn
+res://Backlog.tres::243756d96a528c3c2abe8886fa4306d1::1705255839::res://.godot/exported/133200997/export-3620c8183d44a06c8d80af0f8e1a5879-Backlog.res
+res://BlackScene.tscn::f31fcfa9627abcac6df8e3c81f88e7db::1705498584::res://.godot/exported/133200997/export-62e07560798cea7d58cb2d768d81fe6d-BlackScene.scn
+res://default_bus_layout.tres::1082c1bd399e96ab008e41d702fe78bb::1705255839::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://settings.tres::328e5ec10d4e0cffdf729e2d0dec6ead::1705255839::res://.godot/exported/133200997/export-0ecb12cfced7e5093e9bb9dc1a2d581c-settings.res
+res://TextBox.tres::bb234901cae2d659b136cf8ef3824be9::1705255839::res://.godot/exported/133200997/export-f1a6a6b86be4e57eb0809a4cc995719b-TextBox.res
+res://TextBoxBlue.tres::77e18cd340fcff6b8c398edf9e489f69::1705255839::res://.godot/exported/133200997/export-ada427bc2ce0e866c9022ab96273f191-TextBoxBlue.res
+res://Scenes/SaveSlots.tscn::af8bca08bd1b4b48dc5ff37bf326e7c9::1705498584::res://.godot/exported/133200997/export-87b46f858aaea8064b23f9ec719e82de-SaveSlots.scn
+res://UIButtons/UIButtons.tscn::df20cf68a3e3cc96dffd6dc16bf8c957::1705498584::res://.godot/exported/133200997/export-be9521b94e3356406b4be2027ac1648f-UIButtons.scn
+res://savefile1.tres::69287702c676d8cc8e36f3b6b76aae1c::1705255839::res://.godot/exported/133200997/export-7463ecbdb483d1111b45813ed4d96984-savefile1.res
+res://SliderTheme.tres::3b3d6da7ea64c075960595f476bd1110::1705419511::res://.godot/exported/133200997/export-f2b52e374f5e64b8d8b81c846e7ebb06-SliderTheme.res

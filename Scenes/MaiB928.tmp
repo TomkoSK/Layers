@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsoithy5lg7is"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_0bdrc"]
+[ext_resource type="VideoStream" path="res://output.ogv" id="2_crwrw"]
+[ext_resource type="Texture2D" uid="uid://cgdryte7801yi" path="res://Buttons/continue.png" id="3_g1nya"]
+[ext_resource type="Texture2D" uid="uid://buhrse0iyji0k" path="res://Buttons/newgame.png" id="5_nt2j6"]
+[ext_resource type="Texture2D" uid="uid://pbf60ohiqxer" path="res://Buttons/options.png" id="6_q0ef5"]
+[ext_resource type="Texture2D" uid="uid://8uj3wriallbn" path="res://Buttons/gallery.png" id="7_gp2fh"]
+[ext_resource type="Texture2D" uid="uid://swvi7siowge1" path="res://Buttons/credits.png" id="8_5cf6d"]
+[ext_resource type="Texture2D" uid="uid://dhreu52xtbbm1" path="res://Buttons/quit.png" id="9_555qg"]
+[ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="9_p2mw5"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_0bdrc")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -5
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("2_crwrw")
+autoplay = true
+loop = true
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 1540.0
+offset_top = 520.0
+offset_right = 2035.0
+offset_bottom = 622.0
+scale = Vector2(0.7, 0.7)
+icon = ExtResource("3_g1nya")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Continue"]
+visible = false
+position = Vector2(-24.2857, 47.1428)
+scale = Vector2(20, 20)
+texture = ExtResource("9_p2mw5")
+
+[node name="NewGame" type="Button" parent="."]
+offset_left = 1490.0
+offset_top = 355.0
+offset_right = 1938.0
+offset_bottom = 444.0
+icon = ExtResource("5_nt2j6")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="NewGame"]
+visible = false
+position = Vector2(-20, 35.2941)
+scale = Vector2(20, 20)
+texture = ExtResource("9_p2mw5")
+
+[node name="Options" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 500.0
+offset_right = 349.0
+offset_bottom = 589.0
+icon = ExtResource("6_q0ef5")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Options"]
+visible = false
+position = Vector2(322, 43)
+scale = Vector2(20, 20)
+texture = ExtResource("9_p2mw5")
+
+[node name="Gallery" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 660.0
+offset_right = 409.0
+offset_bottom = 749.0
+icon = ExtResource("7_gp2fh")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Gallery"]
+visible = false
+position = Vector2(302, 44)
+scale = Vector2(20, 20)
+texture = ExtResource("9_p2mw5")
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 340.0
+offset_right = 480.0
+offset_bottom = 429.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("8_5cf6d")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(436.25, 57.5)
+scale = Vector2(25, 25)
+texture = ExtResource("9_p2mw5")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 1515.0
+offset_top = 670.0
+offset_right = 1701.0
+offset_bottom = 772.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("9_555qg")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Quit"]
+visible = false
+position = Vector2(-16.25, 41.25)
+scale = Vector2(20, 20)
+texture = ExtResource("9_p2mw5")
+
+[connection signal="mouse_entered" from="Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="Continue" to="." method="_on_continue_mouse_exited"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="NewGame" to="." method="_on_new_game_mouse_entered"]
+[connection signal="mouse_exited" from="NewGame" to="." method="_on_new_game_mouse_exited"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="Options" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="Gallery" to="." method="_on_gallery_mouse_entered"]
+[connection signal="mouse_exited" from="Gallery" to="." method="_on_gallery_mouse_exited"]
+[connection signal="mouse_entered" from="Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

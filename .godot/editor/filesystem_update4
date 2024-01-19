@@ -1,6 +1,6 @@
 res://Scripts/MainMenu.gd
 res://Scripts/betterText.gd
-res://ResourceScripts/SettingsResource.gd
+res://Scripts/PrologueScene.gd
 res://Scenes/MainMenu.tscn
 res://SliderTheme.tres
 res://Scenes/SceneManager.tscn
@@ -16,3 +16,10 @@ res://TestScenes/Test2.tscn
 res://Scenes/PrologueScene.tscn
 res://Scenes/SaveSlots.tscn
 res://BlackScene.tscn
+res://Scripts/DialoguePlayer.gd
+res://Scripts/SaveSlots.gd
+res://Scripts/SceneManager.gd
+res://Scripts/Settings.gd
+res://Scripts/MenuMusicPlayer.gd
+res://Scripts/FileManager.gd
+res://Scripts/Backlog.gd
