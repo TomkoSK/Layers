@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxjimd5onxft8"]
+
+[ext_resource type="Script" path="res://Scripts/Gallery.gd" id="1_th3s8"]
+[ext_resource type="Texture2D" uid="uid://dgus5fosw7wbs" path="res://Textures/gallery.png" id="2_0egd3"]
+[ext_resource type="Texture2D" uid="uid://bbu6ylrptsl21" path="res://Textures/text-1705698785420.png" id="3_n5m53"]
+[ext_resource type="Texture2D" uid="uid://cijxr3ejpurtg" path="res://Gallery/testBG.png" id="3_w7wf7"]
+[ext_resource type="Texture2D" uid="uid://b5bmja6kl3366" path="res://Gallery/CGframe.png" id="4_qd7wt"]
+
+[node name="Gallery" type="Node2D"]
+script = ExtResource("1_th3s8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Background" type="Sprite2D" parent="Camera2D"]
+position = Vector2(960, 540)
+texture = ExtResource("2_0egd3")
+
+[node name="TestBg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(525, 450)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("3_w7wf7")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(960, 110)
+texture = ExtResource("3_n5m53")
+
+[node name="CGframe" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(525, 450)
+texture = ExtResource("4_qd7wt")
+
+[node name="CGframe2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1395, 450)
+texture = ExtResource("4_qd7wt")
+
+[node name="CGframe3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(525, 1000)
+texture = ExtResource("4_qd7wt")
+
+[node name="CGframe4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1395, 1000)
+texture = ExtResource("4_qd7wt")
+
+[node name="Images" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+
+[node name="BGHitbox" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="CloseButton" type="Button" parent="CanvasLayer"]
+offset_left = 1608.0
+offset_top = 48.0
+offset_right = 1684.0
+offset_bottom = 79.0
+scale = Vector2(3, 3)
+text = "Close CG"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 768.0
+offset_top = 167.0
+offset_right = 1542.0
+offset_bottom = 217.0
+scale = Vector2(2, 2)
+text = "You can add images by pressing enter for now"
+
+[connection signal="pressed" from="CanvasLayer/CloseButton" to="." method="_on_close_button_pressed"]

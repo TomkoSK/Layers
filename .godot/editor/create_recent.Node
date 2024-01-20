@@ -1,10 +1,12 @@
-Sprite2D
 Label
 Button
+Sprite2D
 CanvasLayer
+PanelContainer
+Node2D
+Camera2D
 NinePatchRect
 VBoxContainer
-PanelContainer
 WorldEnvironment
 HBoxContainer
 TextEdit

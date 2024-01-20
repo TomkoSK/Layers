@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://botnl5370udeg"]
+[gd_scene load_steps=6 format=3 uid="uid://botnl5370udeg"]
+
+[ext_resource type="Texture2D" uid="uid://crvo4vdgnwk5u" path="res://Textures/Credits_Background_1.png" id="1_3vekb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4hyg1"]
 font_size = 100
@@ -102,3 +104,8 @@ text = "Syrius
 "
 label_settings = SubResource("LabelSettings_iq8al")
 horizontal_alignment = 1
+
+[node name="CreditsBackground1" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(960, 540)
+texture = ExtResource("1_3vekb")
