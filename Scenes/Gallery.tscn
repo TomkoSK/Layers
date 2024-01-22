@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxjimd5onxft8"]
+[gd_scene load_steps=7 format=3 uid="uid://cxjimd5onxft8"]
 
 [ext_resource type="Script" path="res://Scripts/Gallery.gd" id="1_th3s8"]
 [ext_resource type="Texture2D" uid="uid://dgus5fosw7wbs" path="res://Textures/gallery.png" id="2_0egd3"]
 [ext_resource type="Texture2D" uid="uid://bbu6ylrptsl21" path="res://Textures/text-1705698785420.png" id="3_n5m53"]
-[ext_resource type="Texture2D" uid="uid://cijxr3ejpurtg" path="res://Gallery/testBG.png" id="3_w7wf7"]
-[ext_resource type="Texture2D" uid="uid://b5bmja6kl3366" path="res://Gallery/CGframe.png" id="4_qd7wt"]
+[ext_resource type="Texture2D" uid="uid://dm0wvjqek5iex" path="res://Textures/button8.png" id="4_8ubpw"]
+[ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="5_t43fc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h23jp"]
+font = ExtResource("5_t43fc")
+font_size = 60
+font_color = Color(1, 1, 1, 0.701961)
 
 [node name="Gallery" type="Node2D"]
 script = ExtResource("1_th3s8")
@@ -16,35 +21,9 @@ anchor_mode = 0
 position = Vector2(960, 540)
 texture = ExtResource("2_0egd3")
 
-[node name="TestBg" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(525, 450)
-scale = Vector2(0.385, 0.385)
-texture = ExtResource("3_w7wf7")
-
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(960, 110)
 texture = ExtResource("3_n5m53")
-
-[node name="CGframe" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(525, 450)
-texture = ExtResource("4_qd7wt")
-
-[node name="CGframe2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1395, 450)
-texture = ExtResource("4_qd7wt")
-
-[node name="CGframe3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(525, 1000)
-texture = ExtResource("4_qd7wt")
-
-[node name="CGframe4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1395, 1000)
-texture = ExtResource("4_qd7wt")
 
 [node name="Images" type="Node2D" parent="."]
 
@@ -75,4 +54,23 @@ offset_bottom = 217.0
 scale = Vector2(2, 2)
 text = "You can add images by pressing enter for now"
 
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 377.0
+offset_bottom = 125.0
+texture_normal = ExtResource("4_8ubpw")
+
+[node name="Label" type="Label" parent="BackButton"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 341.0
+offset_bottom = 92.0
+text = "BACK"
+label_settings = SubResource("LabelSettings_h23jp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="CanvasLayer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -16,7 +16,7 @@ func _ready():
 	$VBoxContainer/VolumeContainer/HSlider.value = settings.level
 	$VBoxContainer/BrightnessContainer/HSlider.value = settings.brightness
 	
-func _on_settings_applied():
+func _on_apply_button_pressed():
 	ProjectSettings.save()
 	ResourceSaver.save(settings, FileManager.settings_file_name)
 	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately after applying settings

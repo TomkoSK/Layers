@@ -70,3 +70,6 @@ func _on_close_button_pressed():
 	$CanvasLayer.hide()
 	$CanvasLayer/CloseButton.show()
 	timer.queue_free()
+
+func _on_back_button_pressed():
+	SceneManager.changeScene("res://Scenes/MainMenu.tscn")

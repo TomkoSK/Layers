@@ -112,8 +112,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Quit"]
 visible = false
-position = Vector2(-47.5, 41.25)
+position = Vector2(-47.5, 40)
 scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_e1o37")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(936, 534)
+rotation = -1.5708
+scale = Vector2(0.602, 0.602)
 texture = ExtResource("6_e1o37")
 
 [connection signal="mouse_entered" from="Continue" to="." method="_on_continue_mouse_entered"]

@@ -1,6 +1,7 @@
 Label
-Button
+TextureButton
 Sprite2D
+Button
 CanvasLayer
 PanelContainer
 Node2D
