@@ -4,16 +4,15 @@ var numberedDict
 var focusedDict
 var positionDict
 var currentArrowIndex
-
-#TODO: ADD COMMENTS EXPLAINING EVERYTHING PLEASE
 func _ready():
-	currentArrowIndex = -1
-	numberedDict = {0 : $Credits, 1 : $Options, 2 : $Gallery, 3 : $NewGame, 4 : $Continue, 5 : $Quit}
+	currentArrowIndex = -1#Index of the button that the arrow is currently pointing at, starts at -1 because the arrow is hidden at the start
+	numberedDict = {0 : $Credits, 1 : $Options, 2 : $Gallery, 3 : $NewGame, 4 : $Continue, 5 : $Quit}#Each button is given an index (used with currentArrowIndex)
+	#Dictionary with the positions of where the arrow is supposed to go when it goes to a button
 	positionDict = {0 : $Credits/Arrow.global_position, 1 : $Options/Arrow.global_position, 2 : $Gallery/Arrow.global_position, 3 : $NewGame/Arrow.global_position, 4 : $Continue/Arrow.global_position, 5 : $Quit/Arrow.global_position}
 	for value in numberedDict.values():
-		value.self_modulate = Color(1, 1, 1, 0.7)
-		value.get_child(0).self_modulate = Color(1, 1, 1, 0.5)
+		value.self_modulate.a = 0.7#Just sets the initial opacity of the buttons
 	UIButtons.set_visibility("ui", false)#Hides the UI buttons
+
 	var settings = FileManager.load_settings() #Loads the settings from the saved file
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the settings value
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.music))
@@ -39,9 +38,9 @@ func _on_continue_pressed():
 func _on_gallery_pressed():
 	SceneManager.changeScene("res://Scenes/Gallery.tscn")
 
-#I assure you this cannot be done in a better way :(
+#moves the arrow to a button when you hover over it with the cursor
 func _on_continue_mouse_entered():
-	setCurrentArrowIndex(numberedDict.find_key($Continue))
+	setCurrentArrowIndex(numberedDict.find_key($Continue))#setCurrentArrowIndex() is a custom function
 
 func _on_new_game_mouse_entered():
 	setCurrentArrowIndex(numberedDict.find_key($NewGame))
@@ -59,27 +58,32 @@ func _on_credits_mouse_entered():
 	setCurrentArrowIndex(numberedDict.find_key($Credits))
 
 func setCurrentArrowIndex(index):
-	if(currentArrowIndex == -1):
-		$Arrow.position = positionDict[index]
+	if(currentArrowIndex == -1):#If the index is -1 its being shown for the first time
+		$Arrow.position = positionDict[index]#Sets the position instantly
 		if(index > 2):
 			$Arrow.rotation_degrees = 0
-			$Arrow.position.x -= 400
+			$Arrow.position.x -= 400#Makes the button come in smoothly by offsetting the position by 400 pixels
 		else:
 			$Arrow.rotation_degrees = -180
 			$Arrow.position.x += 400
 		$Arrow.visible = true
 	currentArrowIndex = index
 
-func _input(event):
-	if(currentArrowIndex == -1):
+func _input(event):#Handles the keyboard controls of the arrow
+	if(currentArrowIndex == -1):#If arrow wasn't shown yet it sets the index based on which arrow was pressed
 		if(event.is_action_pressed("ui_up")):
 			setCurrentArrowIndex(0)
+			return
 		if(event.is_action_pressed("ui_down")):
 			setCurrentArrowIndex(2)
+			return
 		if(event.is_action_pressed("ui_left")):
 			setCurrentArrowIndex(1)
+			return
 		if(event.is_action_pressed("ui_right")):
 			setCurrentArrowIndex(4)
+			return
+	#The buttons are numbered 0-5, so when you decrease the index by 1 you go to the button that's 1 position higher, if u increase it u go 1 button lower
 	if(event.is_action_pressed("ui_up")):
 		if(currentArrowIndex-1 >= 0):
 			setCurrentArrowIndex(currentArrowIndex - 1)
@@ -92,20 +96,27 @@ func _input(event):
 	if(event.is_action_pressed("ui_right")):
 		if(currentArrowIndex+3 <= 5):
 			setCurrentArrowIndex(currentArrowIndex + 3)
-	if(event.is_action_pressed("ui_accept")):
-		numberedDict[currentArrowIndex].emit_signal("pressed")
+	if(event.is_action_pressed("ui_accept")):#Pressing enter on an active button presses the button as if it was clicked
+		if(currentArrowIndex != -1):
+			numberedDict[currentArrowIndex].emit_signal("pressed")
 
-func _process(delta):
-	if(currentArrowIndex > -1):
-		$Arrow.position = $Arrow.position.move_toward(positionDict[currentArrowIndex], 2000*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])*0.004)
-		if(currentArrowIndex < 3):
-			$Arrow.rotation_degrees -= 600*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])*0.00247
+func _process(delta):#The actual movement of the arrow happens here
+	if(currentArrowIndex > -1):#If the arrow wasnt shown yet no need to move it
+		var speed = 8*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
+		#The arrow's speed gets smaller the closer its distance to the button is (it feels smooth)
+		$Arrow.position = $Arrow.position.move_toward(positionDict[currentArrowIndex], speed)
+		if(currentArrowIndex < 3):#With the left buttons, the arrow has to point in a different direction so its rotated smoothly
+			#Button indexes 0 1 and 2 are the left buttons
+			$Arrow.rotation_degrees -= 1.482*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
+			#1.482 was acquired through manual testing :3
+			#The arrow also rotates more slowly as it gets closer to the button, its smoother
 		else:
-			$Arrow.rotation_degrees += 600*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])*0.00247
-		$Arrow.rotation_degrees = clamp($Arrow.rotation_degrees, -180, 0)
-		for key in numberedDict:
+			$Arrow.rotation_degrees += 1.482*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
+		$Arrow.rotation_degrees = clamp($Arrow.rotation_degrees, -180, 0)#Clamps the rotation so that it doesnt rotate too far
+		
+		for key in numberedDict:#When you select a button, the opacity is increased, thats done here (its done smoothly)
 			if(key == currentArrowIndex):
-				numberedDict[key].self_modulate.a += 0.7 * delta
+				numberedDict[key].self_modulate.a += 0.55 * delta
 			else:
-				numberedDict[key].self_modulate.a -= 0.7 * delta
-			numberedDict[key].self_modulate.a = clamp(numberedDict[key].self_modulate.a, 0.7, 0.9)
+				numberedDict[key].self_modulate.a -= 0.55 * delta
+			numberedDict[key].self_modulate.a = clamp(numberedDict[key].self_modulate.a, 0.7, 0.9)#when button isnt selected the opacity is 0.7, when it is the opacity is 0.9
