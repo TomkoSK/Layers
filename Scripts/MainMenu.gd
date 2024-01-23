@@ -24,7 +24,7 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_options_button_pressed():
-	SceneManager.openSettings(true)
+	SceneManager.openSettings(true)#NOTE: THIS IS FOR DESIGNING BUTTON PURPOSES RN SET IT TO FALSE LATER
 
 func _on_credits_pressed():
 	SceneManager.changeScene("res://Scenes/Credits.tscn", 1, 0.8, 1)
