@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://puffotwps4ew"]
 
-[ext_resource type="Script" path="res://Scripts/MenuMusicPlayer.gd" id="1_dbbsr"]
-[ext_resource type="AudioStream" uid="uid://854g5jib208j" path="res://stasis_nD9iYNZM.wav" id="2_qrr4e"]
+[ext_resource type="Script" path="res://Autoloaded/MenuMusicPlayer.gd" id="1_n2nhi"]
+[ext_resource type="AudioStream" uid="uid://854g5jib208j" path="res://stasis_nD9iYNZM.wav" id="2_vidlc"]
 
 [node name="MenuMusicPlayer" type="Node2D"]
-script = ExtResource("1_dbbsr")
+script = ExtResource("1_n2nhi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_qrr4e")
+stream = ExtResource("2_vidlc")
 bus = &"Music"
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

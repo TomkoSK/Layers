@@ -17,3 +17,12 @@ res://Scenes/Gallery.tscn
 res://Scripts/Credits.gd
 res://Scripts/MainMenu.gd
 res://Scripts/Settings.gd
+res://ResourceScripts/SettingsResource.gd
+res://Scripts/PrologueScene.gd
+res://Scenes/Credits.gd
+res://Scripts/SaveSlots.gd
+res://Scripts/SceneManager.gd
+res://Autoloaded/SceneManager.tscn
+res://Autoloaded/Backlog.tscn
+res://Autoloaded/WorldEnvironment.tscn
+res://Autoloaded/MenuMusicPlayer.tscn

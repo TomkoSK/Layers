@@ -17,13 +17,13 @@ config/icon="res://Textures/icon.svg"
 
 [autoload]
 
-SceneManager="*res://Scenes/SceneManager.tscn"
+SceneManager="*res://Autoloaded/SceneManager.tscn"
 UIButtons="*res://UIButtons/UIButtons.tscn"
-MenuMusicPlayer="*res://Scenes/MenuMusicPlayer.tscn"
-GlobalWorldEnvironment="*res://Scenes/WorldEnvironment.tscn"
-FileManager="*res://Scripts/FileManager.gd"
-Backlog="*res://Scenes/Backlog.tscn"
-DialoguePlayer="*res://Scripts/DialoguePlayer.gd"
+MenuMusicPlayer="*res://Autoloaded/MenuMusicPlayer.tscn"
+GlobalWorldEnvironment="*res://Autoloaded/WorldEnvironment.tscn"
+FileManager="*res://Autoloaded/FileManager.gd"
+Backlog="*res://Autoloaded/Backlog.tscn"
+DialoguePlayer="*res://Autoloaded/DialoguePlayer.gd"
 
 [display]
 

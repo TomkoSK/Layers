@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7rox4fg05r1x"]
 
-[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_dinib"]
+[ext_resource type="Script" path="res://Autoloaded/SceneManager.gd" id="1_s76q7"]
 
 [node name="SceneChanger" type="Node2D"]
-script = ExtResource("1_dinib")
+script = ExtResource("1_s76q7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 editor_description = "Button is rendered above everything else, point of button is so that the player can't click anything when switching scenes"
