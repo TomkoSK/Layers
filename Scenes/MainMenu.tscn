@@ -20,7 +20,6 @@ offset_bottom = 1088.0
 stream = ExtResource("2_crwrw")
 autoplay = true
 loop = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Continue" type="Button" parent="."]
 offset_left = 1540.0
@@ -30,7 +29,6 @@ offset_bottom = 622.0
 scale = Vector2(0.7, 0.7)
 icon = ExtResource("3_g1nya")
 flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Continue"]
 visible = false
@@ -40,17 +38,16 @@ texture = ExtResource("6_e1o37")
 
 [node name="NewGame" type="Button" parent="."]
 offset_left = 1490.0
-offset_top = 355.0
+offset_top = 365.0
 offset_right = 1938.0
-offset_bottom = 444.0
-scale = Vector2(0.95, 0.95)
+offset_bottom = 454.0
+scale = Vector2(0.912, 0.912)
 icon = ExtResource("5_nt2j6")
 flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="NewGame"]
 visible = false
-position = Vector2(-36.842, 35.7895)
+position = Vector2(-41.842, 35.79)
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("6_e1o37")
 
@@ -65,22 +62,21 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Options"]
 visible = false
-position = Vector2(337, 44)
+position = Vector2(353, 44)
 scale = Vector2(-0.6, 0.6)
 texture = ExtResource("6_e1o37")
 
 [node name="Gallery" type="Button" parent="."]
-offset_left = 95.0
-offset_top = 660.0
-offset_right = 409.0
+offset_left = 105.0
+offset_top = 650.0
+offset_right = 393.0
 offset_bottom = 749.0
 icon = ExtResource("7_gp2fh")
 flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Gallery"]
 visible = false
-position = Vector2(325, 54)
+position = Vector2(335, 54)
 scale = Vector2(-0.6, 0.6)
 texture = ExtResource("6_e1o37")
 
@@ -90,13 +86,14 @@ offset_top = 340.0
 offset_right = 494.0
 offset_bottom = 442.0
 scale = Vector2(0.76, 0.76)
+size_flags_horizontal = 6
+size_flags_vertical = 6
 icon = ExtResource("8_5cf6d")
 flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Credits"]
 visible = false
-position = Vector2(459.211, 63.1579)
+position = Vector2(479.211, 63.158)
 scale = Vector2(-0.79, 0.79)
 texture = ExtResource("6_e1o37")
 
@@ -108,7 +105,6 @@ offset_bottom = 772.0
 scale = Vector2(0.8, 0.8)
 icon = ExtResource("9_ipm8y")
 flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Quit"]
 visible = false
@@ -118,6 +114,7 @@ texture = ExtResource("6_e1o37")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false
+self_modulate = Color(1, 1, 1, 0.8)
 position = Vector2(936, 534)
 rotation = -1.5708
 scale = Vector2(0.602, 0.602)

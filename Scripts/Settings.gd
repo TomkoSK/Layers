@@ -1,10 +1,11 @@
 extends Node
 
 var previousScene = null
-
+var hoveredDict
 var settings
 
 func _ready():
+	hoveredDict = {$BackButton : false, $MenuButton : false, $ApplyButton : false}
 	UIButtons.set_visibility("ui", false)
 	settings = FileManager.load_settings()
 	var windowMode = DisplayServer.window_get_mode()
@@ -20,7 +21,7 @@ func _on_apply_button_pressed():
 	ProjectSettings.save()
 	ResourceSaver.save(settings, FileManager.settings_file_name)
 	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately after applying settings
-
+	
 func _on_window_mode_changed(index:int):
 	ProjectSettings.set_setting("display/window/size/mode", $VBoxContainer/WindowMode/OptionButton.get_item_id(index))
 
@@ -44,3 +45,24 @@ func setMenuButton(visibility : bool):#Called from the SceneManager
 
 func _on_menu_button_pressed():
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
+
+func _on_back_button_mouse_entered():
+	hoveredDict[$BackButton] = true
+
+func _on_back_button_mouse_exited():
+	hoveredDict[$BackButton] = false
+
+func _process(delta):
+	for key in hoveredDict:
+		if(hoveredDict[key] == true):
+			key.modulate.a += 1.2*delta
+			key.scale += Vector2(0.3*delta, 0.3*delta)
+		else:
+			key.modulate.a -= 1.2*delta
+			key.scale -= Vector2(6*delta, 6*delta)
+		key.modulate.a = clamp(key.modulate.a, 0.55, 0.9)
+		key.scale = clamp(key.scale, Vector2(1,1), Vector2(2,2))
+		if(key == $BackButton):
+			var posMinus = ((key.scale.x-1)*80)
+			key.position = Vector2(80-posMinus, 80-posMinus)
+			print(key.position.x)
