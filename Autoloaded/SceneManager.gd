@@ -2,6 +2,7 @@ extends Node
 
 signal sceneSwitched
 
+var developing = false#MAKES ALL THE TRANSITIONS INSTANT TURN OFF WHEN UPLOADING NEW VERSION TO BE PLAYED
 var sprite : Sprite2D
 var opacity : float = 0
 var fadingAway : bool
@@ -32,6 +33,10 @@ func openSaveSlots(mode : String):#The mode thing is explained in SaveSlots.gd, 
 	get_tree().current_scene.mode = mode
 
 func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4):
+	if(developing):
+		fadeIn = 0.01
+		midLength = 0.01
+		fadeOut = 0.01
 	$CanvasLayer/Button.show()
 	var scene = load(targetScene).instantiate()
 	fadeLengthIn = fadeIn

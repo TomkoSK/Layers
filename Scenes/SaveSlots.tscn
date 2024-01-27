@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duuoxelgisixc"]
+[gd_scene load_steps=7 format=3 uid="uid://duuoxelgisixc"]
 
 [ext_resource type="Texture2D" uid="uid://c5xv85mc6apai" path="res://Textures/Save_Slots.png" id="1_8jemr"]
 [ext_resource type="Script" path="res://Scripts/SaveSlots.gd" id="1_srd57"]
 [ext_resource type="Texture2D" uid="uid://bgdbxn7jiw3u5" path="res://Textures/Save_Slots_Button.png" id="2_dpb3f"]
 [ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="4_s6byu"]
+[ext_resource type="Texture2D" uid="uid://yh87bh4c7bq1" path="res://Textures/border.png" id="5_orvh1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jpjrv"]
 font = ExtResource("4_s6byu")
@@ -102,9 +103,19 @@ offset_top = 864.0
 offset_right = 1721.0
 offset_bottom = 1065.0
 
+[node name="Border" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.290196, 0.290196, 0.882353)
+position = Vector2(864, 325)
+texture = ExtResource("5_orvh1")
+
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="mouse_entered" from="SlotButton1" to="." method="_on_slot_button_1_mouse_entered"]
 [connection signal="pressed" from="SlotButton1" to="." method="_on_slot_button_1_pressed"]
+[connection signal="mouse_entered" from="SlotButton2" to="." method="_on_slot_button_2_mouse_entered"]
 [connection signal="pressed" from="SlotButton2" to="." method="_on_slot_button_2_pressed"]
+[connection signal="mouse_entered" from="SlotButton3" to="." method="_on_slot_button_3_mouse_entered"]
 [connection signal="pressed" from="SlotButton3" to="." method="_on_slot_button_3_pressed"]
+[connection signal="mouse_entered" from="SlotButton4" to="." method="_on_slot_button_4_mouse_entered"]
 [connection signal="pressed" from="SlotButton4" to="." method="_on_slot_button_4_pressed"]
+[connection signal="mouse_entered" from="SlotButton5" to="." method="_on_slot_button_5_mouse_entered"]
 [connection signal="pressed" from="SlotButton5" to="." method="_on_slot_button_5_pressed"]

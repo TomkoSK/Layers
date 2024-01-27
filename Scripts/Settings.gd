@@ -52,17 +52,22 @@ func _on_back_button_mouse_entered():
 func _on_back_button_mouse_exited():
 	hoveredDict[$BackButton] = false
 
+func _on_menu_button_mouse_entered():
+	hoveredDict[$MenuButton] = true
+
+func _on_menu_button_mouse_exited():
+	hoveredDict[$MenuButton] = false
+
+func _on_apply_button_mouse_entered():
+	hoveredDict[$ApplyButton] = true
+
+func _on_apply_button_mouse_exited():
+	hoveredDict[$ApplyButton] = false
+	
 func _process(delta):
 	for key in hoveredDict:
 		if(hoveredDict[key] == true):
-			key.modulate.a += 1.2*delta
-			key.scale += Vector2(0.3*delta, 0.3*delta)
+			key.modulate.a += 2.1*delta
 		else:
-			key.modulate.a -= 1.2*delta
-			key.scale -= Vector2(6*delta, 6*delta)
+			key.modulate.a -= 2.1*delta
 		key.modulate.a = clamp(key.modulate.a, 0.55, 0.9)
-		key.scale = clamp(key.scale, Vector2(1,1), Vector2(2,2))
-		if(key == $BackButton):
-			var posMinus = ((key.scale.x-1)*80)
-			key.position = Vector2(80-posMinus, 80-posMinus)
-			print(key.position.x)

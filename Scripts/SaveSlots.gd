@@ -1,5 +1,11 @@
 extends Node2D
 
+var borderLocation = Vector2(864, 112+213*2)#Current location of the border
+
+var normal = 74#Parameters for the flashing of the border when a save slot is clicked
+var flashed = 225
+var flashSpeed = 12.0
+
 var mode : String#the mode in which the scene is operating, if it was reached by clicking the new game button, clicking on an empty
 #slot will result in a new game, but if you click on an empty slot after getting to the scene by clicking continue, clicking on an
 #empty slot shouldnt do anything, the mode variable distinguishes between those
@@ -33,21 +39,48 @@ func _ready():
 	UIButtons.set_visibility("ui", false)
 
 func _on_slot_button_1_pressed():
+	borderLocation.y = 112
+	$SlotButton1.release_focus()#the button grabbing the focus when clicked messes up the keyboard controls
 	on_slot_clicked(1)
 
 func _on_slot_button_2_pressed():
+	borderLocation.y = 112+213*1
+	$SlotButton2.release_focus()
 	on_slot_clicked(2)
 
 func _on_slot_button_3_pressed():
+	print("sad")
+	borderLocation.y = 112+213*2
+	$SlotButton3.release_focus()
 	on_slot_clicked(3)
 
 func _on_slot_button_4_pressed():
+	borderLocation.y = 112+213*3
+	$SlotButton4.release_focus()
 	on_slot_clicked(4)
 
 func _on_slot_button_5_pressed():
+	borderLocation.y = 112+213*4
+	$SlotButton5.release_focus()
 	on_slot_clicked(5)
 
+func _on_slot_button_1_mouse_entered():
+	borderLocation.y = 112
+
+func _on_slot_button_2_mouse_entered():
+	borderLocation.y = 112+213
+
+func _on_slot_button_3_mouse_entered():
+	borderLocation.y = 112+213*2
+
+func _on_slot_button_4_mouse_entered():
+	borderLocation.y = 112+213*3
+
+func _on_slot_button_5_mouse_entered():
+	borderLocation.y = 112+213*4
+
 func on_slot_clicked(slot_number : int):
+	print(slot_number)
 	var file = FileManager.load_save_file(slot_number)
 	if(mode == "continue"):
 		if(file.playtime > 0):
@@ -59,6 +92,7 @@ func on_slot_clicked(slot_number : int):
 			FileManager.set_active_save_file(slot_number)
 			SceneManager.changeScene("res://Scenes/PrologueScene.tscn", 1, 0.8, 1)
 			MenuMusicPlayer.fadeOut(1)
+	flash()
 
 func format_playtime(seconds : int):
 	var string = "%sh %sm"#Just a gdscript format string
@@ -67,3 +101,27 @@ func format_playtime(seconds : int):
 
 func _on_menu_button_pressed():
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
+
+func _input(event):
+	if(event.is_action_pressed("ui_down")):#moves the border using keyboard controls
+		borderLocation.y += 213
+		borderLocation.y = clamp(borderLocation.y, 112, 112+213*4)#makes sure the border isn't offscreen
+	if(event.is_action_pressed("ui_up")):
+		borderLocation.y -= 213
+		borderLocation.y = clamp(borderLocation.y, 112, 112+213*4)
+	if(event.is_action_pressed("ui_accept")):
+		on_slot_clicked((borderLocation.y-112)/213+1)#Clicks the slot that the border is currently on
+
+func _process(delta):
+	var speed = 12*delta*$Border.position.distance_to(borderLocation)
+	$Border.position = $Border.position.move_toward(borderLocation, speed)
+
+func flash():#flashes the border to white and back, called when a save slot is clicked
+	for i in range(abs(normal-flashed)/flashSpeed):
+		$Border.self_modulate.g += flashSpeed/255
+		$Border.self_modulate.b += flashSpeed/255
+		await get_tree().create_timer(0.005).timeout
+	for i in range(abs(normal-flashed)/flashSpeed):
+		$Border.self_modulate.g -= flashSpeed/255
+		$Border.self_modulate.b -= flashSpeed/255
+		await get_tree().create_timer(0.005).timeout

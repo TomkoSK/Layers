@@ -1,4 +1,4 @@
-res://Scripts/Settings.gd
+res://Autoloaded/SceneManager.gd
 res://Autoloaded/SceneManager.tscn
 res://SliderTheme.tres
 res://Scenes/Credits.tscn
@@ -16,8 +16,10 @@ res://Scenes/SaveSlots.tscn
 res://BlackScene.tscn
 res://Scenes/Gallery.tscn
 res://Scripts/MainMenu.gd
+res://Retired Technology/InventoryButton.gd
+res://ResourceScripts/SaveFileResource.gd
 res://ResourceScripts/SettingsResource.gd
-res://Scripts/Credits.gd
-res://Autoloaded/SceneManager.gd
 res://Scripts/SaveSlots.gd
+res://Retired Technology/InventoryButton.tscn
+res://Scripts/Settings.gd
 res://Scripts/Gallery.gd

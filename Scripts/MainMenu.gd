@@ -119,7 +119,6 @@ func _process(delta):#The actual movement of the arrow happens here
 		
 		for key in numberedDict:#When you select a button, the opacity is increased, thats done here (its done smoothly)
 			if(key == currentArrowIndex):
-				print(numberedDict[key].scale.x, " ", scaleDict[key])
 				numberedDict[key].self_modulate.a += 0.65 * delta
 				numberedDict[key].scale += scaleDict[key]*0.19*delta
 			else:
