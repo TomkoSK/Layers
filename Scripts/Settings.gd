@@ -5,7 +5,9 @@ var hoveredDict
 var settings
 
 func _ready():
-	hoveredDict = {$BackButton : false, $MenuButton : false, $ApplyButton : false}
+	$MenuButton.modulate.a = 0.55
+	$ApplyButton.modulate.a = 0.55
+	$BackButton.modulate.a = 0.55
 	UIButtons.set_visibility("ui", false)
 	settings = FileManager.load_settings()
 	var windowMode = DisplayServer.window_get_mode()
@@ -47,27 +49,19 @@ func _on_menu_button_pressed():
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
 
 func _on_back_button_mouse_entered():
-	hoveredDict[$BackButton] = true
+	$BackButton.modulate.a = 0.9
 
 func _on_back_button_mouse_exited():
-	hoveredDict[$BackButton] = false
+	$BackButton.modulate.a = 0.55
 
 func _on_menu_button_mouse_entered():
-	hoveredDict[$MenuButton] = true
+	$MenuButton.modulate.a = 0.9
 
 func _on_menu_button_mouse_exited():
-	hoveredDict[$MenuButton] = false
+	$MenuButton.modulate.a = 0.55
 
 func _on_apply_button_mouse_entered():
-	hoveredDict[$ApplyButton] = true
+	$ApplyButton.modulate.a = 0.9
 
 func _on_apply_button_mouse_exited():
-	hoveredDict[$ApplyButton] = false
-	
-func _process(delta):
-	for key in hoveredDict:
-		if(hoveredDict[key] == true):
-			key.modulate.a += 2.1*delta
-		else:
-			key.modulate.a -= 2.1*delta
-		key.modulate.a = clamp(key.modulate.a, 0.55, 0.9)
+	$ApplyButton.modulate.a = 0.55
