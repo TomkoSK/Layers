@@ -48,40 +48,20 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4):
 	sprite.modulate = Color(0, 0, 0, 0)
 	sprite.z_index = 20
 	self.add_child(sprite)
-
-	var t1 = Timer.new()
-	t1.set_wait_time(fadeLengthIn)
-	self.add_child(t1)
-	var t2 = Timer.new()
-	t2.set_wait_time(fadeLengthOut)
-	self.add_child(t2)
-
-	t1.start()
 	fadingIn = true
-	await t1.timeout
+	await get_tree().create_timer(fadeLengthIn).timeout
 	fadingIn = false
 	opacity = 1
 	get_tree().current_scene.queue_free()
 	get_tree().root.add_child(scene)
 	get_tree().set_current_scene(scene)
 	sceneSwitched.emit()
-
-	var timer = Timer.new()
-	timer.set_wait_time(midLength)
-	self.add_child(timer)
-	timer.start()
-	await timer.timeout
-	timer.queue_free()
-
+	await get_tree().create_timer(midLength).timeout
 	fadingAway = true
-	t2.start()
-	await t2.timeout
+	await get_tree().create_timer(fadeLengthOut).timeout
 	fadingAway = false
 	opacity = 0
 	sprite.queue_free()
-	t1.queue_free()
-	t2.queue_free()
-
 	$CanvasLayer/Button.hide()
 
 func setBackground(bgPath):

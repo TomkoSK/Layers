@@ -49,7 +49,6 @@ func _on_slot_button_2_pressed():
 	on_slot_clicked(2)
 
 func _on_slot_button_3_pressed():
-	print("sad")
 	borderLocation.y = 112+213*2
 	$SlotButton3.release_focus()
 	on_slot_clicked(3)
@@ -80,7 +79,6 @@ func _on_slot_button_5_mouse_entered():
 	borderLocation.y = 112+213*4
 
 func on_slot_clicked(slot_number : int):
-	print(slot_number)
 	var file = FileManager.load_save_file(slot_number)
 	if(mode == "continue"):
 		if(file.playtime > 0):

@@ -24,3 +24,4 @@ res://Retired Technology/InventoryButton.tscn
 res://Scripts/Settings.gd
 res://Scripts/Gallery.gd
 res://Scripts/PrologueScene.gd
+res://Autoloaded/DialoguePlayer.gd
