@@ -111,6 +111,8 @@ func _input(event):
 		borderLocation.y = clamp(borderLocation.y, 112, 112+213*4)
 	if(event.is_action_pressed("ui_accept")):
 		on_slot_clicked((borderLocation.y-112)/213+1)#Clicks the slot that the border is currently on
+	if(event.is_action_pressed("ui_cancel")):
+		$MenuButton.emit_signal("pressed")
 
 func _process(delta):
 	var speed = 12*delta*$Border.position.distance_to(borderLocation)
