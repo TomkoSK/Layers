@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ixech3qpjyl"]
+
+[ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="1_gcbk0"]
+[ext_resource type="Script" path="res://Scripts/SplashScreen.gd" id="1_xnwlx"]
+[ext_resource type="Texture2D" uid="uid://v7jk1b8y8tm4" path="res://Textures/Pwp_Logo_Layers.png" id="2_gi28g"]
+[ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="4_4s2p3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l0wu6"]
+font = ExtResource("4_4s2p3")
+font_size = 70
+
+[node name="BlackScene" type="Node2D"]
+script = ExtResource("1_xnwlx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(4000, 4000)
+texture = ExtResource("1_gcbk0")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(960, 560)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("2_gi28g")
+
+[node name="Label" type="Label" parent="Logo"]
+z_index = 5
+offset_left = -218.182
+offset_top = -390.152
+offset_right = 205.818
+offset_bottom = -313.152
+text = "Presented By:"
+label_settings = SubResource("LabelSettings_l0wu6")

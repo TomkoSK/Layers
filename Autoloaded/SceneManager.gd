@@ -2,7 +2,7 @@ extends Node
 
 signal sceneSwitched
 
-var developing = true#MAKES ALL THE TRANSITIONS INSTANT TURN OFF WHEN UPLOADING NEW VERSION TO BE PLAYED
+var developing = false#MAKES ALL THE TRANSITIONS INSTANT TURN OFF WHEN UPLOADING NEW VERSION TO BE PLAYED
 var sprite : Sprite2D
 var opacity : float = 0
 var fadingAway : bool
@@ -16,7 +16,6 @@ func _ready():
 	bgSprite.position = Vector2(960, 540)#middle of the screen
 	bgSprite.z_index = -10#its literally the background so u know
 	self.add_child(bgSprite)
-	changeScene("res://Scenes/MainMenu.tscn", 0.02, 0.5, 2)
 
 func openSettings(includeMenuButton : bool = false):
 	var currentScene = get_tree().current_scene.scene_file_path

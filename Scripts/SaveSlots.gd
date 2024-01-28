@@ -4,7 +4,7 @@ var borderLocation = Vector2(864, 112+213*2)#Current location of the border
 
 var normal = 74#Parameters for the flashing of the border when a save slot is clicked
 var flashed = 225
-var flashSpeed = 12.0
+var flashSpeed = 18.0#do NOT forget the decimal place if changing the speed, having it as an integer leads to integer division in the code
 
 var mode : String#the mode in which the scene is operating, if it was reached by clicking the new game button, clicking on an empty
 #slot will result in a new game, but if you click on an empty slot after getting to the scene by clicking continue, clicking on an
