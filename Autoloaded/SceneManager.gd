@@ -2,7 +2,7 @@ extends Node
 
 signal sceneSwitched
 
-var developing = false#MAKES ALL THE TRANSITIONS INSTANT TURN OFF WHEN UPLOADING NEW VERSION TO BE PLAYED
+var developing = true#MAKES ALL THE TRANSITIONS INSTANT TURN OFF WHEN UPLOADING NEW VERSION TO BE PLAYED
 var sprite : Sprite2D
 var opacity : float = 0
 var fadingAway : bool

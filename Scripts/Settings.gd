@@ -24,11 +24,14 @@ func _on_apply_button_pressed():
 	ResourceSaver.save(settings, FileManager.settings_file_name)
 	DisplayServer.window_set_mode(ProjectSettings.get_setting("display/window/size/mode"))#Sets the window mode immediately after applying settings
 	
-func _on_window_mode_changed(index:int):
-	ProjectSettings.set_setting("display/window/size/mode", $VBoxContainer/WindowMode/OptionButton.get_item_id(index))
-
 func _on_back_button_pressed():
 	SceneManager.changeScene(previousScene)
+
+func _on_menu_button_pressed():
+	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
+
+func _on_window_mode_changed(index:int):
+	ProjectSettings.set_setting("display/window/size/mode", $VBoxContainer/WindowMode/OptionButton.get_item_id(index))
 
 func _on_music_slider_changed(value: float):
 	AudioServer.set_bus_volume_db(1, linear_to_db(value))
@@ -44,9 +47,6 @@ func _on_brightness_changed(value: float):
 
 func setMenuButton(visibility : bool):#Called from the SceneManager
 	$MenuButton.visible = visibility
-
-func _on_menu_button_pressed():
-	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
 
 func _on_back_button_mouse_entered():
 	$BackButton.modulate.a = 0.9

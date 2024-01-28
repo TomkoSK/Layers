@@ -5,6 +5,7 @@ var images = []
 
 func _ready():
 	UIButtons.set_visibility("ui", false)
+	$BackButton.modulate.a = 0.55
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -73,3 +74,9 @@ func _on_close_button_pressed():
 
 func _on_back_button_pressed():
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
+
+func _on_back_button_mouse_exited():
+	$BackButton.modulate.a = 0.55
+
+func _on_back_button_mouse_entered():
+	$BackButton.modulate.a = 0.9
