@@ -24,3 +24,4 @@ res://Autoloaded/FileManager.gd
 res://Autoloaded/DialoguePlayer.gd
 res://Scripts/SplashScreen.gd
 res://UIButtons/UIButtons.gd
+res://Autoloaded/SceneManager.gd
