@@ -19,3 +19,8 @@ res://Scenes/Gallery.tscn
 res://Retired Technology/InventoryButton.tscn
 res://Scripts/SaveSlots.gd
 res://Scripts/MainMenu.gd
+res://Retired Technology/PlayerInventory.gd
+res://Autoloaded/FileManager.gd
+res://Autoloaded/DialoguePlayer.gd
+res://Scripts/SplashScreen.gd
+res://UIButtons/UIButtons.gd

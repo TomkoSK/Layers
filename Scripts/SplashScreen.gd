@@ -1,20 +1,16 @@
 extends Node2D
 
 var maxOpacity = 1
-var startOpacity = 0.0
-var changeDuration = 0.4
+var changeDuration = 0.9
 
 func _ready():
+	var tween = self.create_tween()
 	UIButtons.set_visibility("ui", false)
-	var currentOpacity = startOpacity
-	$Logo.modulate.a = startOpacity
-	for i in range(50):
-		currentOpacity += (maxOpacity-startOpacity)/50
-		$Logo.modulate.a = currentOpacity
-		await get_tree().create_timer(changeDuration/50).timeout
+	$Logo.modulate.a = 0
+	tween.tween_property($Logo, "modulate", Color(1, 1, 1, maxOpacity), changeDuration)
+	await get_tree().create_timer(changeDuration).timeout
 	await get_tree().create_timer(0.7).timeout
-	for i in range(50):
-		currentOpacity -= (maxOpacity-startOpacity)/50
-		$Logo.modulate.a = currentOpacity
-		await get_tree().create_timer(changeDuration/50).timeout
+	tween = self.create_tween()
+	tween.tween_property($Logo, "modulate", Color(1, 1, 1, 0), changeDuration)
+	await get_tree().create_timer(changeDuration).timeout
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn", 0.2, 0.5, 2)

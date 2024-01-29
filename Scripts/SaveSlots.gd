@@ -84,12 +84,12 @@ func on_slot_clicked(slot_number : int):
 		if(file.playtime > 0):
 			FileManager.set_active_save_file(slot_number)
 			SceneManager.changeScene(file.last_scene, 1, 0.8, 1)
-			MenuMusicPlayer.fadeOut(1)
+			MenuMusicPlayer.stopMenuMusic(1)
 	elif(mode == "newgame"):
 		if(file.playtime == 0):
 			FileManager.set_active_save_file(slot_number)
 			SceneManager.changeScene("res://Scenes/PrologueScene.tscn", 1, 0.8, 1)
-			MenuMusicPlayer.fadeOut(1)
+			MenuMusicPlayer.stopMenuMusic(1)
 	flash()
 
 func format_playtime(seconds : int):

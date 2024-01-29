@@ -6,8 +6,10 @@
 [node name="MenuMusicPlayer" type="Node2D"]
 script = ExtResource("1_n2nhi")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vidlc")
 bus = &"Music"
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[node name="AmbienceAudio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="MenuMusic" to="." method="_on_menu_music_finished"]

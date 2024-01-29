@@ -21,7 +21,7 @@ func _ready():
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.music))
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings.level))
 	if(!MenuMusicPlayer.playingMenuMusic):#Only start the music if it isn't already playing
-		MenuMusicPlayer.fadeIn(FileManager.load_settings().music, 1)# smooths out the music volume to start from 0 to the settings.music value in 2 seconds
+		MenuMusicPlayer.startMenuMusic(FileManager.load_settings().music, 1)# smooths out the music volume to start from 0 to the settings.music value in 2 seconds
 
 func _on_quit_button_pressed():
 	get_tree().quit()
