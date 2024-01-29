@@ -1,5 +1,8 @@
-res://Autoloaded/SceneManager.tscn
+res://Scenes/SplashScreen.tscn
 res://SliderTheme.tres
+res://Autoloaded/MenuMusicPlayer.gd
+res://ResourceScripts/SettingsResource.gd
+res://Autoloaded/SceneManager.tscn
 res://Scenes/Credits.tscn
 res://Scenes/MainMenu.tscn
 res://Autoloaded/Backlog.tscn
@@ -12,11 +15,7 @@ res://UIButtons/UIButtons.tscn
 res://TestScenes/Test2.tscn
 res://Scenes/PrologueScene.tscn
 res://Scenes/SaveSlots.tscn
-res://BlackScene.tscn
 res://Scenes/Gallery.tscn
 res://Retired Technology/InventoryButton.tscn
 res://Scripts/SaveSlots.gd
-res://Scenes/SplashScreen.tscn
-res://Scenes/SplashScreen.gd
-res://Scripts/SplashScreen.gd
-res://Autoloaded/SceneManager.gd
+res://Scripts/MainMenu.gd
