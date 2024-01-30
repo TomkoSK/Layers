@@ -1,7 +1,7 @@
 extends Node
 
 var settings_file_name = "user://settings.tres"#Global variable just in case other scripts need to know where the settings file is 
-var save_file_name = "user://savefile%s"
+var save_file_name = "user://savefile%s.tres"
 #(changing it will be easier if needed in the future)
 var current_save_file : SaveFile = null#The save file object that is currently being played on will be put here
 var current_save_file_number : int = 0#The save slot number of the current save file
@@ -27,6 +27,7 @@ func load_settings():#user:// directory is the correct place for saved files tha
 		return Settings.new()
 
 func load_save_file(save_file_number : int):
+	print(save_file_name % save_file_number)
 	if ResourceLoader.exists(save_file_name % save_file_number):#GDscript format string
 		var savefile = ResourceLoader.load(save_file_name % save_file_number)
 		#NOTE: DO NOT FORGET TO CHANGE THIS TO user://savefile when exporting the project this is for DEBUGGING PURPOSES
