@@ -24,13 +24,17 @@ func _ready():
 		AudioManager.startMenuMusic(FileManager.load_settings().music, 1)# smooths out the music volume to start from 0 to the settings.music value in 2 seconds
 
 func _on_quit_button_pressed():
-	get_tree().quit()
+	if(!SceneManager.switchingScenes):
+		SceneManager.changeScene("res://Scenes/QuitScene.tscn", 1.2, 25, 0)
+		AudioManager.stopMenuMusic(1)
+		await Signal(SceneManager, "sceneSwitched")
+		get_tree().quit()
 
 func _on_options_button_pressed():
-	SceneManager.openSettings(true)#NOTE: THIS IS FOR DESIGNING BUTTON PURPOSES RN SET IT TO FALSE LATER
+	SceneManager.openSettings()
 
 func _on_credits_pressed():
-	SceneManager.changeScene("res://Scenes/Credits.tscn", 1, 0.8, 1)
+	SceneManager.changeScene("res://Scenes/Credits.tscn")
 
 func _on_new_game_pressed():
 	SceneManager.openSaveSlots("newgame")

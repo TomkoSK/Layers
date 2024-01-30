@@ -26,6 +26,8 @@ var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​
 ]
 
 var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
+
 func scene():
 	DialoguePlayer.playDialogue(formattedDialogue)
+	await Signal(DialoguePlayer, "dialogueFinished")
 	UIButtons.set_visibility("options", true)

@@ -1,5 +1,7 @@
 extends Node
 
+signal dialogueFinished
+
 func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "text", "res://TexturePath", "res://PfpTexture", 0.03]]
 	var characters = [null, null]
 	var oldestIndex = 0
@@ -34,3 +36,4 @@ func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "t
 		textBox.init(text[1], tempList, profilePicture, timerLength)
 		await Signal(textBox, "tree_exited")
 		Backlog.addText([text[0], text[1]])
+	dialogueFinished.emit()

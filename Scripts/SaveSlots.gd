@@ -13,7 +13,7 @@ var mode : String#the mode in which the scene is operating, if it was reached by
 
 func _ready():
 	#dictionary for converting the scene names into location names that show up in the actual scene
-	var scene_location_dict = {"res://TestScenes/Test1.tscn" : "Testing site 1", "res://TestScenes/Test2.tscn" : "Testing site 2"}
+	var scene_location_dict = {"res://TestScenes/Test1.tscn" : "Testing site 1", "res://TestScenes/Test2.tscn" : "Testing site 2", "res://Scenes/PrologueScene.tscn" : "Prologue Scene"}
 
 	var slot1 = FileManager.load_save_file(1)
 	if(slot1.playtime > 0):#0 playtime means the save slot has not been taken up at all so the playtime and location arent displayed

@@ -28,9 +28,10 @@ func _on_back_button_pressed():
 	SceneManager.changeScene(previousScene)
 
 func _on_menu_button_pressed():
-	SceneManager.changeScene("res://Scenes/MainMenu.tscn", 0.6, 0.4, 0.6)
+	SceneManager.changeScene("res://Scenes/MainMenu.tscn", 1, 0.7, 2, true)
 	if(AudioManager.playingAmbience):
-		AudioManager.stopAmbience(1)
+		AudioManager.stopAmbience(0.8)
+	FileManager.save(previousScene)
 
 func _on_window_mode_changed(index:int):
 	ProjectSettings.set_setting("display/window/size/mode", $VBoxContainer/WindowMode/OptionButton.get_item_id(index))

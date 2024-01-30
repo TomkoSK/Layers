@@ -1,8 +1,5 @@
 extends Node2D
 
-func _ready():
-	self.z_index = 2
-
 func set_visibility(buttonName : String, setVisible : bool):
 	if(buttonName == "ui"):
 		if(setVisible):

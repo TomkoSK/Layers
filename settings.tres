@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Settings" load_steps=2 format=3 uid="uid://cr6rnb8xv2uqh"]
-
-[ext_resource type="Script" path="res://ResourceScripts/SettingsResource.gd" id="1_4mgp1"]
-
-[resource]
-script = ExtResource("1_4mgp1")
-music = 0.5
-level = 0.5
-brightness = 1.0

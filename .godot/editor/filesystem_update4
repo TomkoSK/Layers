@@ -30,3 +30,5 @@ res://Scripts/SaveSlots.gd
 res://Autoloaded/AudioManager.gd
 res://Autoloaded/DialoguePlayer.gd
 res://UIButtons/UIButtons.gd
+res://Scripts/Gallery.gd
+res://Scenes/QuitScene.tscn

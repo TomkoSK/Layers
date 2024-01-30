@@ -1,6 +1,7 @@
 extends Node
 
 var settings_file_name = "user://settings.tres"#Global variable just in case other scripts need to know where the settings file is 
+var save_file_name = "user://savefile%s"
 #(changing it will be easier if needed in the future)
 var current_save_file : SaveFile = null#The save file object that is currently being played on will be put here
 var current_save_file_number : int = 0#The save slot number of the current save file
@@ -26,8 +27,8 @@ func load_settings():#user:// directory is the correct place for saved files tha
 		return Settings.new()
 
 func load_save_file(save_file_number : int):
-	if ResourceLoader.exists("res://savefile%s.tres" % save_file_number):#GDscript format string
-		var savefile = ResourceLoader.load("res://savefile%s.tres" % save_file_number)
+	if ResourceLoader.exists(save_file_name % save_file_number):#GDscript format string
+		var savefile = ResourceLoader.load(save_file_name % save_file_number)
 		#NOTE: DO NOT FORGET TO CHANGE THIS TO user://savefile when exporting the project this is for DEBUGGING PURPOSES
 		if savefile is SaveFile:
 			return savefile
@@ -48,6 +49,6 @@ func _on_playtime_timer_timeout():#Increases the playtime of the active save fil
 	if(current_save_file_number != 0):
 		current_save_file.playtime += 1
 
-func save():#Saves the current save file data
-	current_save_file.last_scene = get_tree().current_scene.scene_file_path
-	ResourceSaver.save(current_save_file, "res://savefile%s.tres" % current_save_file_number)
+func save(scenePath : String):#Saves the current save file with the scenePath provided as the last scene
+	current_save_file.last_scene = scenePath
+	ResourceSaver.save(current_save_file, save_file_name % current_save_file_number)

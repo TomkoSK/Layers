@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://puffotwps4ew"]
 
 [ext_resource type="Script" path="res://Autoloaded/AudioManager.gd" id="1_8cbpt"]
-[ext_resource type="AudioStream" uid="uid://854g5jib208j" path="res://stasis_nD9iYNZM.wav" id="2_ncq3s"]
+[ext_resource type="AudioStream" uid="uid://bl7lfw6735mfw" path="res://stasis_nD9iYNZM-[AudioTrimmer.com].wav" id="2_cchi8"]
 [ext_resource type="AudioStream" uid="uid://xua7hdlpt0rb" path="res://Dread.mp3" id="3_pmy7o"]
 
 [node name="MenuMusicPlayer" type="Node2D"]
 script = ExtResource("1_8cbpt")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ncq3s")
+stream = ExtResource("2_cchi8")
 bus = &"Music"
 
 [node name="AmbienceAudio" type="AudioStreamPlayer" parent="."]
