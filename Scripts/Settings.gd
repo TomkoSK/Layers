@@ -16,7 +16,7 @@ func _ready():
 	else:
 		$VBoxContainer/WindowMode/OptionButton.selected = 0
 	$VBoxContainer/MusicContainer/HSlider.value = settings.music
-	$VBoxContainer/VolumeContainer/HSlider.value = settings.level
+	$VBoxContainer/VolumeContainer/HSlider.value = settings.volume
 	$VBoxContainer/BrightnessContainer/HSlider.value = settings.brightness
 	
 func _on_apply_button_pressed():
@@ -28,7 +28,9 @@ func _on_back_button_pressed():
 	SceneManager.changeScene(previousScene)
 
 func _on_menu_button_pressed():
-	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
+	SceneManager.changeScene("res://Scenes/MainMenu.tscn", 0.6, 0.4, 0.6)
+	if(AudioManager.playingAmbience):
+		AudioManager.stopAmbience(1)
 
 func _on_window_mode_changed(index:int):
 	ProjectSettings.set_setting("display/window/size/mode", $VBoxContainer/WindowMode/OptionButton.get_item_id(index))
@@ -39,7 +41,7 @@ func _on_music_slider_changed(value: float):
 
 func _on_volume_slider_changed(value: float):
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
-	settings.level = value
+	settings.volume = value
 
 func _on_brightness_changed(value: float):
 	settings.brightness = value

@@ -6,12 +6,14 @@
 script = ExtResource("1_bqkji")
 
 [node name="Backlog" type="Button" parent="."]
+z_index = 15
 offset_left = 1607.0
 offset_right = 1727.0
 offset_bottom = 120.0
 text = "BACKLOG"
 
 [node name="Options" type="Button" parent="."]
+z_index = 15
 offset_left = 1737.0
 offset_right = 1857.0
 offset_bottom = 120.0

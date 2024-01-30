@@ -1,14 +1,12 @@
 extends Node
 
 func _ready():
+	AudioManager.startAmbience(FileManager.load_settings().volume, 3)
 	UIButtons.set_visibility("ui", false)
 	for line in dialogue:
 		var listToAppend = [line[1], line[0]]
 		formattedDialogue.append(listToAppend)
 	call_deferred("scene")#Called as deferred so that the engine has time to set up objects and stuff idk it threw an error before
-
-var red = null
-var blue = null
 
 var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​there's a layer there.", "Cat"],["I know.", "Remy"], ["It's moving towards you...", "Cat"],
  ["I know.", "Remy"], ["Can't you... climb out?", "Cat"], ["What do you think I'm trying to do right now?", "Remy"],
@@ -30,3 +28,4 @@ var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​
 var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
 func scene():
 	DialoguePlayer.playDialogue(formattedDialogue)
+	UIButtons.set_visibility("options", true)

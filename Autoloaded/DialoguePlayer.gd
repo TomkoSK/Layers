@@ -1,4 +1,5 @@
 extends Node
+
 func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "text", "res://TexturePath", "res://PfpTexture", 0.03]]
 	var characters = [null, null]
 	var oldestIndex = 0
@@ -22,7 +23,7 @@ func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "t
 		else:
 			timerLength = 0.03
 		var textBox = node.instantiate()
-		get_tree().root.add_child(textBox)
+		self.add_child(textBox)
 		#done to remove the nulls from the character texture list (nulls in the list fuck up the text box code)
 		var tempList = []
 		for ch in characters:

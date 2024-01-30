@@ -6,9 +6,11 @@ func _ready():
 func set_visibility(buttonName : String, setVisible : bool):
 	if(buttonName == "ui"):
 		if(setVisible):
-			self.show()
+			$Options.show()
+			$Backlog.show()
 		else:
-			self.hide()
+			$Options.hide()
+			$Backlog.hide()
 	elif(buttonName == "options"):
 		if(setVisible):
 			$Options.show()
@@ -19,11 +21,6 @@ func set_visibility(buttonName : String, setVisible : bool):
 			$Backlog.show()
 		else:
 			$Backlog.hide()
-	elif(buttonName == "main_menu"):
-		if(setVisible):
-			$MainMenu.show()
-		else:
-			$MainMenu.hide()
 	else:
 		print("[WARNING]",buttonName," was passed into ui buttons set visibility function")
 

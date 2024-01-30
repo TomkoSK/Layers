@@ -19,7 +19,7 @@ config/icon="res://Textures/icon.svg"
 
 SceneManager="*res://Autoloaded/SceneManager.tscn"
 UIButtons="*res://UIButtons/UIButtons.tscn"
-MenuMusicPlayer="*res://Autoloaded/MenuMusicPlayer.tscn"
+AudioManager="*res://Autoloaded/AudioManager.tscn"
 GlobalWorldEnvironment="*res://Autoloaded/WorldEnvironment.tscn"
 FileManager="*res://Autoloaded/FileManager.gd"
 Backlog="*res://Autoloaded/Backlog.tscn"
