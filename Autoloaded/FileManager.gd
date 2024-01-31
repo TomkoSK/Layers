@@ -27,14 +27,13 @@ func load_settings():#user:// directory is the correct place for saved files tha
 		return Settings.new()
 
 func load_save_file(save_file_number : int):
-	print(save_file_name % save_file_number)
 	if ResourceLoader.exists(save_file_name % save_file_number):#GDscript format string
 		var savefile = ResourceLoader.load(save_file_name % save_file_number)
 		#NOTE: DO NOT FORGET TO CHANGE THIS TO user://savefile when exporting the project this is for DEBUGGING PURPOSES
 		if savefile is SaveFile:
 			return savefile
 		else:
-			print("[WARNING] Save file is bad")#NOTE: same thing as the line 11 comment
+			print("[WARNING] Save file is bad")#NOTE: same thing as the line 24 comment
 	else:
 		return SaveFile.new()
 

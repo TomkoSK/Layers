@@ -1,23 +1,20 @@
 extends Node2D
 
-var t
 var loading_text
 var testContainer
 var testNode
 var textNode
-var shortPause
-var longPause
+
+var time = 0
+var formattedText
+var lineNumber = 0
+var characterNumber = 0
+var timeBetweenCharacters
 
 func _ready():
 	testContainer = $PanelContainer2
 	testNode = $PanelContainer2/Label
 	textNode = $PanelContainer/Label
-	shortPause = Timer.new()
-	shortPause.set_wait_time(0.15)
-	self.add_child(shortPause)
-	longPause = Timer.new()
-	longPause.set_wait_time(0.3)
-	self.add_child(longPause)
 
 func formatText(text):
 	#The way the function works is it uses the testNode label to find out how long a piece of text is, and it splits the text
@@ -58,6 +55,8 @@ func checkDot(text, lineIndex, charIndex):#checks if a dot in the text is a part
 	return 0
 
 func checkShortPause(text, lineIndex, charIndex):
+	if(lineIndex == len(formattedText)-1 and charIndex == len(formattedText[lineIndex])-1):
+		return false
 	var pauseCharacters = ["?", "!", ","]#. is not in the list because its special (also needs to checkDot())
 	if((text[lineIndex][charIndex] == "." and checkDot(text, lineIndex, charIndex) == 0) or pauseCharacters.has(text[lineIndex][charIndex])):
 		if(charIndex < len(text[lineIndex])-1):
@@ -68,6 +67,8 @@ func checkShortPause(text, lineIndex, charIndex):
 		return false
 
 func checkLongPause(text, lineIndex, charIndex):
+	if(lineIndex == len(formattedText)-1 and charIndex == len(formattedText[lineIndex])-1):
+		return false
 	var enders = ["?", "!", ")", ","]#The list of characters that ... shouldn't cause a pause in front of
 	if(text[lineIndex][charIndex] == "." and checkDot(text, lineIndex, charIndex) == 2):
 		if(charIndex < len(text[lineIndex])-1):
@@ -80,15 +81,11 @@ func checkLongPause(text, lineIndex, charIndex):
 	return false
 
 func init(text, texturePaths = null, profilePicture = null, timerLength = 0.03):
+	timeBetweenCharacters = timerLength
 	if(text[0] == "(" and text[-1] == ")"):
 		textNode.label_settings = load("res://TextBoxBlue.tres")
-	var formattedText = formatText(text)	
-	if(timerLength > 0):
-		t = Timer.new()
-		t.set_wait_time(timerLength)
-		t.set_one_shot(false)
-		self.add_child(t)
-	
+	formattedText = formatText(text)	
+
 	if(profilePicture != null):
 		var sprite = Sprite2D.new()
 		sprite.texture = load(profilePicture)
@@ -117,41 +114,40 @@ func init(text, texturePaths = null, profilePicture = null, timerLength = 0.03):
 			self.add_child(sprite)
 		else:
 			print("[WARNING] Array of a size that's not 1 or 2 was passed into Textbox idk if this is what you want")
+	loading_text = true
 
-	if(timerLength > 0):
-		loading_text = true
-		t.start()
-		var lineIndex = 0
-		for i in range(len(formattedText)):
-			for j in range(len(formattedText[i])):
-				if(loading_text):
-					textNode.text += formattedText[i][j]
-					if(checkShortPause(formattedText, i, j)):
-						shortPause.start()
-						await shortPause.timeout
-					if(checkLongPause(formattedText, i, j)):
-						longPause.start()
-						await longPause.timeout
-					await t.timeout
-				else:#If not loading text anymore, hitbox was clicked, end text is shown instantly and init is exited
-					if(len(formattedText) > 1):
-						textNode.text = formattedText[-2]+"\n"+formattedText[-1]
-					else:
-						textNode.text = formattedText[0]
+func _process(delta):#Text is loaded in _process, because if you want a letter to show up every 0.03 seconds,
+					#using normal timers is bad for it (timers with a length of less than 0.05 can behave weirdly)
+	if(loading_text):
+		time += delta
+		if(time >= timeBetweenCharacters):
+			time = 0
+			if(characterNumber >= len(formattedText[lineNumber])):
+				characterNumber = 0
+				lineNumber += 1
+				textNode.text += "\n"
+				if(lineNumber > 1 and lineNumber < len(formattedText)):
+					textNode.text = formattedText[lineNumber-1]+"\n"
+				if(lineNumber >= len(formattedText)):
+					loading_text = false
 					return
-			textNode.text += "\n"
-			lineIndex += 1
-			if(lineIndex > 1 and lineIndex < len(formattedText)):#Only prints the last 2 lines of text after getting to 3rd line
-				#or further, but it looks weird if it does this on the last line
-				textNode.text = formattedText[lineIndex-1]+"\n"
-		t.stop()
-		loading_text = false
+			textNode.text += formattedText[lineNumber][characterNumber]
+			if(checkShortPause(formattedText, lineNumber, characterNumber)):
+				time -= 0.15
+			if(checkLongPause(formattedText, lineNumber, characterNumber)):
+				time -= 0.3
+			characterNumber += 1
+
+func showText():#Shows the last 2 lines when the text box is clicked while its text is being loading
+	if(len(formattedText) > 1):
+		textNode.text = formattedText[-2]+"\n"+formattedText[-1]
 	else:
-		textNode.text = text
+		textNode.text = formattedText[0]
 
 func _on_hitbox_pressed():
 	if(loading_text):
 		loading_text = false
+		showText()
 	else:
 		queue_free()
 
@@ -159,5 +155,6 @@ func _input(event):
 	if(event.is_action_pressed("SkipTextbox")):
 		if(loading_text):
 			loading_text = false
+			showText()
 		else:
 			queue_free()

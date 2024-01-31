@@ -14,7 +14,7 @@ var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​
 ["(Just one misstep, and this happens? God...)", "Remy"], ["Remy...", "Cat"], ["Hey. Look away for a moment.", "Remy"],
 ["B-but...", "Cat"], ["Just shut up and listen!", "Remy"], ["...", "Cat"], ["Leave me here for a while. There's an opening down below, and I'm going to try and drop down there, okay?", "Remy"],
 ["I'll try to get back to you, but it might take a while. Just... keep going until we see each other again, okay?", "Remy"],
-["W-wh… Well, yeah! Okay! I'll see you soon, right?", "Cat"], ["Don't get your hopes up, you know how this place moves, cat.", "Remy"],
+["W-wh... Well, yeah! Okay! I'll see you soon, right?", "Cat"], ["Don't get your hopes up, you know how this place moves, cat.", "Remy"],
 ["Reach the nearest safe spot, alright? I'll try to get there.", "Remy"], ["...", "Cat"], ["What're you doing? Hurry up and go.", "Remy"],
 ["Okay...", "Cat"], ["Good. I'll meet you in the future, cat.", "Remy"], ["M-mhm! Thank you, Rem!", "Cat"], ["Just go.", "Remy"],
 ["S-seeya!", "Cat"], ["(Ahh, the cat's gone. Ugh.\nThere's... really no exit here...)", "Remy"],
