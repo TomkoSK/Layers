@@ -1,10 +1,10 @@
 res://Autoloaded/SceneManager.tscn
+res://Scenes/MainMenu.gdshader
 res://SliderTheme.tres
 res://Scenes/Credits.tscn
 res://Scenes/MainMenu.tscn
 res://Autoloaded/Backlog.tscn
 res://Scenes/Settings.tscn
-res://Autoloaded/WorldEnvironment.tscn
 res://Scenes/BetterText.tscn
 res://TestScenes/Test1.tscn
 res://Autoloaded/AudioManager.tscn
@@ -16,13 +16,3 @@ res://Scenes/SplashScreen.tscn
 res://Scenes/Gallery.tscn
 res://Retired Technology/InventoryButton.tscn
 res://Scenes/QuitScene.tscn
-res://Scripts/betterText.gd
-res://Autoloaded/SceneManager.gd
-res://Autoloaded/DialoguePlayer.gd
-res://Scripts/PrologueScene.gd
-res://Autoloaded/AudioManager.gd
-res://Scripts/Credits.gd
-res://Scripts/Gallery.gd
-res://Scripts/MainMenu.gd
-res://Scripts/Settings.gd
-res://Autoloaded/FileManager.gd
