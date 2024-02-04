@@ -77,6 +77,8 @@ func setCurrentArrowIndex(index):
 	currentArrowIndex = index
 
 func _input(event):#Handles the keyboard controls of the arrow
+	if(event.is_action_pressed("ui_cancel")):
+		glitch_effect()
 	if(currentArrowIndex == -1):#If arrow wasn't shown yet it sets the index based on which arrow was pressed
 		if(event.is_action_pressed("ui_up")):
 			setCurrentArrowIndex(0)
@@ -106,6 +108,62 @@ func _input(event):#Handles the keyboard controls of the arrow
 	if(event.is_action_pressed("ui_accept")):#Pressing enter on an active button presses the button as if it was clicked
 		if(currentArrowIndex != -1):
 			numberedDict[currentArrowIndex].emit_signal("pressed")
+
+func setShake(shakeValue):
+	$GlitchSprite.material.set_shader_parameter("shake_power", shakeValue)
+
+func glitch_effect():
+	AudioManager.stopMenuMusic(3)
+	await get_tree().create_timer(2.0).timeout
+	$GlitchSprite.show()
+	$GlitchAudio.play()
+	$StaticAudio.play()
+	$GlitchAudio.volume_db = -10
+	await get_tree().create_timer(0.3).timeout
+	$GlitchSprite.hide()
+	$GlitchAudio.stop()
+	$StaticAudio.stop()
+	await get_tree().create_timer(1).timeout
+	$GlitchSprite.show()
+	$GlitchAudio.play()
+	$StaticAudio.play()
+	var tween = self.create_tween()
+	tween.set_trans(Tween.TransitionType.TRANS_QUINT)
+	tween.tween_method(setShake, 0.015, 0.08, 1.3)
+	$GlitchAudio.volume_db = -10
+	tween = self.create_tween()
+	tween.set_trans(Tween.TransitionType.TRANS_LINEAR)
+	tween.tween_property($GlitchAudio, "volume_db", 5, 3.3)
+	await get_tree().create_timer(1.3).timeout
+	await RenderingServer.frame_post_draw
+	var texture = get_viewport().get_texture()
+	var imgtex = ImageTexture.create_from_image(texture.get_image())
+	SceneManager.setBackgroundTexture(imgtex)
+	$GlitchSprite.hide()
+	for button in numberedDict.values():
+		button.hide()
+	$Arrow.hide()
+	$VideoStreamPlayer.hide()
+	await get_tree().create_timer(2).timeout
+	$GlitchAudio.stop()
+	$StaticAudio.stop()
+	SceneManager.setBackgroundFromPath("res://Textures/glitchBG.png")
+	await get_tree().create_timer(1).timeout
+	$MorseCode.play()
+	await $MorseCode.finished
+	await get_tree().create_timer(0.5).timeout
+	$GlitchSprite.show()
+	$GlitchAudio.play()
+	$StaticAudio.play()
+	await get_tree().create_timer(0.2).timeout
+	$GlitchSprite.hide()
+	$GlitchAudio.stop()
+	$StaticAudio.stop()
+	$VideoStreamPlayer.show()
+	for button in numberedDict.values():
+		button.show()
+	AudioManager.startMenuMusic(FileManager.load_settings().music, 1)
+
 
 func _process(delta):#The actual movement of the arrow happens here
 	if(currentArrowIndex > -1):#If the arrow wasnt shown yet no need to move it

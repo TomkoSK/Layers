@@ -80,5 +80,8 @@ func changeScene(targetScene : String, fadeIn = 0.4, midLength = 0.4, fadeOut = 
 func emitSceneSwitched():
 	sceneSwitched.emit()
 
-func setBackground(bgPath):
+func setBackgroundFromPath(bgPath : String):
 	bgSprite.texture = load(bgPath)
+
+func setBackgroundTexture(texture : Texture2D):
+	bgSprite.texture = texture
