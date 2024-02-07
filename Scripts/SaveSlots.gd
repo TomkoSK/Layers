@@ -84,12 +84,16 @@ func on_slot_clicked(slot_number : int):
 		if(file.playtime > 0):
 			FileManager.set_active_save_file(slot_number)
 			SceneManager.changeScene(file.last_scene, 1, 0.8, 1)
-			AudioManager.stopMenuMusic(1)
+			AudioManager.setMenuMusicVolume(0, 1)
+			await get_tree().create_timer(1).timeout
+			AudioManager.setMenuMusicPlaying(false)
 	elif(mode == "newgame"):
 		if(file.playtime == 0):
 			FileManager.set_active_save_file(slot_number)
 			SceneManager.changeScene("res://Scenes/PrologueScene.tscn", 1, 0.8, 1)
-			AudioManager.stopMenuMusic(1)
+			AudioManager.setMenuMusicVolume(0, 1)
+			await get_tree().create_timer(1).timeout
+			AudioManager.setMenuMusicPlaying(false)
 	flash()
 
 func format_playtime(seconds : int):

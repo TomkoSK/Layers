@@ -1,7 +1,9 @@
 extends Node
 
 func _ready():
-	AudioManager.startAmbience(FileManager.load_settings().volume, 3)
+	AudioManager.setAmbiencePlaying(true)
+	AudioManager.setAmbienceVolume(0)
+	AudioManager.setAmbienceVolume(1, 3)
 	UIButtons.set_visibility("ui", false)
 	for line in dialogue:
 		var listToAppend = [line[1], line[0]]

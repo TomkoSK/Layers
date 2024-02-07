@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsoithy5lg7is"]
+[gd_scene load_steps=10 format=3 uid="uid://bsoithy5lg7is"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_0bdrc"]
 [ext_resource type="VideoStream" path="res://output.ogv" id="2_crwrw"]
@@ -9,19 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://8uj3wriallbn" path="res://Buttons/gallery.png" id="7_gp2fh"]
 [ext_resource type="Texture2D" uid="uid://swvi7siowge1" path="res://Buttons/credits.png" id="8_5cf6d"]
 [ext_resource type="Texture2D" uid="uid://dpg2u8qmf3yyq" path="res://Buttons/quitted.png" id="9_ipm8y"]
-[ext_resource type="Shader" path="res://Scenes/MainMenu.gdshader" id="10_jwi4u"]
-[ext_resource type="Texture2D" uid="uid://ct63j0hubgwlt" path="res://Textures/icon.svg" id="11_1q8vh"]
-[ext_resource type="AudioStream" uid="uid://c76d2ybuqi28x" path="res://Audio/static.mp3" id="12_huqk8"]
-[ext_resource type="AudioStream" uid="uid://k380438f0nax" path="res://Audio/cutGlitch (mp3cut.net).mp3" id="12_w4qth"]
-[ext_resource type="AudioStream" uid="uid://dpa4rvahb2rc1" path="res://Audio/morsecode.wav" id="14_er37d"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2ft8"]
-shader = ExtResource("10_jwi4u")
-shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 1.0
-shader_parameter/shake_speed = 5.0
-shader_parameter/shake_block_size = 30.5
-shader_parameter/shake_color_rate = 0.01
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_0bdrc")
@@ -132,25 +119,6 @@ position = Vector2(936, 534)
 rotation = -1.5708
 scale = Vector2(0.602, 0.602)
 texture = ExtResource("6_e1o37")
-
-[node name="GlitchSprite" type="Sprite2D" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_y2ft8")
-position = Vector2(960, 540)
-scale = Vector2(15, 8.4375)
-texture = ExtResource("11_1q8vh")
-
-[node name="GlitchAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_w4qth")
-bus = &"Main"
-
-[node name="StaticAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_huqk8")
-volume_db = -38.0
-
-[node name="MorseCode" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_er37d")
-volume_db = -20.0
 
 [connection signal="mouse_entered" from="Continue" to="." method="_on_continue_mouse_entered"]
 [connection signal="mouse_exited" from="Continue" to="." method="_on_continue_mouse_exited"]

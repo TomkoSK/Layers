@@ -1,0 +1,177 @@
+[gd_scene load_steps=17 format=3 uid="uid://dcbdncm70tpma"]
+
+[ext_resource type="Script" path="res://Scripts/GlitchedMenu.gd" id="1_ie53w"]
+[ext_resource type="VideoStream" path="res://output.ogv" id="2_38bqp"]
+[ext_resource type="Texture2D" uid="uid://cgdryte7801yi" path="res://Buttons/continue.png" id="3_i4rqi"]
+[ext_resource type="Texture2D" uid="uid://bcse4eauj0x17" path="res://Textures/arrowgus.png" id="4_vgv12"]
+[ext_resource type="Texture2D" uid="uid://buhrse0iyji0k" path="res://Buttons/newgame.png" id="5_xr7e1"]
+[ext_resource type="Texture2D" uid="uid://pbf60ohiqxer" path="res://Buttons/options.png" id="6_32rcx"]
+[ext_resource type="Texture2D" uid="uid://8uj3wriallbn" path="res://Buttons/gallery.png" id="7_sgdhc"]
+[ext_resource type="Texture2D" uid="uid://swvi7siowge1" path="res://Buttons/credits.png" id="8_onij8"]
+[ext_resource type="Texture2D" uid="uid://dpg2u8qmf3yyq" path="res://Buttons/quitted.png" id="9_p37lb"]
+[ext_resource type="Shader" path="res://MainMenu.gdshader" id="10_kuwpm"]
+[ext_resource type="Texture2D" uid="uid://ct63j0hubgwlt" path="res://Textures/icon.svg" id="11_y0su1"]
+[ext_resource type="AudioStream" uid="uid://k380438f0nax" path="res://Audio/cutGlitch (mp3cut.net).mp3" id="12_rdffo"]
+[ext_resource type="AudioStream" uid="uid://c76d2ybuqi28x" path="res://Audio/static.mp3" id="13_kjqy0"]
+[ext_resource type="AudioStream" uid="uid://dpa4rvahb2rc1" path="res://Audio/morsecode.wav" id="14_l6co5"]
+[ext_resource type="AudioStream" uid="uid://bl7lfw6735mfw" path="res://Audio/stasis_nD9iYNZM-[AudioTrimmer.com].wav" id="15_tyqbr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2ft8"]
+shader = ExtResource("10_kuwpm")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 1.0
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[node name="GlitchedMenu" type="Node2D"]
+script = ExtResource("1_ie53w")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -5
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("2_38bqp")
+autoplay = true
+loop = true
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 1540.0
+offset_top = 520.0
+offset_right = 2035.0
+offset_bottom = 622.0
+scale = Vector2(0.7, 0.7)
+icon = ExtResource("3_i4rqi")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Continue"]
+visible = false
+position = Vector2(-48.5714, 52.8571)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("4_vgv12")
+
+[node name="NewGame" type="Button" parent="."]
+offset_left = 1490.0
+offset_top = 365.0
+offset_right = 1938.0
+offset_bottom = 454.0
+scale = Vector2(0.912, 0.912)
+icon = ExtResource("5_xr7e1")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="NewGame"]
+visible = false
+position = Vector2(-41.842, 35.79)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("4_vgv12")
+
+[node name="Options" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 500.0
+offset_right = 349.0
+offset_bottom = 589.0
+icon = ExtResource("6_32rcx")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow" type="Sprite2D" parent="Options"]
+visible = false
+position = Vector2(353, 44)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("4_vgv12")
+
+[node name="Gallery" type="Button" parent="."]
+offset_left = 105.0
+offset_top = 650.0
+offset_right = 393.0
+offset_bottom = 749.0
+icon = ExtResource("7_sgdhc")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Gallery"]
+visible = false
+position = Vector2(335, 54)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("4_vgv12")
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 340.0
+offset_right = 494.0
+offset_bottom = 442.0
+scale = Vector2(0.76, 0.76)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("8_onij8")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(479.211, 63.158)
+scale = Vector2(-0.79, 0.79)
+texture = ExtResource("4_vgv12")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 1515.0
+offset_top = 670.0
+offset_right = 1701.0
+offset_bottom = 772.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("9_p37lb")
+flat = true
+
+[node name="Arrow" type="Sprite2D" parent="Quit"]
+visible = false
+position = Vector2(-47.5, 40)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_vgv12")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.8)
+position = Vector2(936, 534)
+rotation = -1.5708
+scale = Vector2(0.602, 0.602)
+texture = ExtResource("4_vgv12")
+
+[node name="GlitchSprite" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_y2ft8")
+position = Vector2(960, 540)
+scale = Vector2(15, 8.4375)
+texture = ExtResource("11_y0su1")
+
+[node name="GlitchAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rdffo")
+bus = &"Main"
+
+[node name="StaticAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_kjqy0")
+volume_db = -38.0
+
+[node name="MorseCode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_l6co5")
+volume_db = -20.0
+bus = &"Main"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_tyqbr")
+
+[connection signal="mouse_entered" from="Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="Continue" to="." method="_on_continue_mouse_exited"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="NewGame" to="." method="_on_new_game_mouse_entered"]
+[connection signal="mouse_exited" from="NewGame" to="." method="_on_new_game_mouse_exited"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="Options" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="Gallery" to="." method="_on_gallery_mouse_entered"]
+[connection signal="mouse_exited" from="Gallery" to="." method="_on_gallery_mouse_exited"]
+[connection signal="pressed" from="Gallery" to="." method="_on_gallery_pressed"]
+[connection signal="mouse_entered" from="Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

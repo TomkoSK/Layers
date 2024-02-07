@@ -21,12 +21,14 @@ func _ready():
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.music))
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings.volume))
 	if(!AudioManager.playingMenuMusic):#Only start the music if it isn't already playing
-		AudioManager.startMenuMusic(FileManager.load_settings().music, 1)# smooths out the music volume to start from 0 to the settings.music value in 2 seconds
+		AudioManager.setMenuMusicPlaying(true)
+		AudioManager.setMenuMusicVolume(0)
+		AudioManager.setMenuMusicVolume(1, 1)#Makes the music go from 0 to 100% volume in 1 second
 
 func _on_quit_button_pressed():
 	if(!SceneManager.switchingScenes):
 		SceneManager.changeScene("res://Scenes/QuitScene.tscn", 1.2, 25, 0)
-		AudioManager.stopMenuMusic(1)
+		AudioManager.setMenuMusicVolume(0, 1)
 		await Signal(SceneManager, "sceneSwitched")
 		get_tree().quit()
 
@@ -77,8 +79,6 @@ func setCurrentArrowIndex(index):
 	currentArrowIndex = index
 
 func _input(event):#Handles the keyboard controls of the arrow
-	if(event.is_action_pressed("ui_cancel")):
-		glitch_effect()
 	if(currentArrowIndex == -1):#If arrow wasn't shown yet it sets the index based on which arrow was pressed
 		if(event.is_action_pressed("ui_up")):
 			setCurrentArrowIndex(0)
@@ -111,59 +111,6 @@ func _input(event):#Handles the keyboard controls of the arrow
 
 func setShake(shakeValue):
 	$GlitchSprite.material.set_shader_parameter("shake_power", shakeValue)
-
-func glitch_effect():
-	AudioManager.stopMenuMusic(3)
-	await get_tree().create_timer(2.0).timeout
-	$GlitchSprite.show()
-	$GlitchAudio.play()
-	$StaticAudio.play()
-	$GlitchAudio.volume_db = -10
-	await get_tree().create_timer(0.3).timeout
-	$GlitchSprite.hide()
-	$GlitchAudio.stop()
-	$StaticAudio.stop()
-	await get_tree().create_timer(1).timeout
-	$GlitchSprite.show()
-	$GlitchAudio.play()
-	$StaticAudio.play()
-	var tween = self.create_tween()
-	tween.set_trans(Tween.TransitionType.TRANS_QUINT)
-	tween.tween_method(setShake, 0.015, 0.08, 1.3)
-	$GlitchAudio.volume_db = -10
-	tween = self.create_tween()
-	tween.set_trans(Tween.TransitionType.TRANS_LINEAR)
-	tween.tween_property($GlitchAudio, "volume_db", 5, 3.3)
-	await get_tree().create_timer(1.3).timeout
-	await RenderingServer.frame_post_draw
-	var texture = get_viewport().get_texture()
-	var imgtex = ImageTexture.create_from_image(texture.get_image())
-	SceneManager.setBackgroundTexture(imgtex)
-	$GlitchSprite.hide()
-	for button in numberedDict.values():
-		button.hide()
-	$Arrow.hide()
-	$VideoStreamPlayer.hide()
-	await get_tree().create_timer(2).timeout
-	$GlitchAudio.stop()
-	$StaticAudio.stop()
-	SceneManager.setBackgroundFromPath("res://Textures/glitchBG.png")
-	await get_tree().create_timer(1).timeout
-	$MorseCode.play()
-	await $MorseCode.finished
-	await get_tree().create_timer(0.5).timeout
-	$GlitchSprite.show()
-	$GlitchAudio.play()
-	$StaticAudio.play()
-	await get_tree().create_timer(0.2).timeout
-	$GlitchSprite.hide()
-	$GlitchAudio.stop()
-	$StaticAudio.stop()
-	$VideoStreamPlayer.show()
-	for button in numberedDict.values():
-		button.show()
-	AudioManager.startMenuMusic(FileManager.load_settings().music, 1)
-
 
 func _process(delta):#The actual movement of the arrow happens here
 	if(currentArrowIndex > -1):#If the arrow wasnt shown yet no need to move it
