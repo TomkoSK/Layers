@@ -79,6 +79,7 @@ func _on_slot_button_5_mouse_entered():
 	borderLocation.y = 112+213*4
 
 func on_slot_clicked(slot_number : int):
+	flash()
 	var file = FileManager.load_save_file(slot_number)
 	if(mode == "continue"):
 		if(file.playtime > 0):
@@ -87,6 +88,7 @@ func on_slot_clicked(slot_number : int):
 			AudioManager.setMenuMusicVolume(0, 1)
 			await get_tree().create_timer(1).timeout
 			AudioManager.setMenuMusicPlaying(false)
+			Input.set_custom_mouse_cursor(load("res://Textures/cursor65res.png"))
 	elif(mode == "newgame"):
 		if(file.playtime == 0):
 			FileManager.set_active_save_file(slot_number)
@@ -94,7 +96,7 @@ func on_slot_clicked(slot_number : int):
 			AudioManager.setMenuMusicVolume(0, 1)
 			await get_tree().create_timer(1).timeout
 			AudioManager.setMenuMusicPlaying(false)
-	flash()
+			Input.set_custom_mouse_cursor(load("res://Textures/cursor65res.png"))
 
 func format_playtime(seconds : int):
 	var string = "%sh %sm"#Just a gdscript format string

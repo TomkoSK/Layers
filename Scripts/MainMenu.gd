@@ -7,6 +7,7 @@ var scaleDict
 var currentArrowIndex
 
 func _ready():
+	Input.set_custom_mouse_cursor(load("res://Textures/quillcursorglow.png"))
 	currentArrowIndex = -1#Index of the button that the arrow is currently pointing at, starts at -1 because the arrow is hidden at the start
 	numberedDict = {0 : $Credits, 1 : $Options, 2 : $Gallery, 3 : $NewGame, 4 : $Continue, 5 : $Quit}#Each button is given an index (used with currentArrowIndex)
 	#Dictionary with the positions of where the arrow is supposed to go when it goes to a button

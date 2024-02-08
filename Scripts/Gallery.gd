@@ -21,7 +21,7 @@ func addImage(imagePath : String):
 	var offset = len(images)
 	var x
 	if(offset%2 == 0):
-		x = 525
+		x = 525	
 	else:
 		x = 1395
 	var y = 450+(540*(offset/2))
@@ -44,33 +44,19 @@ func addImage(imagePath : String):
 	buttonNode.button_down.connect(openImage.bind(spriteNode))
 
 func openImage(spriteNode : Sprite2D):
-	var timer = Timer.new()
-	timer.wait_time = 0.005
-	timer.one_shot = false
-	self.add_child(timer)
 	$CanvasLayer/Sprite2D.texture = spriteNode.texture
 	$CanvasLayer/Sprite2D.self_modulate.a = 0
 	$CanvasLayer.show()
-	timer.start()
-	for i in range(20):
-		$CanvasLayer/Sprite2D.self_modulate.a += 0.05
-		await timer.timeout
-	timer.queue_free()
+	var tween = self.create_tween()
+	tween.tween_property($CanvasLayer/Sprite2D, "self_modulate", Color(1, 1, 1, 1), 0.15)
 
 func _on_close_button_pressed():
 	$CanvasLayer/CloseButton.hide()
-	var timer = Timer.new()
-	timer.wait_time = 0.005
-	timer.one_shot = false
-	self.add_child(timer)
-	$CanvasLayer/Sprite2D.self_modulate.a = 1
-	timer.start()
-	for i in range(20):
-		$CanvasLayer/Sprite2D.self_modulate.a -= 0.05
-		await timer.timeout
+	var tween = self.create_tween()
+	tween.tween_property($CanvasLayer/Sprite2D, "self_modulate", Color(1, 1, 1, 0), 0.15)
+	await get_tree().create_timer(0.15).timeout
 	$CanvasLayer.hide()
 	$CanvasLayer/CloseButton.show()
-	timer.queue_free()
 
 func _on_back_button_pressed():
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
