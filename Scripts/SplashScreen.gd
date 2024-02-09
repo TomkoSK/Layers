@@ -14,7 +14,7 @@ func _ready():
 	tween.tween_property($Logo, "modulate", Color(1, 1, 1, 0), changeDuration)
 	await get_tree().create_timer(changeDuration).timeout
 	var rng = RandomNumberGenerator.new()
-	if(rng.randi_range(1, 4) > 3):
+	if(rng.randi_range(1, 4) > 4):
 		SceneManager.changeScene("res://Scenes/GlitchedMenu.tscn", 0, 0.7, 2, true)
 	else:
 		SceneManager.changeScene("res://Scenes/MainMenu.tscn", 0, 0.7, 2, true)
