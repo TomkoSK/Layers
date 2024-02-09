@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_67gjx"]
 [ext_resource type="Texture2D" uid="uid://bgdbxn7jiw3u5" path="res://Textures/Save_Slots_Button.png" id="2_xugl2"]
 [ext_resource type="Theme" uid="uid://q20srnrdcdy3" path="res://SliderTheme.tres" id="3_6a021"]
-[ext_resource type="Texture2D" uid="uid://cbjbpvrjqlkch" path="res://Buttons/settings3.png" id="4_1m05d"]
+[ext_resource type="Texture2D" uid="uid://cbjbpvrjqlkch" path="res://Textures/settings3.png" id="4_1m05d"]
 [ext_resource type="Texture2D" uid="uid://dm0wvjqek5iex" path="res://Textures/button8.png" id="6_4ialg"]
 [ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="6_04mlq"]
 [ext_resource type="Texture2D" uid="uid://b7wr5q5tkau0l" path="res://Textures/settingsBack.png" id="7_keuk3"]
