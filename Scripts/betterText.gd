@@ -25,11 +25,14 @@ func formatText(text):
 	var index = 0
 	while(index < len(textArray)):
 		var length = 0
-		while(length < 1513 and index < len(textArray)):#917 is the size of the text container
+		while(length < 1513 and index < len(textArray)):#1513 is the size of the text container
 			if(length > 0):#Adds a BEFORE every word except the first one so that the size isn't incorrect
 				testNode.text += " "
 			testNode.text += textArray[index]
 			length = testContainer.get_minimum_size().x
+			if(textArray[index][-1] == "\n"):#ends the line early if there is a \n character
+				index += 1
+				break
 			index += 1
 		if(length >= 1513):#this means there are still more words, the last word added gets removed from the text
 			index -= 1
@@ -125,9 +128,12 @@ func _process(delta):#Text is loaded in _process, because if you want a letter t
 			if(characterNumber >= len(formattedText[lineNumber])):
 				characterNumber = 0
 				lineNumber += 1
-				textNode.text += "\n"
-				if(lineNumber > 1 and lineNumber < len(formattedText)):
-					textNode.text = formattedText[lineNumber-1]+"\n"
+				if(lineNumber < len(formattedText)):
+					if(formattedText[lineNumber-1][-1] == "\n"):#Text line can be ended early by putting in \n in the dialogue,
+						#if it wasnt ended manually a \n is appended automatically instead
+						textNode.text = formattedText[lineNumber-1]
+					else:
+						textNode.text = formattedText[lineNumber-1]+"\n"
 				if(lineNumber >= len(formattedText)):
 					loading_text = false
 					return
