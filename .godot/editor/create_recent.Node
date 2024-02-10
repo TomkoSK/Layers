@@ -1,3 +1,4 @@
+Button
 AudioStreamPlayer
 SubViewport
 Sprite2D
@@ -5,7 +6,6 @@ AudioStreamPlayer2D
 Timer
 Label
 TextureButton
-Button
 CanvasLayer
 PanelContainer
 Node2D

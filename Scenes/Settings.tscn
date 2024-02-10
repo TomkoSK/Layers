@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv6e0j8ix7vsh"]
+[gd_scene load_steps=16 format=3 uid="uid://cv6e0j8ix7vsh"]
 
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_67gjx"]
 [ext_resource type="Texture2D" uid="uid://bgdbxn7jiw3u5" path="res://Textures/Save_Slots_Button.png" id="2_xugl2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b7wr5q5tkau0l" path="res://Textures/settingsBack.png" id="7_keuk3"]
 [ext_resource type="Texture2D" uid="uid://fentpbootfak" path="res://Textures/mainmenusettings.png" id="8_65112"]
 [ext_resource type="Texture2D" uid="uid://detgs3ntftqno" path="res://Textures/applysettings.png" id="9_af8pq"]
+[ext_resource type="Texture2D" uid="uid://6qtyeubyb55i" path="res://Textures/reset.png" id="10_sienh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_73b4o"]
 font = ExtResource("6_04mlq")
@@ -174,6 +175,15 @@ texture_normal = ExtResource("6_4ialg")
 position = Vector2(176, 53)
 texture = ExtResource("9_af8pq")
 
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 1407.0
+offset_top = 904.0
+offset_right = 1445.0
+offset_bottom = 942.0
+scale = Vector2(2, 2)
+icon = ExtResource("10_sienh")
+flat = true
+
 [connection signal="item_selected" from="VBoxContainer/WindowMode/OptionButton" to="." method="_on_window_mode_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicContainer/HSlider" to="." method="_on_music_slider_changed"]
 [connection signal="value_changed" from="VBoxContainer/VolumeContainer/HSlider" to="." method="_on_volume_slider_changed"]
@@ -187,3 +197,4 @@ texture = ExtResource("9_af8pq")
 [connection signal="mouse_entered" from="ApplyButton" to="." method="_on_apply_button_mouse_entered"]
 [connection signal="mouse_exited" from="ApplyButton" to="." method="_on_apply_button_mouse_exited"]
 [connection signal="pressed" from="ApplyButton" to="." method="_on_apply_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

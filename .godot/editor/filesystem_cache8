@@ -1,14 +1,14 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1707494232
+::res://::1707560237
 Aunchantedxspace-ogg4.ttf::FontFile::80135453338762667::1706889833::1706889833::1::::<><>::
 Backlog.tres::LabelSettings::8788546622413896129::1706889833::0::1::::<><>::uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
 default_bus_layout.tres::AudioBusLayout::7616872049961334629::1706889833::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1706889833::0::1::::<><>::
-MainMenu.gdshader::Shader::-1::1707494210::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1707498264::0::1::::<><>::
+MainMenu.gdshader::Shader::-1::1707508243::0::1::::<><>::
 output.ogv::VideoStreamTheora::-1::1706889833::0::1::::<><>::
 Prociono-Regular.ttf::FontFile::8258174028040268027::1706889833::1706889833::1::::<><>::
 README.md::TextFile::-1::1706889833::0::1::::<><>::
-SliderTheme.tres::Theme::1180310680433485816::1707038059::0::1::::<><>::
+SliderTheme.tres::Theme::1180310680433485816::1707501897::0::1::::<><>::
 TextBox.tres::LabelSettings::5408113517508338153::1706889833::0::1::::<><>::uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
 TextBoxBlue.tres::LabelSettings::3390741163976579374::1706889833::0::1::::<><>::uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
 ::res://Audio/::1707494210
@@ -17,14 +17,14 @@ Dread.mp3::AudioStreamMP3::1655688476979372239::1706889833::1707494210::1::::<><
 morsecode.wav::AudioStreamWAV::8213886960247217898::1706993347::1706996469::1::::<><>::
 stasis_nD9iYNZM-[AudioTrimmer.com].wav::AudioStreamWAV::3225236072626509920::1707493970::1707493970::1::::<><>::
 static.mp3::AudioStreamMP3::7083111704628467557::1706991453::1706991453::1::::<><>::
-::res://Autoloaded/::1707494210
+::res://Autoloaded/::1707508041
 AudioManager.gd::GDScript::-1::1707493970::0::1::::<>Node<>::
-AudioManager.tscn::PackedScene::1094433489283589522::1707494210::0::1::::<><>::res://Autoloaded/AudioManager.gd<>uid://bl7lfw6735mfw::::res://Audio/stasis_nD9iYNZM-[AudioTrimmer.com].wav<>uid://xua7hdlpt0rb::::res://Audio/Dread.mp3
+AudioManager.tscn::PackedScene::1094433489283589522::1707508041::0::1::::<><>::res://Autoloaded/AudioManager.gd<>uid://bl7lfw6735mfw::::res://Audio/stasis_nD9iYNZM-[AudioTrimmer.com].wav<>uid://xua7hdlpt0rb::::res://Audio/Dread.mp3
 Backlog.gd::GDScript::-1::1707493970::0::1::::<>Node2D<>::
 Backlog.tscn::PackedScene::8317845083521078288::1707038972::0::1::::<><>::res://Autoloaded/Backlog.gd<>uid://dxhicxfb8wl1b::::res://Backlog.tres<>uid://d2cpfafh0pwn2::::res://Textures/backlog.png
-DialoguePlayer.gd::GDScript::-1::1706889833::0::1::::<>Node<>::
+DialoguePlayer.gd::GDScript::-1::1707498402::0::1::::<>Node<>::
 FileManager.gd::GDScript::-1::1707493970::0::1::::<>Node<>::
-SceneManager.gd::GDScript::-1::1707003192::0::1::::<>Node<>::
+SceneManager.gd::GDScript::-1::1707500412::0::1::::<>Node<>::
 SceneManager.tscn::PackedScene::7054871427989194575::1707038972::0::1::::<><>::res://Autoloaded/SceneManager.gd
 WorldEnvironment.tscn::PackedScene::3520954166298732393::1706911460::0::1::::<><>::
 ::res://Buttons/::1707494232
@@ -49,8 +49,8 @@ emptyItem.tres::Resource/Resource::1992266088042175769::1706889833::0::1::::<><>
 greenAmongus.tres::Resource/Resource::1708374592717798950::1706889833::0::1::::<><>::res://Retired Technology/ItemResource.gd
 InventoryItems.tres::Resource/Resource::-1::1706889833::0::1::::<><>::res://Retired Technology/InventoryResource.gd<>uid://ylsxeatsax3s::::res://Resources/greenAmongus.tres
 ::res://ResourceScripts/::1706889833
-SaveFileResource.gd::GDScript::-1::1706909325::0::1::::SaveFile<>Resource<>::
-SettingsResource.gd::GDScript::-1::1706889833::0::1::::Settings<>Resource<>::
+SaveFileResource.gd::GDScript::-1::1707494935::0::1::::SaveFile<>Resource<>::
+SettingsResource.gd::GDScript::-1::1707505451::0::1::::Settings<>Resource<>::
 ::res://Retired Technology/::1707038972
 InventoryButton.gd::GDScript::-1::1706889833::0::1::::<>Node2D<>::
 InventoryButton.tscn::PackedScene::3919946264467365873::1707038972::0::1::::<><>::res://Retired Technology/InventoryButton.gd<>uid://cyixnv76pf0xr::::res://Textures/textboxFINAL.png
@@ -59,33 +59,33 @@ Item.tscn::PackedScene::7642784132391757425::1706889833::0::1::::<><>::
 ItemResource.gd::GDScript::-1::1706889833::0::1::::Item<>Resource<>::
 PlayerInventory.gd::GDScript::-1::1706889833::0::1::::<>Node<>::
 PlayerInventory.tscn::PackedScene::6140065149160983039::1706889833::0::1::::<><>::res://Retired Technology/PlayerInventory.gd<>uid://cyixnv76pf0xr::::res://Textures/textboxFINAL.png<>uid://dwgsfn83rgagq::::res://Textures/emptySlot.png
-::res://Scenes/::1707494232
-BetterText.tscn::PackedScene::3388993965863828351::1707494150::0::1::::<><>::res://Scripts/betterText.gd<>uid://cjby3spvru6gr::::res://TextBox.tres<>uid://do1tlnnr4eaj0::::res://Textures/dialogue_box_layers_version_2.png
+::res://Scenes/::1707508243
+BetterText.tscn::PackedScene::3388993965863828351::1707508041::0::1::::<><>::res://Scripts/betterText.gd<>uid://cjby3spvru6gr::::res://TextBox.tres<>uid://do1tlnnr4eaj0::::res://Textures/dialogue_box_layers_version_2.png
 Credits.tscn::PackedScene::3409098257034767690::1707038972::0::1::::<><>::uid://crvo4vdgnwk5u::::res://Textures/Credits_Background_1.png<>res://Scripts/Credits.gd<>uid://dm0wvjqek5iex::::res://Textures/button8.png<>uid://b7wr5q5tkau0l::::res://Textures/settingsBack.png
-Gallery.tscn::PackedScene::6406271540885037059::1707494150::0::1::::<><>::res://Scripts/Gallery.gd<>uid://dgus5fosw7wbs::::res://Textures/gallery.png<>uid://bbu6ylrptsl21::::res://Textures/galleryTitle.png<>uid://dm0wvjqek5iex::::res://Textures/button8.png<>uid://b7wr5q5tkau0l::::res://Textures/settingsBack.png
-GlitchedMenu.tscn::PackedScene::7301909607480950524::1707494150::0::1::::<><>::res://Scripts/GlitchedMenu.gd<>res://output.ogv<>uid://cgdryte7801yi::::res://Buttons/continue.png<>uid://bcse4eauj0x17::::res://Textures/arrowgus.png<>uid://buhrse0iyji0k::::res://Buttons/newgame.png<>uid://pbf60ohiqxer::::res://Buttons/options.png<>uid://8uj3wriallbn::::res://Buttons/gallery.png<>uid://swvi7siowge1::::res://Buttons/credits.png<>uid://dpg2u8qmf3yyq::::res://Buttons/quitted.png<>res://MainMenu.gdshader<>uid://ct63j0hubgwlt::::res://Textures/icon.svg<>uid://k380438f0nax::::res://Audio/cutGlitch (mp3cut.net).mp3<>uid://c76d2ybuqi28x::::res://Audio/static.mp3<>uid://dpa4rvahb2rc1::::res://Audio/morsecode.wav<>uid://bl7lfw6735mfw::::res://Audio/stasis_nD9iYNZM-[AudioTrimmer.com].wav
-MainMenu.tscn::PackedScene::3679241229877638082::1707494150::0::1::::<><>::res://Scripts/MainMenu.gd<>res://output.ogv<>uid://cgdryte7801yi::::res://Buttons/continue.png<>uid://buhrse0iyji0k::::res://Buttons/newgame.png<>uid://bcse4eauj0x17::::res://Textures/arrowgus.png<>uid://pbf60ohiqxer::::res://Buttons/options.png<>uid://8uj3wriallbn::::res://Buttons/gallery.png<>uid://swvi7siowge1::::res://Buttons/credits.png<>uid://dpg2u8qmf3yyq::::res://Buttons/quitted.png
-PrologueScene.tscn::PackedScene::6810028433637837184::1707038972::0::1::::<><>::res://Scripts/PrologueScene.gd<>uid://cg6012dh7t047::::res://Textures/square.png
-QuitScene.tscn::PackedScene::4391735950579520914::1707494150::0::1::::<><>::
+Gallery.tscn::PackedScene::6406271540885037059::1707508041::0::1::::<><>::res://Scripts/Gallery.gd<>uid://dgus5fosw7wbs::::res://Textures/gallery.png<>uid://bbu6ylrptsl21::::res://Textures/galleryTitle.png<>uid://dm0wvjqek5iex::::res://Textures/button8.png<>uid://b7wr5q5tkau0l::::res://Textures/settingsBack.png
+GlitchedMenu.tscn::PackedScene::7301909607480950524::1707508041::0::1::::<><>::res://Scripts/GlitchedMenu.gd<>res://output.ogv<>uid://cgdryte7801yi::::res://Buttons/continue.png<>uid://bcse4eauj0x17::::res://Textures/arrowgus.png<>uid://buhrse0iyji0k::::res://Buttons/newgame.png<>uid://pbf60ohiqxer::::res://Buttons/options.png<>uid://8uj3wriallbn::::res://Buttons/gallery.png<>uid://swvi7siowge1::::res://Buttons/credits.png<>uid://dpg2u8qmf3yyq::::res://Buttons/quitted.png<>res://MainMenu.gdshader<>uid://ct63j0hubgwlt::::res://Textures/icon.svg<>uid://k380438f0nax::::res://Audio/cutGlitch (mp3cut.net).mp3<>uid://c76d2ybuqi28x::::res://Audio/static.mp3<>uid://dpa4rvahb2rc1::::res://Audio/morsecode.wav<>uid://bl7lfw6735mfw::::res://Audio/stasis_nD9iYNZM-[AudioTrimmer.com].wav
+MainMenu.tscn::PackedScene::3679241229877638082::1707508041::0::1::::<><>::res://Scripts/MainMenu.gd<>res://output.ogv<>uid://cgdryte7801yi::::res://Buttons/continue.png<>uid://buhrse0iyji0k::::res://Buttons/newgame.png<>uid://bcse4eauj0x17::::res://Textures/arrowgus.png<>uid://pbf60ohiqxer::::res://Buttons/options.png<>uid://8uj3wriallbn::::res://Buttons/gallery.png<>uid://swvi7siowge1::::res://Buttons/credits.png<>uid://dpg2u8qmf3yyq::::res://Buttons/quitted.png
+PrologueScene.tscn::PackedScene::6810028433637837184::1707508041::0::1::::<><>::res://Scripts/PrologueScene.gd<>uid://cg6012dh7t047::::res://Textures/square.png
+QuitScene.tscn::PackedScene::4391735950579520914::1707508041::0::1::::<><>::
 SaveSlots.tscn::PackedScene::8605217817449959360::1707038972::0::1::::<><>::uid://c5xv85mc6apai::::res://Textures/Save_Slots.png<>res://Scripts/SaveSlots.gd<>uid://bgdbxn7jiw3u5::::res://Textures/Save_Slots_Button.png<>uid://be224af47s08::::res://Aunchantedxspace-ogg4.ttf<>uid://yh87bh4c7bq1::::res://Textures/border.png
-Settings.tscn::PackedScene::6311090831063622255::1707494232::0::1::::<><>::res://Scripts/Settings.gd<>uid://bgdbxn7jiw3u5::::res://Textures/Save_Slots_Button.png<>uid://q20srnrdcdy3::::res://SliderTheme.tres<>uid://cbjbpvrjqlkch::::res://Textures/settings3.png<>uid://dm0wvjqek5iex::::res://Textures/button8.png<>uid://be224af47s08::::res://Aunchantedxspace-ogg4.ttf<>uid://b7wr5q5tkau0l::::res://Textures/settingsBack.png<>uid://fentpbootfak::::res://Textures/mainmenusettings.png<>uid://detgs3ntftqno::::res://Textures/applysettings.png
-SplashScreen.tscn::PackedScene::17918773196231703::1707494197::0::1::::<><>::uid://cg6012dh7t047::::res://Textures/square.png<>res://Scripts/SplashScreen.gd<>uid://v7jk1b8y8tm4::::res://Textures/Pwp_Logo_Layers.png<>uid://be224af47s08::::res://Aunchantedxspace-ogg4.ttf
-::res://Scripts/::1707493970
-betterText.gd::GDScript::-1::1706889833::0::1::::<>Node2D<>::
+Settings.tscn::PackedScene::6311090831063622255::1707508243::0::1::::<><>::res://Scripts/Settings.gd<>uid://bgdbxn7jiw3u5::::res://Textures/Save_Slots_Button.png<>uid://q20srnrdcdy3::::res://SliderTheme.tres<>uid://cbjbpvrjqlkch::::res://Textures/settings3.png<>uid://dm0wvjqek5iex::::res://Textures/button8.png<>uid://be224af47s08::::res://Aunchantedxspace-ogg4.ttf<>uid://b7wr5q5tkau0l::::res://Textures/settingsBack.png<>uid://fentpbootfak::::res://Textures/mainmenusettings.png<>uid://detgs3ntftqno::::res://Textures/applysettings.png<>uid://6qtyeubyb55i::::res://Textures/reset.png
+SplashScreen.tscn::PackedScene::17918773196231703::1707508041::0::1::::<><>::uid://cg6012dh7t047::::res://Textures/square.png<>res://Scripts/SplashScreen.gd<>uid://v7jk1b8y8tm4::::res://Textures/Pwp_Logo_Layers.png<>uid://be224af47s08::::res://Aunchantedxspace-ogg4.ttf
+::res://Scripts/::1707506221
+betterText.gd::GDScript::-1::1707501904::0::1::::<>Node2D<>::
 Credits.gd::GDScript::-1::1706889833::0::1::::<>Node2D<>::
 Gallery.gd::GDScript::-1::1707493970::0::1::::<>Node2D<>::
 GlitchedMenu.gd::GDScript::-1::1707493970::0::1::::<>Node2D<>::
-MainMenu.gd::GDScript::-1::1707494116::0::1::::<>Node2D<>::
-PrologueScene.gd::GDScript::-1::1707493970::0::1::::<>Node<>::
+MainMenu.gd::GDScript::-1::1707507728::0::1::::<>Node2D<>::
+PrologueScene.gd::GDScript::-1::1707500413::0::1::::<>Node<>::
 SaveSlots.gd::GDScript::-1::1707493970::0::1::::<>Node2D<>::
-Settings.gd::GDScript::-1::1707493970::0::1::::<>Node<>::
-SplashScreen.gd::GDScript::-1::1707493970::0::1::::<>Node2D<>::
+Settings.gd::GDScript::-1::1707509439::0::1::::<>Node<>::
+SplashScreen.gd::GDScript::-1::1707509449::0::1::::<>Node2D<>::
 ::res://TestScenes/::1707038972
 Test1.gd::GDScript::-1::1706889833::0::1::::<>Node2D<>::
 Test1.tscn::PackedScene::2784546292954745283::1707038972::0::1::::<><>::res://TestScenes/Test1.gd<>uid://be224af47s08::::res://Aunchantedxspace-ogg4.ttf
 Test2.gd::GDScript::-1::1706889833::0::1::::<>Node2D<>::
 Test2.tscn::PackedScene::5916801952287927186::1707038972::0::1::::<><>::res://TestScenes/Test2.gd<>uid://dpwk6jggieidv::::res://Prociono-Regular.ttf
-::res://Textures/::1707494232
+::res://Textures/::1707504211
 amogsus.png::CompressedTexture2D::1047331774601801688::1706889833::1706889833::1::::<><>::
 applysettings.png::CompressedTexture2D::7479638540812437264::1706889833::1706889833::1::::<><>::
 arrowgus.png::CompressedTexture2D::2564252037551695816::1706889833::1706889833::1::::<><>::
@@ -104,6 +104,7 @@ icon.svg::CompressedTexture2D::6172142579634966497::1706889833::1706889847::1:::
 mainmenusettings.png::CompressedTexture2D::360025770247171862::1706889833::1706889833::1::::<><>::
 Pwp_Logo_Layers.png::CompressedTexture2D::1540591484087208681::1706889833::1706889833::1::::<><>::
 quillcursorglow.png::CompressedTexture2D::3267749547571698342::1707493970::1707493970::1::::<><>::
+reset.png::CompressedTexture2D::2210080919827312036::1707504207::1707504211::1::::<><>::
 Save_Slots.png::CompressedTexture2D::6927322947287977716::1706889833::1706889833::1::::<><>::
 Save_Slots_Button.png::CompressedTexture2D::2813849401693854214::1706889833::1706889833::1::::<><>::
 settings3.png::CompressedTexture2D::4861698244394884651::1706889833::1707494232::1::::<><>::

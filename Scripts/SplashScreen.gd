@@ -4,6 +4,7 @@ var maxOpacity = 1
 var changeDuration = 0.9
 
 func _ready():
+	DisplayServer.window_set_mode(FileManager.load_settings().windowMode)
 	UIButtons.set_visibility("ui", false)
 	$Logo.modulate.a = 0
 	var tween = self.create_tween()
