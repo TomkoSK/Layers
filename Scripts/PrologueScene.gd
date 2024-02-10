@@ -30,10 +30,10 @@ var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​
 ["(Why am I even praying?\nI hate this place.\nThis world... so shrill and unpleasant. I hate it.)", "Remy"], ["(I'm...)", "Remy"]]
 
 
-#var dialogue = [["(Why am I even praying?\n I hate this place.\n This world... so shrill and unpleasant. I hate it.)", "Remy"]]
+var testdialogue = [["Remy", "the most random text ever", "res://Audio/test.mp3"], ["Remy", "the most random text ever the most random text ever the most random text ever the most random text ever the most random text ever", "res://Audio/test.mp3"]]
 var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
 
 func scene():
-	DialoguePlayer.playDialogue(formattedDialogue)
+	DialoguePlayer.playDialogue(testdialogue)
 	await Signal(DialoguePlayer, "dialogueFinished")
 	UIButtons.set_visibility("options", true)

@@ -10,6 +10,7 @@ var formattedText
 var lineNumber = 0
 var characterNumber = 0
 var timeBetweenCharacters
+var audiostream = null
 
 func _ready():
 	testContainer = $PanelContainer2
@@ -83,7 +84,7 @@ func checkLongPause(text, lineIndex, charIndex):
 		return true
 	return false
 
-func init(text, texturePaths = null, profilePicture = null, timerLength = 0.03):
+func init(text, audioPath = null, texturePaths = null, profilePicture = null, timerLength = 0.03):
 	timeBetweenCharacters = timerLength
 	if(text[0] == "(" and text[-1] == ")"):
 		textNode.label_settings = load("res://TextBoxBlue.tres")
@@ -117,6 +118,13 @@ func init(text, texturePaths = null, profilePicture = null, timerLength = 0.03):
 			self.add_child(sprite)
 		else:
 			print("[WARNING] Array of a size that's not 1 or 2 was passed into Textbox idk if this is what you want")
+	
+	if(audioPath != null):
+		audiostream = AudioStreamPlayer.new()
+		self.add_child(audiostream)
+		audiostream.stream = load(audioPath)
+		audiostream.bus = "Main"
+		audiostream.play()
 	loading_text = true
 
 func _process(delta):#Text is loaded in _process, because if you want a letter to show up every 0.03 seconds,
