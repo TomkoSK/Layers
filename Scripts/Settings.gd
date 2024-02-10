@@ -23,6 +23,7 @@ func _ready():
 	$VBoxContainer/MusicContainer/HSlider.value = settings.music
 	$VBoxContainer/VolumeContainer/HSlider.value = settings.volume
 	$VBoxContainer/BrightnessContainer/HSlider.value = settings.brightness
+	$VBoxContainer/SaturationContainer/HSlider.value = settings.saturation
 
 	settingsChanged(false)
 
@@ -31,6 +32,8 @@ func _on_reset_button_pressed():
 	settings.music = settingsBefore.music
 	settings.volume = settingsBefore.volume
 	settings.brightness = settingsBefore.brightness
+	settings.saturation = settingsBefore.saturation
+
 	$VBoxContainer/WindowMode/OptionButton.selected = $VBoxContainer/WindowMode/OptionButton.get_item_index(settings.windowMode)
 	DisplayServer.window_set_mode(settings.windowMode)
 	$VBoxContainer/MusicContainer/HSlider.value = settings.music
@@ -39,15 +42,19 @@ func _on_reset_button_pressed():
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings.volume))
 	$VBoxContainer/BrightnessContainer/HSlider.value = settings.brightness
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness
+	$VBoxContainer/SaturationContainer/HSlider.value = settings.saturation
+	GlobalWorldEnvironment.environment.adjustment_saturation = settings.saturation
 	settingsChanged(false)
 
 func _on_apply_button_pressed():
 	ResourceSaver.save(settings, FileManager.settings_file_name)
 	DisplayServer.window_set_mode(settings.windowMode)#Sets the window mode immediately after applying settings
+
 	settingsBefore.windowMode = settings.windowMode
 	settingsBefore.music = settings.music
 	settingsBefore.volume = settings.volume
 	settingsBefore.brightness = settings.brightness
+	settingsBefore.saturation = settings.saturation
 	settingsChanged(false)
 
 func _on_back_button_pressed():
@@ -62,23 +69,33 @@ func _on_menu_button_pressed():
 		AudioManager.setAmbiencePlaying(false)
 
 func _on_window_mode_changed(index:int):
-	settingsChanged(true)
+	if(applyButtonOpacity == 0.55):
+		settingsChanged(true)
 	settings.windowMode = $VBoxContainer/WindowMode/OptionButton.get_item_id(index)
 
 func _on_music_slider_changed(value: float):
-	settingsChanged(true)
+	if(applyButtonOpacity == 0.55):
+		settingsChanged(true)
 	AudioServer.set_bus_volume_db(1, linear_to_db(value))
 	settings.music = value
 
 func _on_volume_slider_changed(value: float):
-	settingsChanged(true)
+	if(applyButtonOpacity == 0.55):
+		settingsChanged(true)
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
 	settings.volume = value
 
 func _on_brightness_changed(value: float):
-	settingsChanged(true)
+	if(applyButtonOpacity == 0.55):
+		settingsChanged(true)
 	settings.brightness = value
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the value that was given
+
+func _on_saturation_changed(value:float):
+	if(applyButtonOpacity == 0.55):
+		settingsChanged(true)
+	settings.saturation = value
+	GlobalWorldEnvironment.environment.adjustment_saturation = settings.saturation
 
 func setMenuButton(visibility : bool):#Called from the SceneManager
 	$MenuButton.visible = visibility

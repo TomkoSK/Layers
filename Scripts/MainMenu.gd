@@ -19,6 +19,7 @@ func _ready():
 
 	var settings = FileManager.load_settings() #Loads the settings from the saved file
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings.brightness#This sets the brightness to the settings value
+	GlobalWorldEnvironment.environment.adjustment_saturation = settings.saturation
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.music))
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings.volume))
 	if(!AudioManager.playingMenuMusic):#Only start the music if it isn't already playing

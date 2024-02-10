@@ -9,3 +9,11 @@ res://ResourceScripts/SettingsResource.gd
 res://Autoloaded/FileManager.gd
 res://Scripts/MainMenu.gd
 res://Autoloaded/SceneManager.gd
+res://Scripts/Gallery.gd
+res://Scenes/Gallery.tscn
+res://UIButtons/UIButtons.gd
+res://Scripts/SaveSlots.gd
+res://Scripts/PrologueScene.gd
+res://Autoloaded/DialoguePlayer.gd
+res://Scenes/QuitScene.tscn
+res://Scenes/MainMenu.tscn
