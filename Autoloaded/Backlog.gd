@@ -50,10 +50,7 @@ func updateArrays():#Updates the text in names and textLines based on whatever i
 
 func removeNewlines(text):
 	while(text.find("\n") != -1):#Keeps looping until it can't find any more \n characters
-		text = text.substr(0, text.find("\n"))+" "+text.substr(text.find("\n")+1)#Makes the string a substring of itself with every character except the \n
-		#The space is added where the \n used to be 
-		#because without the newline, there needs to be something between the words (there is no space between the words)
-		#idk how to explain it well just please dont remove the space :3
+		text = text.substr(0, text.find("\n"))+text.substr(text.find("\n")+1)#Makes the string a substring of itself with every character except the \n
 	return text
 
 func addText(text):#textlines with the character name and the text will be passed to this function, in a format of ["CharacterName", "text"]
