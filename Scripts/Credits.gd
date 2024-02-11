@@ -1,13 +1,23 @@
 extends Node2D
 
 func _ready():
-	$BackButton.modulate.a = 0.76
+	UIButtons.set_visibility("ui", false)
+	$Camera2D/BackButton.modulate.a = 0.76
 
 func _on_back_button_pressed():
 	SceneManager.changeScene("res://Scenes/MainMenu.tscn")
 
 func _on_back_button_mouse_exited():
-	$BackButton.modulate.a = 0.76
+	$Camera2D/BackButton.modulate.a = 0.76
 
 func _on_back_button_mouse_entered():
-	$BackButton.modulate.a = 0.9
+	$Camera2D/BackButton.modulate.a = 0.9
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				$Camera2D.position.y -= 20
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				$Camera2D.position.y += 20
+	$Camera2D.position.y = clamp($Camera2D.position.y, 540, 750)

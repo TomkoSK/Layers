@@ -1,3 +1,4 @@
+Camera2D
 Button
 AudioStreamPlayer
 SubViewport
@@ -9,6 +10,5 @@ TextureButton
 CanvasLayer
 PanelContainer
 Node2D
-Camera2D
 NinePatchRect
 VBoxContainer

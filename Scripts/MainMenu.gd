@@ -121,11 +121,11 @@ func _process(delta):#The actual movement of the arrow happens here
 		$Arrow.position = $Arrow.position.move_toward(positionDict[currentArrowIndex], speed)
 		if(currentArrowIndex < 3):#With the left buttons, the arrow has to point in a different direction so its rotated smoothly
 			#Button indexes 0 1 and 2 are the left buttons
-			$Arrow.rotation_degrees -= 1.482*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
-			#1.482 was acquired through manual testing :3
+			$Arrow.rotation_degrees -= 1.6*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
+			#1.6 was acquired through manual testing :3
 			#The arrow also rotates more slowly as it gets closer to the button, its smoother
 		else:
-			$Arrow.rotation_degrees += 1.482*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
+			$Arrow.rotation_degrees += 1.6*delta*$Arrow.position.distance_to(positionDict[currentArrowIndex])
 		$Arrow.rotation_degrees = clamp($Arrow.rotation_degrees, -180, 0)#Clamps the rotation so that it doesnt rotate too far
 		
 		for key in numberedDict:#When you select a button, the opacity is increased, thats done here (its done smoothly)

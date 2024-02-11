@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dm0wvjqek5iex" path="res://Textures/button8.png" id="2_06ni1"]
 [ext_resource type="Texture2D" uid="uid://b7wr5q5tkau0l" path="res://Textures/settingsBack.png" id="4_hte3a"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_4hyg1"]
-font_size = 100
-
 [sub_resource type="LabelSettings" id="LabelSettings_k34ux"]
 font_size = 30
 
@@ -17,23 +14,16 @@ font_size = 25
 [sub_resource type="LabelSettings" id="LabelSettings_saeoy"]
 font_size = 30
 
+[sub_resource type="LabelSettings" id="LabelSettings_4hyg1"]
+font_size = 100
+
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_as0g2")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 759.0
-offset_top = 2.0
-offset_right = 1158.0
-offset_bottom = 139.0
-text = "CREDITS
-"
-label_settings = SubResource("LabelSettings_4hyg1")
-horizontal_alignment = 1
-
 [node name="CreditsContainer" type="HBoxContainer" parent="."]
-offset_left = 2.0
+offset_left = 460.0
 offset_top = 192.0
-offset_right = 1922.0
+offset_right = 1460.0
 offset_bottom = 1078.0
 
 [node name="JobContainer" type="VBoxContainer" parent="CreditsContainer"]
@@ -52,6 +42,7 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="CreditsContainer/JobContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Direction
 "
@@ -109,23 +100,35 @@ text = "Syrius
 label_settings = SubResource("LabelSettings_iq8al")
 horizontal_alignment = 1
 
-[node name="CreditsBackground1" type="Sprite2D" parent="."]
-z_index = -5
+[node name="Label" type="Label" parent="."]
+offset_left = 759.0
+offset_top = 2.0
+offset_right = 1158.0
+offset_bottom = 139.0
+text = "CREDITS
+"
+label_settings = SubResource("LabelSettings_4hyg1")
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
+
+[node name="CreditsBackground1" type="Sprite2D" parent="Camera2D"]
+z_index = -5
 texture = ExtResource("1_3vekb")
 
-[node name="BackButton" type="TextureButton" parent="."]
-offset_left = 76.0
-offset_top = 28.0
-offset_right = 426.0
-offset_bottom = 128.0
+[node name="BackButton" type="TextureButton" parent="Camera2D"]
+offset_left = -884.0
+offset_top = -512.0
+offset_right = -534.0
+offset_bottom = -412.0
 texture_normal = ExtResource("2_06ni1")
 
-[node name="Sprite2D" type="Sprite2D" parent="BackButton"]
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/BackButton"]
 position = Vector2(172, 50)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_hte3a")
 
-[connection signal="mouse_entered" from="BackButton" to="." method="_on_back_button_mouse_entered"]
-[connection signal="mouse_exited" from="BackButton" to="." method="_on_back_button_mouse_exited"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="Camera2D/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/BackButton" to="." method="_on_back_button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/BackButton" to="." method="_on_back_button_pressed"]

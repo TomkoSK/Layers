@@ -81,9 +81,9 @@ scale = Vector2(-0.6, 0.6)
 texture = ExtResource("6_e1o37")
 
 [node name="Credits" type="Button" parent="."]
-offset_left = 75.0
+offset_left = 60.0
 offset_top = 340.0
-offset_right = 494.0
+offset_right = 479.0
 offset_bottom = 442.0
 scale = Vector2(0.76, 0.76)
 size_flags_horizontal = 6
