@@ -27,10 +27,16 @@ var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​
 ["(It cut my leg so deep... I can't patch the injury...)", "Remy"], ["(I can't believe I messed up like that, damn it!\nHow could I have...)", "Remy"],
 ["(That... screeching... twisting... grating metal...)", "Remy"], ["Just this once. Please. in some way... that lets me go...", "Remy"],
 ["...C-come on...\nPlease move.", "Remy"], ["(The one behind me, huh?)", "Remy"], ["(God... please help that cat. No way they survive here.)", "Remy"],
-["(Why am I even praying?\nI hate this place.\nThis world... so shrill and unpleasant. I hate it.)", "Remy"], ["(I'm...)", "Remy"]]
+["(Why am I even praying?\n I hate this place.\n This world... so shrill and unpleasant. I hate it.)", "Remy"], ["(I'm...)", "Remy"],
+["(I'm just going to end up as another scream in the cacophony, huh? Just another one that rings out, lost in the noise...)", "Remy"],
+["(The cat'll probably not even notice it among the others, let alone recognize it.)", "Remy"], ["(I just hope... it keeps moving forward.)", "Remy"],
+["(I had... so many things I wanted to do...\n I lost... so many things I wanted... That I could've had...)", "Remy"],
+["(I'm so sorry... I can't even think of you in my last moments... just myself...\n No one will ever see that speck of light I had...\n that hope in my eyes I held for so long...)", "Remy"],
+["(No matter how hard I tried, it whittled and faded away...)", "Remy"], ["(Prove me wrong... please, cat...\n I-)", "Remy"]
+]
 
 
-var testdialogue = [["Remy", "the\n most random\n text ever", "res://Audio/test.mp3"], ["Remy", "the most random text ever the most random text ever the most random text ever the most random text ever the most random text ever", "res://Audio/test.mp3"]]
+var testdialogue = [["Remy","(Why am I even praying?\n I hate this place.\n This world... so shrill and unpleasant. I hate it.)"]]
 var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
 
 func scene():

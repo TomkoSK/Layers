@@ -154,7 +154,10 @@ func _process(delta):#Text is loaded in _process, because if you want a letter t
 
 func showText():#Shows the last 2 lines when the text box is clicked while its text is being loading
 	if(len(formattedText) > 1):
-		textNode.text = formattedText[-2]+"\n"+formattedText[-1]
+		if(formattedText[-2][-1] == "\n"):
+			textNode.text = formattedText[-2]+formattedText[-1]
+		else:
+			textNode.text = formattedText[-2]+"\n"+formattedText[-1]
 	else:
 		textNode.text = formattedText[0]
 
