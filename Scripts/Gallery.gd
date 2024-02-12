@@ -18,7 +18,9 @@ func _input(event):
 				$Camera2D.position.y = clamp($Camera2D.position.y, 0, max(len(images)*270-900, 0))
 	if(event.is_action_pressed("ui_accept")):
 		addImage("res://Gallery/testBG.png")
-
+	if(event.is_action_pressed("ui_cancel")):
+		$MenuButton.emit_signal("pressed")
+		
 func addImage(imagePath : String):
 	var offset = len(images)
 	var x

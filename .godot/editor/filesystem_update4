@@ -1,6 +1,8 @@
-res://Scripts/PrologueScene.gd
-res://Scripts/SplashScreen.gd
-res://Scripts/betterText.gd
+res://Scripts/MainMenu.gd
+res://Scripts/Settings.gd
+res://Scripts/SaveSlots.gd
+res://Scripts/Gallery.gd
+res://Scripts/Credits.gd
 res://Scenes/BetterText.tscn
 res://SliderTheme.tres
 res://MainMenu.gdshader
@@ -9,10 +11,4 @@ res://Scenes/Settings.tscn
 res://Scenes/Gallery.tscn
 res://Scenes/QuitScene.tscn
 res://Scenes/MainMenu.tscn
-res://ResourceScripts/SettingsResource.gd
-res://Scripts/Settings.gd
-res://Autoloaded/AudioManager.gd
 res://Scenes/Credits.tscn
-res://Scripts/Credits.gd
-res://Scripts/Gallery.gd
-res://Scripts/MainMenu.gd

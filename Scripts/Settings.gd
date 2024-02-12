@@ -126,3 +126,7 @@ func settingsChanged(changed : bool):
 		$ResetButton.hide()
 		applyButtonOpacity = 0.55
 	$ApplyButton.modulate.a = applyButtonOpacity
+
+func _input(event):
+	if(event.is_action_pressed("ui_cancel")):
+		$BackButton.emit_signal("pressed")
