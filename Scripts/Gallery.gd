@@ -94,4 +94,3 @@ func _process(delta):#unnecesarily complicated smooth scrolling when using the a
 		$Camera2D.position.y = clamp($Camera2D.position.y, 0, max(len(images)*270-900, 0))
 	else:
 		$Camera2D.position.y = clamp($Camera2D.position.y, 0, max(len(images)*270-900+270, 0))
-	print(velocity)
