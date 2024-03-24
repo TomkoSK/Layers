@@ -45,7 +45,7 @@ texture = ExtResource("4_hte3a")
 offset_left = 460.0
 offset_top = 184.0
 offset_right = 1460.0
-offset_bottom = 798.0
+offset_bottom = 731.0
 
 [node name="JobContainer" type="VBoxContainer" parent="CreditsContainer"]
 layout_mode = 2
@@ -130,21 +130,7 @@ offset_left = 522.0
 offset_top = 161.0
 offset_right = 630.0
 offset_bottom = 215.0
-text = "People"
 label_settings = ExtResource("5_g4p7f")
-
-[node name="OptionButton" type="OptionButton" parent="."]
-offset_left = 342.0
-offset_top = 246.0
-offset_right = 450.0
-offset_bottom = 277.0
-item_count = 3
-popup/item_0/text = "uhhh??"
-popup/item_0/id = 0
-popup/item_1/text = "idk man"
-popup/item_1/id = 1
-popup/item_2/text = ":D"
-popup/item_2/id = 2
 
 [connection signal="mouse_entered" from="Camera2D/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/BackButton" to="." method="_on_back_button_mouse_exited"]

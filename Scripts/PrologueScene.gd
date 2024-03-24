@@ -40,6 +40,6 @@ var testdialogue = [["Remy","(Why am I even praying?\n I hate this place.\n This
 var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
 
 func scene():
-	DialoguePlayer.playDialogue(testdialogue)
+	DialoguePlayer.playDialogue(formattedDialogue)
 	await Signal(DialoguePlayer, "dialogueFinished")
 	UIButtons.set_visibility("ui", true)
