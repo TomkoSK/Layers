@@ -1,6 +1,6 @@
 extends Node2D
 
-signal card_clicked(card : Node2D, value : int)
+signal card_clicked(card : Node2D)
 
 var coveredTexture = load("res://CardTextures/card_check.png")
 var showingTexture = null
@@ -25,6 +25,9 @@ func flip(visibility = null):
 
 func setExpanding(expand : bool):
 	expandOnHover = expand
+	if(not expandOnHover and scale.x > 1):#if expanded when expandibility is canceled, automatically shrinks card
+		var tween = self.create_tween()
+		tween.tween_property(self, "scale", Vector2(1, 1), 0.12)
 
 func _on_collider_mouse_exited():
 	var tween = self.create_tween()
@@ -36,4 +39,4 @@ func _on_collider_mouse_entered():
 		tween.tween_property(self, "scale", Vector2(1.15, 1.15), 0.12)
 
 func _on_collider_button_down():
-	card_clicked.emit(self, value)
+	card_clicked.emit(self)

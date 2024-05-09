@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbalsi1bytw4v"]
+
+[ext_resource type="Script" path="res://CardMinigame/Minigame.gd" id="1_nkxmc"]
+
+[node name="Testing" type="Node2D"]
+script = ExtResource("1_nkxmc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1672.0
+offset_top = 529.0
+offset_right = 1712.0
+offset_bottom = 552.0
+scale = Vector2(10, 10)
+text = "0"
