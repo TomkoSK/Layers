@@ -11,7 +11,18 @@ func _ready():
 	bgSprite.position = Vector2(960, 540)#middle of the screen
 	bgSprite.z_index = -10#its literally the background so u know
 	self.add_child(bgSprite)
-	
+
+func selectMinigameCard():#Used in CardMinigame/Minigame.gd to let the player select a card
+	var previousScene = get_tree().current_scene
+	changeScene("res://CardMinigame/CardSelection.tscn", 0.4, 0.4, 0.4, false, false)
+	await Signal(self, "sceneSwitched")
+	var currentScene = get_tree().current_scene
+	await Signal(currentScene, "cardSelected")
+	var card = currentScene.playerCard
+	changeScene(previousScene)
+	return card
+
+
 func openSettings(includeMenuButton : bool = false):
 	if(!switchingScenes):
 		var currentScene = get_tree().current_scene.scene_file_path
@@ -28,14 +39,19 @@ func openSaveSlots(mode : String):#The mode thing is explained in SaveSlots.gd, 
 		await Signal(self, "sceneSwitched")
 		get_tree().current_scene.mode = mode
 
-func changeScene(targetScene : String, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4, changeAfterMidTimer : bool = false):
+func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4, changeAfterMidTimer : bool = false, freeObject = true):
 	if(developing):
 		fadeIn = 0
 		midLength = 0
 		fadeOut = 0
 	if(!switchingScenes):
 		switchingScenes = true
-		var scene = load(targetScene).instantiate()
+		var scene
+		if(typeof(targetScene) == TYPE_STRING):#if targetScene is string, its a path to the scene to be loaded
+			scene = load(targetScene).instantiate()
+		elif(typeof(targetScene) == TYPE_OBJECT):#if its an object, its the instantiated scene itself
+			scene = targetScene
+			print(scene)
 		var sprite = Sprite2D.new()
 		sprite.texture = load("res://Textures/square.png")
 		sprite.scale = Vector2(4000, 4000)
@@ -52,7 +68,11 @@ func changeScene(targetScene : String, fadeIn = 0.4, midLength = 0.4, fadeOut = 
 			sprite.modulate.a = 1
 		
 		if(!changeAfterMidTimer):
-			get_tree().current_scene.queue_free()
+			if(freeObject):#if it is needed to return to the previous scene instance sometime after, the scene object needs
+			#to not be queue_free()'d, only removed as a child of the tree
+				get_tree().current_scene.queue_free()
+			else:
+				get_tree().root.remove_child(get_tree().current_scene)
 			get_tree().root.add_child(scene)
 			get_tree().set_current_scene(scene)
 			call_deferred("emitSceneSwitched")
@@ -61,7 +81,11 @@ func changeScene(targetScene : String, fadeIn = 0.4, midLength = 0.4, fadeOut = 
 			await get_tree().create_timer(midLength).timeout
 		
 		if(changeAfterMidTimer):
-			get_tree().current_scene.queue_free()
+			if(freeObject):#if it is needed to return to the previous scene instance sometime after, the scene object needs
+			#to not be queue_free()'d, only removed as a child of the tree
+				get_tree().current_scene.queue_free()
+			else:
+				get_tree().root.remove_child(get_tree().current_scene)
 			get_tree().root.add_child(scene)
 			get_tree().set_current_scene(scene)
 			call_deferred("emitSceneSwitched")
