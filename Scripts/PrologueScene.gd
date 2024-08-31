@@ -3,6 +3,7 @@ extends Node
 #BIG NOTE: IF YOU PUT A \n CHARACTER IN THE DIALOGUE, PUT A SPACE AFTER IT! IF YOU DONT, THE TEXTBOX CODE *WILL NOT* WORK
 
 func _ready():
+	AudioManager.setAmbienceTrack("prologueScene")
 	AudioManager.setAmbiencePlaying(true)
 	AudioManager.setAmbienceVolume(0)
 	AudioManager.setAmbienceVolume(1, 3)

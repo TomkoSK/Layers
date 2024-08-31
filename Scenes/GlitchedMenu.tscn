@@ -135,7 +135,6 @@ scale = Vector2(0.602, 0.602)
 texture = ExtResource("4_vgv12")
 
 [node name="GlitchSprite" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_y2ft8")
 position = Vector2(960, 540)
 scale = Vector2(15, 8.4375)

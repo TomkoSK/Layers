@@ -1,6 +1,8 @@
 extends Node
 
 var playingMenuMusic = false#Used in MainMenu.gd
+var ambienceTracks = {"prologueScene" : ["Dread.mp3", "Dread"]}
+var currentAmbienceTrack = ""
 var playingAmbience = false
 
 func setMenuMusicVolume(volume : float, time : float = 0):#Makes the main menu music fade to {volume} level of sound over {time} seconds
@@ -39,6 +41,10 @@ func setAmbiencePlaying(playing : bool, pause : bool = false):
 			$AmbienceAudio.play()
 		else:
 			$AmbienceAudio.stop()
+
+func setAmbienceTrack(trackName : String):
+	$AmbienceAudio.stream = load("res://Audio/"+ambienceTracks[trackName][0])
+	currentAmbienceTrack = ambienceTracks[trackName][1]
 
 func _on_menu_music_finished():
 	$MenuMusic.play()#whenever the main menu music finishes it loops again
