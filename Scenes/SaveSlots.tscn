@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://duuoxelgisixc"]
 
 [ext_resource type="Texture2D" uid="uid://c5xv85mc6apai" path="res://Textures/Save_Slots.png" id="1_8jemr"]
-[ext_resource type="Script" path="res://Scripts/SaveSlots.gd" id="1_srd57"]
+[ext_resource type="Script" uid="uid://etras57f3a64" path="res://Scripts/SaveSlots.gd" id="1_srd57"]
 [ext_resource type="Texture2D" uid="uid://bgdbxn7jiw3u5" path="res://Textures/Save_Slots_Button.png" id="2_dpb3f"]
 [ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="4_s6byu"]
 [ext_resource type="Texture2D" uid="uid://yh87bh4c7bq1" path="res://Textures/border.png" id="5_orvh1"]

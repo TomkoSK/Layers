@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqke4mo2saxuo"]
 
-[ext_resource type="Script" path="res://TestScenes/Test2.gd" id="1_wjlau"]
+[ext_resource type="Script" uid="uid://ceji6wix1ilws" path="res://TestScenes/Test2.gd" id="1_wjlau"]
 [ext_resource type="FontFile" uid="uid://dpwk6jggieidv" path="res://Prociono-Regular.ttf" id="2_lw6ed"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ojsy"]

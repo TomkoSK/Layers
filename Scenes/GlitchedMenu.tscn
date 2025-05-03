@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dcbdncm70tpma"]
 
-[ext_resource type="Script" path="res://Scripts/GlitchedMenu.gd" id="1_ie53w"]
-[ext_resource type="VideoStream" path="res://output.ogv" id="2_38bqp"]
+[ext_resource type="Script" uid="uid://vba6tx7qj2f4" path="res://Scripts/GlitchedMenu.gd" id="1_ie53w"]
+[ext_resource type="VideoStream" uid="uid://bciu8nodghuco" path="res://output.ogv" id="2_38bqp"]
 [ext_resource type="Texture2D" uid="uid://cgdryte7801yi" path="res://Buttons/continue.png" id="3_i4rqi"]
 [ext_resource type="Texture2D" uid="uid://bcse4eauj0x17" path="res://Textures/arrowgus.png" id="4_vgv12"]
 [ext_resource type="Texture2D" uid="uid://buhrse0iyji0k" path="res://Buttons/newgame.png" id="5_xr7e1"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://8uj3wriallbn" path="res://Buttons/gallery.png" id="7_sgdhc"]
 [ext_resource type="Texture2D" uid="uid://swvi7siowge1" path="res://Buttons/credits.png" id="8_onij8"]
 [ext_resource type="Texture2D" uid="uid://dpg2u8qmf3yyq" path="res://Buttons/quitted.png" id="9_p37lb"]
-[ext_resource type="Shader" path="res://MainMenu.gdshader" id="10_kuwpm"]
+[ext_resource type="Shader" uid="uid://ddyqna81wfmm0" path="res://MainMenu.gdshader" id="10_kuwpm"]
 [ext_resource type="Texture2D" uid="uid://ct63j0hubgwlt" path="res://Textures/icon.svg" id="11_y0su1"]
 [ext_resource type="AudioStream" uid="uid://k380438f0nax" path="res://Audio/cutGlitch (mp3cut.net).mp3" id="12_rdffo"]
 [ext_resource type="AudioStream" uid="uid://c76d2ybuqi28x" path="res://Audio/static.mp3" id="13_kjqy0"]

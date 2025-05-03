@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ixech3qpjyl"]
 
 [ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="1_gcbk0"]
-[ext_resource type="Script" path="res://Scripts/SplashScreen.gd" id="1_xnwlx"]
+[ext_resource type="Script" uid="uid://dltjj63o2il51" path="res://Scripts/SplashScreen.gd" id="1_xnwlx"]
 [ext_resource type="Texture2D" uid="uid://v7jk1b8y8tm4" path="res://Textures/Pwp_Logo_Layers.png" id="2_gi28g"]
 [ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="4_4s2p3"]
 

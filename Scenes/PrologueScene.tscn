@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4a3f5nemyx8c"]
 
-[ext_resource type="Script" path="res://Scripts/PrologueScene.gd" id="1_8xwyu"]
+[ext_resource type="Script" uid="uid://cdh4rdwwaxnr0" path="res://Scripts/PrologueScene.gd" id="1_8xwyu"]
 [ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="2_77735"]
 
 [node name="PrologueScene" type="Node2D"]

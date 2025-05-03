@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d27ar0j5iep5s"]
 
-[ext_resource type="Script" path="res://CardMinigame/Items/CardReveal.gd" id="1_4dj7b"]
+[ext_resource type="Script" uid="uid://cwe6nhgo27bip" path="res://CardMinigame/Items/CardReveal.gd" id="1_4dj7b"]
 [ext_resource type="Texture2D" uid="uid://ct63j0hubgwlt" path="res://Textures/icon.svg" id="2_26rrc"]
 
 [node name="CardReveal" type="Node2D"]

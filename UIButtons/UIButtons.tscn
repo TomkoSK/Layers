@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ngr60hc74d7b"]
 
-[ext_resource type="Script" path="res://UIButtons/UIButtons.gd" id="1_bqkji"]
+[ext_resource type="Script" uid="uid://bwrt8h3gq6t3i" path="res://UIButtons/UIButtons.gd" id="1_bqkji"]
 [ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="2_tadx8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5hh6l"]

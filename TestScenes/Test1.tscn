@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfw4cnvs6kyqd"]
 
-[ext_resource type="Script" path="res://TestScenes/Test1.gd" id="1_l28vr"]
+[ext_resource type="Script" uid="uid://870jb1wl1oow" path="res://TestScenes/Test1.gd" id="1_l28vr"]
 [ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="2_bnduq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yb3dd"]
