@@ -2,13 +2,14 @@ extends Node
 
 signal dialogueFinished
 
-func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "audioPath", "text", "res://TexturePath", "res://PfpTexture", 0.03]]
+func playDialogue(dialogueList, opacityFadeLength = 0):#ARGUMENTS IN THIS FORMAT: [["characterName", "audioPath", "text", "res://TexturePath", "res://PfpTexture", 0.03]]
 	var characters = [null, null]
 	var oldestIndex = 0
 	var node = load("res://Scenes/BetterText.tscn")
 	var profilePicture = null
 	var audioPath = null
 	var timerLength
+	var firstDialogue = true
 	for text in dialogueList:
 		if(len(text) > 2 and text[2] != null):
 			audioPath = text[2]
@@ -31,8 +32,14 @@ func playDialogue(dialogueList):#ARGUMENTS IN THIS FORMAT: [["characterName", "a
 		else:
 			timerLength = 0.03
 		var textBox = node.instantiate()
+		if(firstDialogue and opacityFadeLength > 0):
+			textBox.modulate.a = 0
+			var tween = get_tree().create_tween()
+			tween.tween_property(textBox, "modulate:a", 1, opacityFadeLength)
+			firstDialogue = false
+
 		self.add_child(textBox)
-		#done to remove the nulls from the character texture list (nulls in the list fuck up the text box code)
+		#done to remove the nulls from the character texture list (nulls in the list mess up the text box code)
 		var tempList = []
 		for ch in characters:
 			if(ch != null):

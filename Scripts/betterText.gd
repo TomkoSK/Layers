@@ -27,7 +27,7 @@ func formatText(text):
 	while(index < len(textArray)):
 		var length = 0
 		while(length < 1513 and index < len(textArray)):#1513 is the size of the text container
-			if(length > 0):#Adds a BEFORE every word except the first one so that the size isn't incorrect
+			if(length > 0):#Adds a space BEFORE every word except the first one so that the size isn't incorrect
 				testNode.text += " "
 			testNode.text += textArray[index]
 			length = testContainer.get_minimum_size().x

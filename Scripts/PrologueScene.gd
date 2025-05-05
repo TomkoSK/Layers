@@ -2,6 +2,8 @@ extends Node
 
 #BIG NOTE: IF YOU PUT A \n CHARACTER IN THE DIALOGUE, PUT A SPACE AFTER IT! IF YOU DONT, THE TEXTBOX CODE *WILL NOT* WORK
 
+var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
+
 func _ready():
 	AudioManager.setAmbienceTrack("prologueScene")
 	AudioManager.setAmbiencePlaying(true)
@@ -36,11 +38,28 @@ var dialogue = [["Remy... ​​​​​​​​​​​​​​​​​​
 ["(No matter how hard I tried, it whittled and faded away...)", "Remy"], ["(Prove me wrong... please, cat...\n I-)", "Remy"]
 ]
 
-
-var testdialogue = [["Remy","(Why am I even praying?\n I hate this place.\n This world... so shrill and unpleasant. I hate it.)"]]
-var formattedDialogue = []#The dialogue is formatted into proper DialoguePlayer acceptable dialogue through code
-
 func scene():
-	DialoguePlayer.playDialogue(formattedDialogue)
+	await get_tree().create_timer(2).timeout
+	$OpenVideo.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
+	$LoopVideo.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
+	$OpenVideo.play()
+	$OpenVideo.modulate.a = 0
+	await get_tree().create_timer(3).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property($OpenVideo, "modulate:a", 1, 4)
+	await get_tree().create_timer(1.5).timeout
+	tween = get_tree().create_tween()
+	tween.tween_property($OpenVideo.material, "shader_parameter/blurOffset", 0.012, 1.5)
+	await get_tree().create_timer(0.5).timeout
+	DialoguePlayer.playDialogue(formattedDialogue, 2)
+	await get_tree().create_timer(1.5).timeout
+	tween = get_tree().create_tween()
+	tween.tween_property($OpenVideo.material, "shader_parameter/blurOffset", 0.003, 1)
+	await get_tree().create_timer(1.3).timeout
+	tween = get_tree().create_tween()
+	tween.tween_property($OpenVideo.material, "shader_parameter/blurOffset", 0.0, 2)
 	await Signal(DialoguePlayer, "dialogueFinished")
 	UIButtons.set_visibility("ui", true)
+
+func _on_open_video_finished():
+	$LoopVideo.play()
