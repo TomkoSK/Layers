@@ -31,7 +31,7 @@ func _on_quit_button_pressed():
 	if(!SceneManager.switchingScenes):
 		SceneManager.changeScene("res://Scenes/QuitScene.tscn", 1.2, 25, 0)
 		AudioManager.setMenuMusicVolume(0, 1)
-		await Signal(SceneManager, "sceneSwitched")
+		await SceneManager.sceneSwitched
 		get_tree().quit()
 
 func _on_options_button_pressed():

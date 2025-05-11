@@ -24,6 +24,7 @@ GlobalWorldEnvironment="*res://Autoloaded/WorldEnvironment.tscn"
 FileManager="*res://Autoloaded/FileManager.gd"
 Backlog="*res://Autoloaded/Backlog.tscn"
 DialoguePlayer="*res://Autoloaded/DialoguePlayer.gd"
+Inventory="*res://Autoloaded/Inventory.gd"
 
 [display]
 

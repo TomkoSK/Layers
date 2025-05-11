@@ -51,7 +51,6 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4, chan
 			scene = load(targetScene).instantiate()
 		elif(typeof(targetScene) == TYPE_OBJECT):#if its an object, its the instantiated scene itself
 			scene = targetScene
-			print(scene)
 		var sprite = Sprite2D.new()
 		sprite.texture = load("res://Textures/square.png")
 		sprite.scale = Vector2(4000, 4000)
@@ -75,7 +74,7 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4, chan
 				get_tree().root.remove_child(get_tree().current_scene)
 			get_tree().root.add_child(scene)
 			get_tree().set_current_scene(scene)
-			call_deferred("emitSceneSwitched")
+			sceneSwitched.emit()
 
 		if(midLength > 0):
 			await get_tree().create_timer(midLength).timeout
@@ -88,7 +87,7 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4, chan
 				get_tree().root.remove_child(get_tree().current_scene)
 			get_tree().root.add_child(scene)
 			get_tree().set_current_scene(scene)
-			call_deferred("emitSceneSwitched")
+			sceneSwitched.emit()
 
 		if(fadeOut > 0):
 			var tween = self.create_tween()
@@ -100,9 +99,6 @@ func changeScene(targetScene, fadeIn = 0.4, midLength = 0.4, fadeOut = 0.4, chan
 			sprite.modulate.a = 0
 			switchingScenes = false
 		sprite.queue_free()
-
-func emitSceneSwitched():
-	sceneSwitched.emit()
 
 func setBackgroundFromPath(bgPath : String):
 	bgSprite.texture = load(bgPath)

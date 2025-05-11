@@ -41,7 +41,7 @@ func _on_menu_pressed() -> void:
 func _on_back_pressed() -> void:
 		$CanvasLayer.hide()
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("ui_cancel")):
 		if($CanvasLayer.visible):
 			$CanvasLayer.hide()

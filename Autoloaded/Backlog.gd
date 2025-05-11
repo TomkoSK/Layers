@@ -81,6 +81,7 @@ func addText(text):#textlines with the character name and the text will be passe
 
 func _input(event):
 	if(event.is_action_pressed("ui_cancel")):
+		get_viewport().set_input_as_handled()#stops esc input from triggering anything else like the pause menu
 		close()
 	if event is InputEventMouseButton:
 		if event.is_pressed():

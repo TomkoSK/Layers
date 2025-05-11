@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ylsxeatsax3s"]
-
-[ext_resource type="Script" path="res://Retired Technology/ItemResource.gd" id="1_12tds"]
-
-[resource]
-script = ExtResource("1_12tds")
-ID = 1
-texturePath = "res://Textures/green.png"

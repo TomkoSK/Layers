@@ -1,5 +1,0 @@
-extends Node2D
-
-func _on_button_pressed():
-	#PlayerInventory.show()COMMENTED OUT DUE TO IT CONSTANTLY SHOWING AN ERROR UNCOMMENT IF THIS TECHNOLOGY IS UNRETIRED
-	pass
