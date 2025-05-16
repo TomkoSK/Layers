@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcynmlinda14b"]
+
+[ext_resource type="PackedScene" uid="uid://cwmlac2tfywmn" path="res://ReusableScenes/Interactable.tscn" id="1_xk7hl"]
+[ext_resource type="Shader" uid="uid://rwcurfpy85wg" path="res://Shaders/InteractableOutline.gdshader" id="2_4artn"]
+[ext_resource type="Script" uid="uid://ce3xhiqy70whn" path="res://Scripts/ClickableItem.gd" id="2_cfxqh"]
+[ext_resource type="Resource" uid="uid://bw5q1jn3rk1kp" path="res://Inventory/Items/Green.tres" id="3_buidg"]
+[ext_resource type="Texture2D" uid="uid://db8gud8kw4472" path="res://Textures/green.png" id="3_cfxqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfxqh"]
+resource_local_to_scene = true
+shader = ExtResource("2_4artn")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/outlineSize = 5.076
+shader_parameter/opacityThreshold = 0.0
+shader_parameter/blur = 0.0
+shader_parameter/blurSteps = 1
+
+[node name="ClickableItem" instance=ExtResource("1_xk7hl")]
+position = Vector2(680, 390)
+script = ExtResource("2_cfxqh")
+dialogue = Array[String](["Item......", "Amogus.....", "Gren....."])
+pickUpItem = true
+item = ExtResource("3_buidg")
+itemAmount = 2
+texturePath = "uid://db8gud8kw4472"
+outlineWidth = 5.076
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_cfxqh")
+
+[node name="Outline" parent="Sprite" index="0"]
+material = SubResource("ShaderMaterial_cfxqh")
+texture = ExtResource("3_cfxqh")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+visible = true
+
+[connection signal="input_event" from="Hitbox" to="." method="_on_hitbox_input_event"]

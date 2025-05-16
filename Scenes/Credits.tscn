@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://botnl5370udeg"]
 
 [ext_resource type="Texture2D" uid="uid://crvo4vdgnwk5u" path="res://Textures/Credits_Background_1.png" id="1_3vekb"]
-[ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_as0g2"]
+[ext_resource type="Script" uid="uid://wxvxjhgb32fw" path="res://Scripts/Credits.gd" id="1_as0g2"]
 [ext_resource type="Texture2D" uid="uid://dm0wvjqek5iex" path="res://Textures/button8.png" id="2_06ni1"]
 [ext_resource type="Texture2D" uid="uid://b7wr5q5tkau0l" path="res://Textures/settingsBack.png" id="4_hte3a"]
 [ext_resource type="LabelSettings" uid="uid://bdoeys4ny5i78" path="res://creditsText.tres" id="5_g4p7f"]
@@ -82,7 +82,7 @@ horizontal_alignment = 1
 [node name="Label5" type="Label" parent="CreditsContainer/JobContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-text = "Keyboard typing guy"
+text = "Coding"
 label_settings = ExtResource("5_g4p7f")
 horizontal_alignment = 1
 

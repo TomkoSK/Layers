@@ -1,6 +1,6 @@
 extends Node
 
-var itemsFileLocation = "res://Resources/Inventory/InventoryItems.tres"
+var itemsFileLocation = "user://Resources/Inventory/InventoryItems.tres"
 
 var itemArray : InventoryItemArray
 

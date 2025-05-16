@@ -2,7 +2,7 @@ extends Node
 
 signal dialogueFinished
 
-func playDialogue(dialogueList, opacityFadeLength = 0):#ARGUMENTS IN THIS FORMAT: [["characterName", "audioPath", "text", "res://TexturePath", "res://PfpTexture", 0.03]]
+func playDialogue(dialogueList, opacityFadeLength = 0):#ARGUMENTS IN THIS FORMAT: [["characterName", "text", "audioPath", "res://TexturePath", "res://PfpTexture", 0.03]]
 	var characters = [null, null]
 	var oldestIndex = 0
 	var node = load("res://Scenes/BetterText.tscn")

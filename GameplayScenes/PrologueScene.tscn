@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cdh4rdwwaxnr0" path="res://GameplayScripts/PrologueScene.gd" id="1_c8djt"]
 [ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="2_tbnyb"]
 [ext_resource type="Shader" uid="uid://vb7jvv4tkaxu" path="res://GameplayScenes/PrologueVideo.gdshader" id="3_5lw11"]
-[ext_resource type="VideoStream" uid="uid://d0g7mhhxikl5p" path="res://prologueLoop.ogv" id="4_3o0al"]
-[ext_resource type="VideoStream" uid="uid://cycpfons7ifol" path="res://prologueOpen.ogv" id="5_6wvhl"]
+[ext_resource type="VideoStream" uid="uid://cl1eq0jawgyxr" path="res://prologueLoop.ogv" id="4_3o0al"]
+[ext_resource type="VideoStream" uid="uid://cyfa1c1rj5o3r" path="res://prologueOpen.ogv" id="5_6wvhl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bohap"]
 shader = ExtResource("3_5lw11")

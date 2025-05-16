@@ -1,70 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfw4cnvs6kyqd"]
+[gd_scene load_steps=3 format=3 uid="uid://bfw4cnvs6kyqd"]
 
 [ext_resource type="Script" uid="uid://870jb1wl1oow" path="res://TestScenes/Test1.gd" id="1_l28vr"]
-[ext_resource type="FontFile" uid="uid://be224af47s08" path="res://Aunchantedxspace-ogg4.ttf" id="2_bnduq"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_yb3dd"]
-font = ExtResource("2_bnduq")
-font_size = 70
+[ext_resource type="PackedScene" uid="uid://cwmlac2tfywmn" path="res://ReusableScenes/Interactable.tscn" id="2_t74r4"]
 
 [node name="Test1" type="Node2D"]
 script = ExtResource("1_l28vr")
 
-[node name="Sprites" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(450, 300)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
-position = Vector2(450, 300)
-
-[node name="Sprite2D3" type="Sprite2D" parent="Sprites"]
-position = Vector2(450, 300)
-
-[node name="Sprite2D4" type="Sprite2D" parent="Sprites"]
-position = Vector2(450, 300)
-
-[node name="Sprite2D5" type="Sprite2D" parent="Sprites"]
-position = Vector2(450, 300)
-
-[node name="Labels" type="Node2D" parent="."]
-
-[node name="Label" type="Label" parent="Labels"]
-offset_left = 468.0
-offset_top = 659.0
-offset_right = 1362.0
-offset_bottom = 728.0
-text = "THIS IS THE TEST 1 SCENE"
-label_settings = SubResource("LabelSettings_yb3dd")
-
-[node name="Label2" type="Label" parent="Labels"]
-offset_left = 468.0
-offset_top = 659.0
-offset_right = 1362.0
-offset_bottom = 728.0
-text = "THIS IS THE TEST 1 SCENE"
-label_settings = SubResource("LabelSettings_yb3dd")
-
-[node name="Label3" type="Label" parent="Labels"]
-offset_left = 468.0
-offset_top = 659.0
-offset_right = 1362.0
-offset_bottom = 728.0
-text = "THIS IS THE TEST 1 SCENE"
-label_settings = SubResource("LabelSettings_yb3dd")
-
-[node name="Label4" type="Label" parent="Labels"]
-offset_left = 468.0
-offset_top = 659.0
-offset_right = 1362.0
-offset_bottom = 728.0
-text = "THIS IS THE TEST 1 SCENE"
-label_settings = SubResource("LabelSettings_yb3dd")
-
-[node name="Label5" type="Label" parent="Labels"]
-offset_left = 468.0
-offset_top = 659.0
-offset_right = 1362.0
-offset_bottom = 728.0
-text = "THIS IS THE TEST 1 SCENE"
-label_settings = SubResource("LabelSettings_yb3dd")
+[node name="Interactable" parent="." instance=ExtResource("2_t74r4")]
+texturePath = "uid://o6lnv6d2p4eu"
+outlineWidth = 3.274
+outlineBlur = 0.025
+outlineOpacityThreshold = 0.498
+blurSteps = 7
