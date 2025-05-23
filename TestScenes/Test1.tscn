@@ -1,14 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfw4cnvs6kyqd"]
 
 [ext_resource type="Script" uid="uid://870jb1wl1oow" path="res://TestScenes/Test1.gd" id="1_l28vr"]
-[ext_resource type="PackedScene" uid="uid://cwmlac2tfywmn" path="res://ReusableScenes/Interactable.tscn" id="2_t74r4"]
+[ext_resource type="PackedScene" uid="uid://bcynmlinda14b" path="res://ReusableScenes/ClickableItem.tscn" id="2_t74r4"]
 
 [node name="Test1" type="Node2D"]
 script = ExtResource("1_l28vr")
 
-[node name="Interactable" parent="." instance=ExtResource("2_t74r4")]
-texturePath = "uid://o6lnv6d2p4eu"
-outlineWidth = 3.274
-outlineBlur = 0.025
-outlineOpacityThreshold = 0.498
-blurSteps = 7
+[node name="ClickableItem" parent="." instance=ExtResource("2_t74r4")]

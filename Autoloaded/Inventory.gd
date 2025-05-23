@@ -4,7 +4,7 @@ var itemsFileLocation = "user://Resources/Inventory/InventoryItems.tres"
 
 var itemArray : InventoryItemArray
 
-const MAX_ITEMS = 5
+const MAX_ITEMS = 1
 
 func _ready() -> void:
     if(ResourceLoader.exists(itemsFileLocation, "InventoryItemArray")):

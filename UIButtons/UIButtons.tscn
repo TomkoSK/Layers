@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ngr60hc74d7b"]
+[gd_scene load_steps=6 format=3 uid="uid://ngr60hc74d7b"]
 
 [ext_resource type="Script" uid="uid://bwrt8h3gq6t3i" path="res://UIButtons/UIButtons.gd" id="1_bqkji"]
 [ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="2_tadx8"]
@@ -9,8 +9,12 @@ font_size = 75
 [sub_resource type="LabelSettings" id="LabelSettings_5lm31"]
 font_size = 35
 
-[node name="OptionsButton" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_jtqcf"]
+font_size = 30
+
+[node name="UIButtons" type="Node2D"]
 script = ExtResource("1_bqkji")
+notificationPadding = Vector2(25, 10)
 
 [node name="Backlog" type="Button" parent="."]
 z_index = 10
@@ -19,22 +23,22 @@ offset_right = 1857.0
 offset_bottom = 120.0
 text = "BACKLOG"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 2
 visible = false
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Button" type="Button" parent="PauseLayer"]
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+[node name="Background" type="Sprite2D" parent="PauseLayer"]
 self_modulate = Color(0.141176, 0.141176, 0.141176, 0.956863)
 position = Vector2(960, 540)
 scale = Vector2(1920, 1080)
 texture = ExtResource("2_tadx8")
 
-[node name="Options" type="Button" parent="CanvasLayer"]
+[node name="Options" type="Button" parent="PauseLayer"]
 offset_left = 775.0
 offset_top = 360.0
 offset_right = 960.0
@@ -42,7 +46,7 @@ offset_bottom = 417.0
 scale = Vector2(2.5, 2.5)
 text = "Options"
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="PauseLayer"]
 offset_left = 542.0
 offset_top = 102.0
 offset_right = 1427.0
@@ -50,7 +54,7 @@ offset_bottom = 205.0
 text = "Pause menu :shook_sad:"
 label_settings = SubResource("LabelSettings_5hh6l")
 
-[node name="Menu" type="Button" parent="CanvasLayer"]
+[node name="Menu" type="Button" parent="PauseLayer"]
 offset_left = 775.0
 offset_top = 643.0
 offset_right = 960.0
@@ -58,7 +62,7 @@ offset_bottom = 700.0
 scale = Vector2(2.5, 2.5)
 text = "Main Menu"
 
-[node name="Back" type="Button" parent="CanvasLayer"]
+[node name="Back" type="Button" parent="PauseLayer"]
 offset_left = 1584.0
 offset_top = 95.0
 offset_right = 1706.0
@@ -66,7 +70,7 @@ offset_bottom = 146.0
 scale = Vector2(2.2, 2.2)
 text = "Back"
 
-[node name="AmbienceTrack" type="Label" parent="CanvasLayer"]
+[node name="AmbienceTrack" type="Label" parent="PauseLayer"]
 offset_left = 677.0
 offset_top = 245.0
 offset_right = 1027.0
@@ -74,7 +78,27 @@ offset_bottom = 294.0
 text = "Current Music Track:"
 label_settings = SubResource("LabelSettings_5lm31")
 
+[node name="Notification" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_jtqcf")
+
+[node name="NotificationSprite" type="Sprite2D" parent="Notification"]
+self_modulate = Color(0.0904626, 7.52043e-10, 0.0201569, 1)
+z_index = -1
+position = Vector2(70.5, 22)
+scale = Vector2(204, 41)
+texture = ExtResource("2_tadx8")
+
 [connection signal="pressed" from="Backlog" to="." method="_on_backlog_pressed"]
-[connection signal="pressed" from="CanvasLayer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PauseLayer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PauseLayer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="PauseLayer/Back" to="." method="_on_back_pressed"]
