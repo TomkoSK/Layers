@@ -1,13 +1,172 @@
-[gd_scene load_steps=6 format=3 uid="uid://ngr60hc74d7b"]
+[gd_scene load_steps=13 format=3 uid="uid://ngr60hc74d7b"]
 
 [ext_resource type="Script" uid="uid://bwrt8h3gq6t3i" path="res://UIButtons/UIButtons.gd" id="1_bqkji"]
 [ext_resource type="Texture2D" uid="uid://cg6012dh7t047" path="res://Textures/square.png" id="2_tadx8"]
+[ext_resource type="Shader" uid="uid://dnd41b15rliuq" path="res://Shaders/notification.gdshader" id="3_m4vca"]
+[ext_resource type="Texture2D" uid="uid://cllpukmdsumes" path="res://Textures/notification.png" id="4_23ucb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5hh6l"]
 font_size = 75
 
 [sub_resource type="LabelSettings" id="LabelSettings_5lm31"]
 font_size = 35
+
+[sub_resource type="Animation" id="Animation_m4vca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup:material:shader_parameter/transparentWidth")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasGroup:material:shader_parameter/whiteWidth")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasGroup:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasGroup:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasGroup:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w5umx"]
+resource_name = "new_animation"
+length = 2.5
+step = 0.033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup:material:shader_parameter/transparentWidth")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.7),
+"transitions": PackedFloat32Array(1, 0.732043, 0.5),
+"update": 0,
+"values": [1.0, 0.3, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasGroup:material:shader_parameter/whiteWidth")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.8, 1, 1.3, 1.5, 1.8, 2, 2.3),
+"transitions": PackedFloat32Array(0.659754, 1.15, 1000, 1000, 1000, 1000, 1000, 1000, 1000),
+"update": 0,
+"values": [0.0, 0.15, 0.0, 0.03, 0.0, 0.03, 0.0, 0.03, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasGroup:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasGroup:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.701961)]
+}
+
+[sub_resource type="Animation" id="Animation_23ucb"]
+resource_name = "notification_back"
+length = 0.8
+step = 0.033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(3083.52, 0.835297),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasGroup:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.701961), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxsi8"]
+_data = {
+&"RESET": SubResource("Animation_m4vca"),
+&"notification": SubResource("Animation_w5umx"),
+&"notification_back": SubResource("Animation_23ucb")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_23ucb"]
+shader = ExtResource("3_m4vca")
+shader_parameter/transparentWidth = 0.2
+shader_parameter/whiteWidth = 0.2
 
 [sub_resource type="LabelSettings" id="LabelSettings_jtqcf"]
 font_size = 30
@@ -78,25 +237,33 @@ offset_bottom = 294.0
 text = "Current Music Track:"
 label_settings = SubResource("LabelSettings_5lm31")
 
-[node name="Notification" type="Label" parent="."]
-visible = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kxsi8")
+}
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_23ucb")
+fit_margin = 0.0
+
+[node name="NotificationSprite" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1720, 169)
+texture = ExtResource("4_23ucb")
+
+[node name="Notification" type="Label" parent="CanvasGroup/NotificationSprite"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1.0
-offset_bottom = 42.0
+offset_left = -250.5
+offset_top = -53.5
+offset_right = -148.5
+offset_bottom = -11.5
 grow_horizontal = 2
 grow_vertical = 2
+text = "armogi"
 label_settings = SubResource("LabelSettings_jtqcf")
-
-[node name="NotificationSprite" type="Sprite2D" parent="Notification"]
-self_modulate = Color(0.0904626, 7.52043e-10, 0.0201569, 1)
-z_index = -1
-position = Vector2(70.5, 22)
-scale = Vector2(204, 41)
-texture = ExtResource("2_tadx8")
 
 [connection signal="pressed" from="Backlog" to="." method="_on_backlog_pressed"]
 [connection signal="pressed" from="PauseLayer/Options" to="." method="_on_options_pressed"]

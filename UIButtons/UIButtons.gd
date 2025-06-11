@@ -6,6 +6,9 @@ extends Node2D
 
 var pauseMenuEnabled = true
 
+func _ready():
+	$CanvasGroup.visible = false
+
 func set_visibility(buttonName : String, setVisible : bool):
 	if(buttonName == "ui"):
 		if(setVisible):
@@ -27,22 +30,28 @@ func set_visibility(buttonName : String, setVisible : bool):
 	else:
 		print("[WARNING]",buttonName," was passed into ui buttons set visibility function")
 ## Shows notification that takes [fadeIn] time to come in, stays for [stay] time and leaves in [fadeOut] time
-func showNotification(text : String, fadeIn : float = .8, stay : float = .8, fadeOut : float = .8):
-	$Notification.text = text
-	$Notification/NotificationSprite.scale = $Notification.get_minimum_size()+notificationPadding*2
-	#Node doesn't immediately update its size after changing its text, get_minimum_size() is the way to get the size instead	
-	$Notification.position.y = -2500#after changing the node's size, it needs to have its position changed once before it takes the new size into account
-	$Notification.position = Vector2(1920+notificationPadding.x, 200)
-	$Notification/NotificationSprite.position = $Notification.get_minimum_size()/2
-	$Notification.show()
-	var tween = get_tree().create_tween()
-	tween.tween_property($Notification, "position:x", 1920-$Notification.get_minimum_size().x-notificationPadding.x, fadeIn)
-	await get_tree().create_timer(fadeIn).timeout
-	await get_tree().create_timer(stay).timeout
-	tween = get_tree().create_tween()
-	tween.tween_property($Notification, "position:x", 1920+notificationPadding.x, fadeOut)
-	await get_tree().create_timer(fadeOut).timeout
-	$Notification.hide()
+func showNotification(text : String):
+	$CanvasGroup/NotificationSprite/Notification.text = text
+	$AnimationPlayer.play("notification")
+	await $AnimationPlayer.animation_finished
+	await get_tree().create_timer(0.5).timeout
+	$AnimationPlayer.play("notification_back")
+	await $AnimationPlayer.animation_finished
+	# $Notification.text = text
+	# $Notification/NotificationSprite.scale = $Notification.get_minimum_size()+notificationPadding*2
+	# #Node doesn't immediately update its size after changing its text, get_minimum_size() is the way to get the size instead	
+	# $Notification.position.y = -2500#after changing the node's size, it needs to have its position changed once before it takes the new size into account
+	# $Notification.position = Vector2(1920+notificationPadding.x, 200)
+	# $Notification/NotificationSprite.position = $Notification.get_minimum_size()/2
+	# $Notification.show()
+	# var tween = get_tree().create_tween()
+	# tween.tween_property($Notification, "position:x", 1920-$Notification.get_minimum_size().x-notificationPadding.x, fadeIn)
+	# await get_tree().create_timer(fadeIn).timeout
+	# await get_tree().create_timer(stay).timeout
+	# tween = get_tree().create_tween()
+	# tween.tween_property($Notification, "position:x", 1920+notificationPadding.x, fadeOut)
+	# await get_tree().create_timer(fadeOut).timeout
+	# $Notification.hide()
 
 func _on_options_pressed():
 	$PauseLayer.hide()
