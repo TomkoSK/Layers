@@ -52,3 +52,16 @@ func _on_playtime_timer_timeout():#Increases the playtime of the active save fil
 func save(scenePath : String):#Saves the current save file with the scenePath provided as the last scene
 	current_save_file.last_scene = scenePath
 	ResourceSaver.save(current_save_file, save_file_name % current_save_file_number)
+
+func set_time(minutes : int):
+	if(current_save_file):
+		current_save_file.current_time = minutes
+		UIButtons.set_clock_time(minutes)
+	else:
+		push_error("Tried changing save file's time with no save file active")
+
+func get_time():
+	if(current_save_file):
+		return current_save_file.current_time
+	else:
+		push_error("Tried to get save file's time with no save file active")

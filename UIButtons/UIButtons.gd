@@ -6,8 +6,23 @@ extends Node2D
 
 var pauseMenuEnabled = true
 
+var clockCenter = Vector2(-164, 169)
+
 func _ready():
-	$CanvasGroup.visible = false
+	$NotificationGroup.visible = false
+	await get_tree().create_timer(1.0).timeout
+	$AnimationPlayer.play("character_menu_show")
+
+func set_clock_time(minutes: int):
+	var minuteCount = minutes%60
+	var hourCount = minutes/60
+	var tween = get_tree().create_tween()
+	tween.tween_property($CharacterMenu/MinuteHand, "rotation_degrees", minuteCount*6, 2)
+	tween = get_tree().create_tween()
+	tween.tween_property($CharacterMenu/MinuteHand, "position",clockCenter+Vector2(48*cos(deg_to_rad(90-minuteCount*6)), -48*sin(deg_to_rad(90-minuteCount*6))), 2)
+	# $CharacterMenu/MinuteHand.rotation_degrees = minuteCount*6
+	$CharacterMenu/HourHand.rotation_degrees = hourCount*30
+	$CharacterMenu/HourHand.position = clockCenter+Vector2(40*cos(deg_to_rad(90-hourCount*30)), -40*sin(deg_to_rad(90-hourCount*30)))
 
 func set_visibility(buttonName : String, setVisible : bool):
 	if(buttonName == "ui"):
@@ -31,7 +46,7 @@ func set_visibility(buttonName : String, setVisible : bool):
 		print("[WARNING]",buttonName," was passed into ui buttons set visibility function")
 ## Shows notification that takes [fadeIn] time to come in, stays for [stay] time and leaves in [fadeOut] time
 func showNotification(text : String):
-	$CanvasGroup/NotificationSprite/Notification.text = text
+	$NotificationGroup/NotificationSprite/Notification.text = text
 	$AnimationPlayer.play("notification")
 	await $AnimationPlayer.animation_finished
 	await get_tree().create_timer(0.5).timeout
@@ -69,7 +84,7 @@ func _on_menu_pressed() -> void:
 		AudioManager.setAmbiencePlaying(false)
 
 func _on_back_pressed() -> void:
-		$PauseLayer.hide()
+	$PauseLayer.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("ui_cancel")):

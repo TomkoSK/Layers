@@ -9,6 +9,8 @@ var names = ["", "", "", "", "", "", "", "", "", "", "", ""]
 var textLines = ["", "", "", "", "", "", "", "", "", "", "", ""]
 var scrollOffset = 0
 
+var backlogVisible = false
+
 func _ready():
 	self.close()
 	#the testContainer and testNode are used in the same way as in the textbox script, they are for testing how big a string is
@@ -80,7 +82,7 @@ func addText(text):#textlines with the character name and the text will be passe
 	updateArrays()
 
 func _input(event):
-	if(event.is_action_pressed("ui_cancel")):
+	if(event.is_action_pressed("ui_cancel") and backlogVisible):
 		get_viewport().set_input_as_handled()#stops esc input from triggering anything else like the pause menu
 		close()
 	if event is InputEventMouseButton:
@@ -96,10 +98,12 @@ func _input(event):
 
 func open():#The hitboxes are on another canvas layer so that clicking them takes priority over everything else, the layer also has to be 
 	#manually hidden, thats why the custom show and hide function
+	backlogVisible = true
 	self.show()
 	$CanvasLayer.visible = true
 
 func close():
+	backlogVisible = false
 	self.hide()
 	$CanvasLayer.visible = false
 
