@@ -1,28 +1,37 @@
 extends Node2D
 
-#Despite being called UI *buttons*, this serves as a more wide use case manager for literally any UI elements that need to be available always
-
-@export var notificationPadding : Vector2
+#Despite being called UI buttons, this serves as a more wide use case manager for literally any UI elements that need to always be available
 
 var pauseMenuEnabled = true
 
 var clockCenter = Vector2(-164, 169)
+var clockTime : float = 0#time is a float, so that the clock turns more smoothly when using a tween to change the time's value
 
 func _ready():
 	$NotificationGroup.visible = false
-	await get_tree().create_timer(1.0).timeout
 	$AnimationPlayer.play("character_menu_show")
 
-func set_clock_time(minutes: int):
-	var minuteCount = minutes%60
-	var hourCount = minutes/60
-	var tween = get_tree().create_tween()
-	tween.tween_property($CharacterMenu/MinuteHand, "rotation_degrees", minuteCount*6, 2)
-	tween = get_tree().create_tween()
-	tween.tween_property($CharacterMenu/MinuteHand, "position",clockCenter+Vector2(48*cos(deg_to_rad(90-minuteCount*6)), -48*sin(deg_to_rad(90-minuteCount*6))), 2)
-	# $CharacterMenu/MinuteHand.rotation_degrees = minuteCount*6
+func _process(delta):
+	var minuteCount = fmod(clockTime,60)
+	var hourCount = clockTime/60.0
+	print(minuteCount)
+	$CharacterMenu/MinuteHand.rotation_degrees = minuteCount*6
+	$CharacterMenu/MinuteHand.position = clockCenter+Vector2(48*cos(deg_to_rad(90-minuteCount*6)), -48*sin(deg_to_rad(90-minuteCount*6)))
 	$CharacterMenu/HourHand.rotation_degrees = hourCount*30
 	$CharacterMenu/HourHand.position = clockCenter+Vector2(40*cos(deg_to_rad(90-hourCount*30)), -40*sin(deg_to_rad(90-hourCount*30)))
+
+func set_clock_time(minutes: int):
+	var tween = get_tree().create_tween()
+
+	var duration = 1
+	var difference = abs(clockTime-minutes)
+	tween.set_trans(Tween.TRANS_SINE)
+	if(difference > 120):
+		tween.set_trans(Tween.TRANS_CUBIC)
+	if(difference > 90):
+		duration += log(difference-90)/2.6
+
+	tween.tween_property(self, "clockTime", minutes, duration)
 
 func set_visibility(buttonName : String, setVisible : bool):
 	if(buttonName == "ui"):
@@ -52,21 +61,6 @@ func showNotification(text : String):
 	await get_tree().create_timer(0.5).timeout
 	$AnimationPlayer.play("notification_back")
 	await $AnimationPlayer.animation_finished
-	# $Notification.text = text
-	# $Notification/NotificationSprite.scale = $Notification.get_minimum_size()+notificationPadding*2
-	# #Node doesn't immediately update its size after changing its text, get_minimum_size() is the way to get the size instead	
-	# $Notification.position.y = -2500#after changing the node's size, it needs to have its position changed once before it takes the new size into account
-	# $Notification.position = Vector2(1920+notificationPadding.x, 200)
-	# $Notification/NotificationSprite.position = $Notification.get_minimum_size()/2
-	# $Notification.show()
-	# var tween = get_tree().create_tween()
-	# tween.tween_property($Notification, "position:x", 1920-$Notification.get_minimum_size().x-notificationPadding.x, fadeIn)
-	# await get_tree().create_timer(fadeIn).timeout
-	# await get_tree().create_timer(stay).timeout
-	# tween = get_tree().create_tween()
-	# tween.tween_property($Notification, "position:x", 1920+notificationPadding.x, fadeOut)
-	# await get_tree().create_timer(fadeOut).timeout
-	# $Notification.hide()
 
 func _on_options_pressed():
 	$PauseLayer.hide()

@@ -6,4 +6,4 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("test")):
-		FileManager.set_time(FileManager.get_time()+10)
+		FileManager.set_time(FileManager.get_time()+int($LineEdit.text))

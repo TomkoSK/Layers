@@ -7,3 +7,9 @@
 script = ExtResource("1_l28vr")
 
 [node name="ClickableItem" parent="." instance=ExtResource("2_t74r4")]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 1077.0
+offset_top = 255.0
+offset_right = 1734.0
+offset_bottom = 434.0

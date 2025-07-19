@@ -65,3 +65,15 @@ func get_time():
 		return current_save_file.current_time
 	else:
 		push_error("Tried to get save file's time with no save file active")
+
+func set_day(day : int):
+	if(current_save_file):
+		current_save_file.current_day = day
+	else:
+		push_error("Tried to set save file's day with no save file active")
+
+func get_day():
+	if(current_save_file):
+		return current_save_file.current_day
+	else:
+		push_error("Tried to get save file's day with no save file active")    
